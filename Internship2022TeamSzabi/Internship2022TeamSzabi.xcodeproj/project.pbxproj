@@ -22,6 +22,10 @@
 		AF79B83F288E75B900AA99BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF79B842288E75B900AA99BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF79B844288E75B900AA99BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFA30AF2288FEA8B00781179 /* Model.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Model.md; sourceTree = "<group>"; };
+		AFA30AF3288FEAB000781179 /* Model.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Model.md; sourceTree = "<group>"; };
+		AFA30AF4288FEACA00781179 /* ApiManager.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ApiManager.md; sourceTree = "<group>"; };
+		AFA30AF5288FEADB00781179 /* Storage.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Storage.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,37 +58,15 @@
 		AF79B835288E75B800AA99BD /* Internship2022TeamSzabi */ = {
 			isa = PBXGroup;
 			children = (
-				AF79B84E288E763600AA99BD /* Models */,
+				AFA30AEF288FE15200781179 /* Models */,
+				AFA30AF0288FE15200781179 /* Networking */,
+				AFA30AEE288FE15200781179 /* Persistance */,
 				AF79B84D288E763000AA99BD /* Views */,
-				AF79B84C288E762200AA99BD /* Persistance */,
-				AF79B84A288E760E00AA99BD /* Networking */,
 				AF79B836288E75B800AA99BD /* AppDelegate.swift */,
 				AF79B844288E75B900AA99BD /* Info.plist */,
 				AF79B83F288E75B900AA99BD /* Assets.xcassets */,
 			);
 			path = Internship2022TeamSzabi;
-			sourceTree = "<group>";
-		};
-		AF79B84A288E760E00AA99BD /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-				AF79B84B288E761800AA99BD /* Models */,
-			);
-			path = Networking;
-			sourceTree = "<group>";
-		};
-		AF79B84B288E761800AA99BD /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		AF79B84C288E762200AA99BD /* Persistance */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Persistance;
 			sourceTree = "<group>";
 		};
 		AF79B84D288E763000AA99BD /* Views */ = {
@@ -97,9 +79,35 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		AF79B84E288E763600AA99BD /* Models */ = {
+		AFA30AEE288FE15200781179 /* Persistance */ = {
 			isa = PBXGroup;
 			children = (
+				AFA30AF5288FEADB00781179 /* Storage.md */,
+			);
+			path = Persistance;
+			sourceTree = "<group>";
+		};
+		AFA30AEF288FE15200781179 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AFA30AF2288FEA8B00781179 /* Model.md */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AFA30AF0288FE15200781179 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				AFA30AF1288FE15200781179 /* Models */,
+				AFA30AF4288FEACA00781179 /* ApiManager.md */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		AFA30AF1288FE15200781179 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AFA30AF3288FEAB000781179 /* Model.md */,
 			);
 			path = Models;
 			sourceTree = "<group>";
