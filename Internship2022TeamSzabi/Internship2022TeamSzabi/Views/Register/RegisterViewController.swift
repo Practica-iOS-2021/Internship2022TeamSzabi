@@ -9,30 +9,15 @@ import UIKit
 
 class RegisterViewController: UIViewController {
     // outlets
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var personalIDTextfield: UITextField!
-    @IBOutlet weak var passwordTextfield: UITextField!
-    @IBOutlet weak var studentIDTextfield: UITextField!
-    @IBOutlet weak var registerButton: UIButton!
-    // actions
-    @IBAction func emailCHanged(_ sender: Any) {
-        validateIfFormFilled()
-    }
-    @IBAction func passwordChanged(_ sender: Any) {
-        validateIfFormFilled()
-    }
-    @IBAction func personal_IDChanged(_ sender: Any) {
-        validateIfFormFilled()
-    }
-    @IBAction func student_IDChanged(_ sender: Any) {
-        validateIfFormFilled()
-    }
-    @IBAction func submitAction(_ sender: Any) {
-        handleFormValidation()
-    }
+    @IBOutlet private weak var emailTextField: UITextField!
+    @IBOutlet private weak var personalIDTextfield: UITextField!
+    @IBOutlet private weak var passwordTextfield: UITextField!
+    @IBOutlet private weak var studentIDTextfield: UITextField!
+    @IBOutlet private weak var registerButton: UIButton!
+   
     // input validation error strings
-    var emailError: String = ""
-    var passwordError: String = ""
+    private var emailError: String = ""
+    private var passwordError: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,16 +36,36 @@ class RegisterViewController: UIViewController {
         registerButton.isEnabled = false
     }
     
+    // actions
+    @IBAction private func emailChanged(_ sender: Any) {
+        validateIfFormFilled()
+    }
+    @IBAction private func passwordChanged(_ sender: Any) {
+        validateIfFormFilled()
+    }
+    @IBAction private func personalIDChanged(_ sender: Any) {
+        validateIfFormFilled()
+    }
+    @IBAction private func studentIDChanged(_ sender: Any) {
+        validateIfFormFilled()
+    }
+    @IBAction private func submitAction(_ sender: Any) {
+        handleFormValidation()
+    }
+    
     func handleFormValidation() {
-        let email = emailTextField.text!
-        let password =  passwordTextfield.text!
+        let email = emailTextField.text ?? ""
+        let password =  passwordTextfield.text ?? ""
         
         emailError = validateEmail(email) ?? ""
         passwordError = validatePassword(password) ?? ""
         
-        if emailError != "" || passwordError != "" {
-            alertError([emailError, passwordError])
-        } else {
+        if emailError != ""  {
+            alertError(emailError)
+        } else if passwordError != "" {
+            alertError(passwordError)
+        }
+        else {
             handleRegister()
         }
     }
@@ -106,26 +111,18 @@ class RegisterViewController: UIViewController {
             }
         }
         // enable/disable 'register' button
-        if foundEmpty {
-            registerButton.isEnabled = false
-        } else {
-            registerButton.isEnabled = true
-        }
+        registerButton.isEnabled = !foundEmpty
     }
     
     func isEmptyTextfield(_ textField: UITextField) -> Bool {
-        if textField.text!.isEmpty {
-            return true
+        if textField.text != nil {
+            return textField.text!.isEmpty
         }
-        return false
+        return true
     }
     
-    func alertError(_ errors: [String]) {
-        var errorMessage: String = ""
-        for error in errors {
-            errorMessage += "\n\(error)"
-        }
-        let dialogMessage = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
+    func alertError(_ error: String) {
+        let dialogMessage = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
         // Create OK button with action handler
         let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
         })

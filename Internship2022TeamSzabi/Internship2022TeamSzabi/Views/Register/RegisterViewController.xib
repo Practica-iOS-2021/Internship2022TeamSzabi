@@ -57,7 +57,7 @@
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <textInputTraits key="textInputTraits"/>
                     <connections>
-                        <action selector="emailCHanged:" destination="-1" eventType="editingDidEnd" id="c3n-1M-Mhp"/>
+                        <action selector="emailChanged:" destination="-1" eventType="editingDidEnd" id="MLK-ah-Lef"/>
                     </connections>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EcB-DZ-FTW" userLabel="Personal ID Textfield">
@@ -65,7 +65,7 @@
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <textInputTraits key="textInputTraits"/>
                     <connections>
-                        <action selector="personal_IDChanged:" destination="-1" eventType="editingDidEnd" id="bvg-cP-p7Q"/>
+                        <action selector="personalIDChanged:" destination="-1" eventType="editingDidEnd" id="jpv-wh-MyF"/>
                     </connections>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f4E-NY-o9t" userLabel="Student ID Textfield">
@@ -73,7 +73,7 @@
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <textInputTraits key="textInputTraits"/>
                     <connections>
-                        <action selector="student_IDChanged:" destination="-1" eventType="editingDidEnd" id="8xz-wu-s2c"/>
+                        <action selector="studentIDChanged:" destination="-1" eventType="editingDidEnd" id="29O-db-iz6"/>
                     </connections>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V9D-vv-PuF" userLabel="Password Textfield">
@@ -81,7 +81,7 @@
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <textInputTraits key="textInputTraits"/>
                     <connections>
-                        <action selector="passwordChanged:" destination="-1" eventType="editingDidEnd" id="2Gq-dw-nzw"/>
+                        <action selector="passwordChanged:" destination="-1" eventType="editingDidEnd" id="Nr8-mH-jvA"/>
                     </connections>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WNe-so-Svv">
@@ -97,7 +97,7 @@
                         <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </buttonConfiguration>
                     <connections>
-                        <action selector="submitAction:" destination="-1" eventType="touchUpInside" id="4Bf-dA-9AG"/>
+                        <action selector="submitAction:" destination="-1" eventType="touchUpInside" id="nwB-au-dck"/>
                     </connections>
                 </button>
             </subviews>
