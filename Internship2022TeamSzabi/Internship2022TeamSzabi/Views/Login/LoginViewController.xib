@@ -46,7 +46,6 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LWP-S1-TqH">
                     <rect key="frame" x="40" y="239" width="284" height="35"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="284" id="0zl-iT-dJw"/>
                         <constraint firstAttribute="height" constant="35" id="oX5-tN-Ayz"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -62,7 +61,6 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fh6-Yt-YhV">
                     <rect key="frame" x="40" y="343" width="284" height="35"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="284" id="FP4-t3-yHk"/>
                         <constraint firstAttribute="height" constant="35" id="rBw-ei-4VZ"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -148,7 +146,7 @@
                         <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </buttonConfiguration>
                     <connections>
-                        <action selector="signupButton:" destination="-1" eventType="touchUpInside" id="Tl2-W0-vMr"/>
+                        <action selector="signupButton:" destination="-1" eventType="touchUpInside" id="v8U-Op-11x"/>
                     </connections>
                 </button>
             </subviews>
