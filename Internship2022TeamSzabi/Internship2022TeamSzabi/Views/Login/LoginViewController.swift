@@ -10,21 +10,13 @@ import UIKit
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet private var loginLabel: UILabel!
-    
     @IBOutlet private var emailLabel: UILabel!
-    
     @IBOutlet private var passwordLabel: UILabel!
-    
     @IBOutlet private var notRegisteredLabel: UILabel!
-    
     @IBOutlet private var validationLabel: UILabel!
-    
     @IBOutlet private var emailTextField: UITextField!
-    
     @IBOutlet private var passwordTextField: UITextField!
-    
     @IBOutlet private var loginButton: UIButton!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,32 +36,30 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction private func loginButton(_ sender: UIButton) {
- 
+        
         // validation for empty email textfield
-        guard !emailTextField.text!.isEmpty
-        else {
+        guard !emailTextField.text!.isEmpty else {
             validationLabel.isHidden = false
             validationLabel.text = "Please enter Email"
             return
-             }
-       
+        }
+        
         // validation for valid email format
         if !isValidEmail(emailAddress: emailTextField.text!) {
             validationLabel.isHidden = false
             validationLabel.text = "Email is invalid"}
         else {
-                validationLabel.isHidden = true
-             }
+            validationLabel.isHidden = true
+        }
         
         // validation for empty password textfield
-        guard !passwordTextField.text!.isEmpty
-        else {
+        guard !passwordTextField.text!.isEmpty else {
             validationLabel.isHidden = false
             validationLabel.text = "Please enter Password"
             return
-             }
+        }
     }
-
+    
     @IBAction private func signupButton(_ sender: UIButton) {
         
     }
@@ -99,5 +89,4 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         button.layer.shadowRadius = 0.0
         button.layer.masksToBounds = false
     }
-    
 }
