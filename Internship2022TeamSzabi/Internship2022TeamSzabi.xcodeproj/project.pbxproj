@@ -12,6 +12,8 @@
 		AF79B83E288E75B800AA99BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF79B83C288E75B800AA99BD /* Main.storyboard */; };
 		AF79B840288E75B900AA99BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF79B83F288E75B900AA99BD /* Assets.xcassets */; };
 		AF79B843288E75B900AA99BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF79B841288E75B900AA99BD /* LaunchScreen.storyboard */; };
+		BF4D6DB028900AE100B9C7F5 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF4D6DAE28900AE100B9C7F5 /* RegisterViewController.xib */; };
+		BF4D6DB128900AE100B9C7F5 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4D6DAF28900AE100B9C7F5 /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		AFA30AF3288FEAB000781179 /* Model.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Model.md; sourceTree = "<group>"; };
 		AFA30AF4288FEACA00781179 /* ApiManager.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ApiManager.md; sourceTree = "<group>"; };
 		AFA30AF5288FEADB00781179 /* Storage.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Storage.md; sourceTree = "<group>"; };
+		BF4D6DAE28900AE100B9C7F5 /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RegisterViewController.xib; path = ../../../../../../xcode_projects/LoginForm/LoginForm/RegisterViewController.xib; sourceTree = "<group>"; };
+		BF4D6DAF28900AE100B9C7F5 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = ../../../../../../xcode_projects/LoginForm/LoginForm/RegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,7 @@
 		AF79B84D288E763000AA99BD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BF4D6DAD2890099500B9C7F5 /* Register */,
 				AF79B83A288E75B800AA99BD /* ViewController.swift */,
 				AF79B83C288E75B800AA99BD /* Main.storyboard */,
 				AF79B841288E75B900AA99BD /* LaunchScreen.storyboard */,
@@ -110,6 +115,15 @@
 				AFA30AF3288FEAB000781179 /* Model.md */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		BF4D6DAD2890099500B9C7F5 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				BF4D6DAF28900AE100B9C7F5 /* RegisterViewController.swift */,
+				BF4D6DAE28900AE100B9C7F5 /* RegisterViewController.xib */,
+			);
+			path = Register;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +187,7 @@
 				AF79B843288E75B900AA99BD /* LaunchScreen.storyboard in Resources */,
 				AF79B840288E75B900AA99BD /* Assets.xcassets in Resources */,
 				AF79B83E288E75B800AA99BD /* Main.storyboard in Resources */,
+				BF4D6DB028900AE100B9C7F5 /* RegisterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF4D6DB128900AE100B9C7F5 /* RegisterViewController.swift in Sources */,
 				AF79B83B288E75B800AA99BD /* ViewController.swift in Sources */,
 				AF79B837288E75B800AA99BD /* AppDelegate.swift in Sources */,
 			);
