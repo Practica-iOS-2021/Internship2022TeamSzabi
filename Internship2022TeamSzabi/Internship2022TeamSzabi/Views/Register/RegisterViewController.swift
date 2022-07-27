@@ -115,17 +115,12 @@ class RegisterViewController: UIViewController {
     }
     
     func isEmptyTextfield(_ textField: UITextField) -> Bool {
-        if textField.text != nil {
-            return textField.text!.isEmpty
-        }
-        return true
+        return textField.text?.isEmpty ?? true
     }
     
     func alertError(_ error: String) {
         let dialogMessage = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
-        // Create OK button with action handler
-        let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
-        })
+        let ok = UIAlertAction(title: "OK", style: .default)
         dialogMessage.addAction(ok)
         self.present(dialogMessage, animated: true, completion: nil)
     }
