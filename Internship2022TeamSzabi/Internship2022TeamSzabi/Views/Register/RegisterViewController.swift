@@ -18,8 +18,8 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.subviews.forEach { gotView in
-            guard let textField = gotView as? UITextField else { return }
+        view.subviews.forEach { view in
+            guard let textField = view as? UITextField else { return }
             addStyleToTextfield(textField: textField)
         }
 
@@ -45,15 +45,15 @@ class RegisterViewController: UIViewController {
     }
 
     private func handleFormValidation() {
-        let emailError = validateEmail(emailTextField.text!)
-        let passwordError = validatePassword(passwordTextfield.text!)
+        guard let emailText = emailTextField.text,
+              let passwordText = passwordTextfield.text else { return }
 
-        guard emailError == nil else {
-            alertError(emailError!)
+        if let emailError = validateEmail(emailText) {
+            alertError(emailError)
             return
         }
-        guard passwordError == nil else {
-            alertError(passwordError!)
+        if let passwordError = validatePassword(passwordText) {
+            alertError(passwordError)
             return
         }
 
@@ -90,17 +90,16 @@ class RegisterViewController: UIViewController {
         return nil
     }
 
-    func validateIfFormFilled() {
-        var foundEmpty: Bool = false
-        for gotView in self.view.subviews {
-            guard let textField = gotView as? UITextField else { continue }
-            if textField.text?.isEmpty ?? true {
-                foundEmpty = true
-                break
+    private func validateIfFormFilled() {
+        let firstEmpty = view.subviews.first { view in
+            if let textField = view as? UITextField {
+                return textField.text?.isEmpty ?? true
             }
+            return false
         }
+
         // enable/disable 'register' button
-        registerButton.isEnabled = !foundEmpty
+        registerButton.isEnabled = firstEmpty == nil
     }
 
     func alertError(_ error: String) {
