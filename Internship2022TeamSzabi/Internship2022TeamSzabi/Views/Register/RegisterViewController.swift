@@ -14,29 +14,20 @@ class RegisterViewController: UIViewController {
     @IBOutlet private weak var passwordTextfield: UITextField!
     @IBOutlet private weak var studentIDTextfield: UITextField!
     @IBOutlet private weak var registerButton: UIButton!
-   
-    // input validation error strings
-    private var emailError: String = ""
-    private var passwordError: String = ""
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-        // Add style to all textfields
-        for textField in self.view.subviews {
-            if type(of: textField) == UITextField.self
-            {
-                addStyleToTextfield(textField: textField as! UITextField)
-            }
+
+        view.subviews.forEach { gotView in
+            guard let textField = gotView as? UITextField else { return }
+            addStyleToTextfield(textField: textField)
         }
-        // Add style to button
+
+        passwordTextfield.isSecureTextEntry = true
         addStyleToButton(button: registerButton)
-        // Set initial state of 'registerButton' to disabled
         registerButton.isEnabled = false
     }
-    
-    // actions
+
     @IBAction private func emailChanged(_ sender: Any) {
         validateIfFormFilled()
     }
@@ -52,31 +43,31 @@ class RegisterViewController: UIViewController {
     @IBAction private func submitAction(_ sender: Any) {
         handleFormValidation()
     }
-    
-    func handleFormValidation() {
-        let email = emailTextField.text ?? ""
-        let password =  passwordTextfield.text ?? ""
-        
-        emailError = validateEmail(email) ?? ""
-        passwordError = validatePassword(password) ?? ""
-        
-        if emailError != ""  {
-            alertError(emailError)
-        } else if passwordError != "" {
-            alertError(passwordError)
+
+    private func handleFormValidation() {
+        let emailError = validateEmail(emailTextField.text!)
+        let passwordError = validatePassword(passwordTextfield.text!)
+
+        guard emailError == nil else {
+            alertError(emailError!)
+            return
         }
-        else {
-            handleRegister()
+        guard passwordError == nil else {
+            alertError(passwordError!)
+            return
         }
+
+        // all validations passed
+        handleRegister()
     }
-    
-    func handleRegister() {
+
+    private func handleRegister() {
         print("ready to register")
     }
-    
+
     func validateEmail(_ email: String) -> String? {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,20}"
-        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        let emailPred = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
         // must be of valid type *@*.*
         guard emailPred.evaluate(with: email) else {
             return "Invalid email."
@@ -84,10 +75,10 @@ class RegisterViewController: UIViewController {
         // valid email
         return nil
     }
-    
+
     func validatePassword(_ password: String) -> String? {
         let passwordRegEx = "^(?=.{8,})(?=.*[A-Z])(?=.*[@#$%^&+=]).*$"
-        let emailPred = NSPredicate(format:"SELF MATCHES %@", passwordRegEx)
+        let emailPred = NSPredicate(format: "SELF MATCHES %@", passwordRegEx)
         // must be of valid type:
         //  at least 1 uppercase character
         //  at least 1 special character
@@ -98,33 +89,27 @@ class RegisterViewController: UIViewController {
         // valid password
         return nil
     }
-    
+
     func validateIfFormFilled() {
         var foundEmpty: Bool = false
-        // test subvies of type UITextField if not empty
-        for textField in self.view.subviews {
-            if type(of: textField) == UITextField.self {
-                if isEmptyTextfield(textField as! UITextField) {
-                    foundEmpty = true
-                    break
-                }
+        for gotView in self.view.subviews {
+            guard let textField = gotView as? UITextField else { continue }
+            if textField.text?.isEmpty ?? true {
+                foundEmpty = true
+                break
             }
         }
         // enable/disable 'register' button
         registerButton.isEnabled = !foundEmpty
     }
-    
-    func isEmptyTextfield(_ textField: UITextField) -> Bool {
-        return textField.text?.isEmpty ?? true
-    }
-    
+
     func alertError(_ error: String) {
         let dialogMessage = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
-        let ok = UIAlertAction(title: "OK", style: .default)
-        dialogMessage.addAction(ok)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        dialogMessage.addAction(okAction)
         self.present(dialogMessage, animated: true, completion: nil)
     }
-    
+
     func addStyleToButton(button: UIButton) {
         // shadow
         button.layer.shadowColor = UIColor.black.cgColor
@@ -134,9 +119,8 @@ class RegisterViewController: UIViewController {
         button.layer.shadowRadius = 2
         button.layer.shadowOpacity = 0.2
     }
-    
-    func addStyleToTextfield(textField: UITextField)
-    {
+
+    func addStyleToTextfield(textField: UITextField) {
         // border bottom
         let bottomLine = CALayer()
         bottomLine.frame = CGRect(
@@ -144,13 +128,20 @@ class RegisterViewController: UIViewController {
             y: textField.frame.height - 1,
             width: textField.frame.width,
             height: 1.0)
-        bottomLine.backgroundColor = UIColor(
-            red: 0.486,
-            green: 0.478,
-            blue: 0.478,
-            alpha: 1).cgColor
+        bottomLine.backgroundColor = UIColor(named: "TextFieldBorderColor")?.cgColor
         textField.borderStyle = UITextField.BorderStyle.none
         textField.layer.addSublayer(bottomLine)
     }
-    
+}
+
+// MARK: - for keyboard issues
+extension RegisterViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // dismiss keyboard
+        emailTextField.resignFirstResponder()
+        personalIDTextfield.resignFirstResponder()
+        studentIDTextfield.resignFirstResponder()
+        passwordTextfield.resignFirstResponder()
+        return true
+    }
 }
