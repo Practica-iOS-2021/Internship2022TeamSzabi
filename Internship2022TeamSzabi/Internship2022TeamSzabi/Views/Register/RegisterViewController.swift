@@ -111,7 +111,7 @@ class RegisterViewController: UIViewController {
         let dialogMessage = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default)
         dialogMessage.addAction(okAction)
-        self.present(dialogMessage, animated: true, completion: nil)
+        present(dialogMessage, animated: true, completion: nil)
     }
 
     func addStyleToButton(button: UIButton) {
