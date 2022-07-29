@@ -14,11 +14,13 @@
 		17289A0B28901E5400D6EFCE /* GradesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17289A0928901E5400D6EFCE /* GradesViewController.swift */; };
 		17289A0C28901E5400D6EFCE /* GradesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17289A0A28901E5400D6EFCE /* GradesViewController.xib */; };
 		17289A0F2890415E00D6EFCE /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17289A0E2890415E00D6EFCE /* TabBarController.swift */; };
+		ACEDF6B22892948D00CCFF8B /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACEDF6B02892948D00CCFF8B /* LoginViewController.xib */; };
+		ACEDF6B32892948D00CCFF8B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEDF6B12892948D00CCFF8B /* LoginViewController.swift */; };
 		AF79B837288E75B800AA99BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF79B836288E75B800AA99BD /* AppDelegate.swift */; };
 		AF79B840288E75B900AA99BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF79B83F288E75B900AA99BD /* Assets.xcassets */; };
 		AF79B843288E75B900AA99BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF79B841288E75B900AA99BD /* LaunchScreen.storyboard */; };
-		BFA07BFF28927D1400219811 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFA07BFD28927D1400219811 /* RegisterViewController.xib */; };
-		BFA07C0028927D1400219811 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA07BFE28927D1400219811 /* RegisterViewController.swift */; };
+		BF227DBD2893C83600DD111A /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF227DBB2893C83600DD111A /* RegisterViewController.xib */; };
+		BF227DBE2893C83600DD111A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF227DBC2893C83600DD111A /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		17289A0928901E5400D6EFCE /* GradesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradesViewController.swift; sourceTree = "<group>"; };
 		17289A0A28901E5400D6EFCE /* GradesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GradesViewController.xib; sourceTree = "<group>"; };
 		17289A0E2890415E00D6EFCE /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		ACEDF6B02892948D00CCFF8B /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		ACEDF6B12892948D00CCFF8B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AF79B833288E75B800AA99BD /* Internship2022TeamSzabi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Internship2022TeamSzabi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF79B836288E75B800AA99BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF79B83F288E75B900AA99BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,8 +42,8 @@
 		AFA30AF3288FEAB000781179 /* Model.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Model.md; sourceTree = "<group>"; };
 		AFA30AF4288FEACA00781179 /* ApiManager.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ApiManager.md; sourceTree = "<group>"; };
 		AFA30AF5288FEADB00781179 /* Storage.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Storage.md; sourceTree = "<group>"; };
-		BFA07BFD28927D1400219811 /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
-		BFA07BFE28927D1400219811 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		BF227DBB2893C83600DD111A /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		BF227DBC2893C83600DD111A /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,15 @@
 			path = CoursesViewController;
 			sourceTree = "<group>";
 		};
+		ACEDF6AF2892948D00CCFF8B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				ACEDF6B02892948D00CCFF8B /* LoginViewController.xib */,
+				ACEDF6B12892948D00CCFF8B /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		AF79B82A288E75B800AA99BD = {
 			isa = PBXGroup;
 			children = (
@@ -121,7 +134,8 @@
 		AF79B84D288E763000AA99BD /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BFA07BFC28927D1400219811 /* Register */,
+				BF227DBA2893C83600DD111A /* Register */,
+				ACEDF6AF2892948D00CCFF8B /* Login */,
 				17289A0D2890411000D6EFCE /* TabBarController */,
 				17289A0428901D6700D6EFCE /* ProfileViewController */,
 				17354F00288FEE8600CBC1F5 /* CoursesViewController */,
@@ -164,11 +178,11 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		BFA07BFC28927D1400219811 /* Register */ = {
+		BF227DBA2893C83600DD111A /* Register */ = {
 			isa = PBXGroup;
 			children = (
-				BFA07BFD28927D1400219811 /* RegisterViewController.xib */,
-				BFA07BFE28927D1400219811 /* RegisterViewController.swift */,
+				BF227DBB2893C83600DD111A /* RegisterViewController.xib */,
+				BF227DBC2893C83600DD111A /* RegisterViewController.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -183,6 +197,7 @@
 				AF79B82F288E75B800AA99BD /* Sources */,
 				AF79B830288E75B800AA99BD /* Frameworks */,
 				AF79B831288E75B800AA99BD /* Resources */,
+				F02937B92892B8CD001144EF /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -233,24 +248,47 @@
 			files = (
 				AF79B843288E75B900AA99BD /* LaunchScreen.storyboard in Resources */,
 				AF79B840288E75B900AA99BD /* Assets.xcassets in Resources */,
+				BF227DBD2893C83600DD111A /* RegisterViewController.xib in Resources */,
+				ACEDF6B22892948D00CCFF8B /* LoginViewController.xib in Resources */,
 				17289A0828901D9500D6EFCE /* ProfileViewController.xib in Resources */,
 				17289A0328901B4800D6EFCE /* CoursesViewController.xib in Resources */,
 				17289A0C28901E5400D6EFCE /* GradesViewController.xib in Resources */,
-				BFA07BFF28927D1400219811 /* RegisterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F02937B92892B8CD001144EF /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AF79B82F288E75B800AA99BD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACEDF6B32892948D00CCFF8B /* LoginViewController.swift in Sources */,
 				17289A0728901D9500D6EFCE /* ProfileViewController.swift in Sources */,
+				BF227DBE2893C83600DD111A /* RegisterViewController.swift in Sources */,
 				17289A0F2890415E00D6EFCE /* TabBarController.swift in Sources */,
 				AF79B837288E75B800AA99BD /* AppDelegate.swift in Sources */,
-				BFA07C0028927D1400219811 /* RegisterViewController.swift in Sources */,
 				17289A0B28901E5400D6EFCE /* GradesViewController.swift in Sources */,
 				17289A0228901B4800D6EFCE /* CoursesViewController.swift in Sources */,
 			);
