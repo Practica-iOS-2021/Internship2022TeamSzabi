@@ -21,6 +21,8 @@
 		AF79B840288E75B900AA99BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF79B83F288E75B900AA99BD /* Assets.xcassets */; };
 		AF79B843288E75B900AA99BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF79B841288E75B900AA99BD /* LaunchScreen.storyboard */; };
 		AFD0D4E22893DEE100363B6C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AFD0D4E12893DEE100363B6C /* GoogleService-Info.plist */; };
+		BF227DC22893E41600DD111A /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF227DC02893E41600DD111A /* RegisterViewController.xib */; };
+		BF227DC32893E41600DD111A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF227DC12893E41600DD111A /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,8 @@
 		AFA30AF4288FEACA00781179 /* ApiManager.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ApiManager.md; sourceTree = "<group>"; };
 		AFA30AF5288FEADB00781179 /* Storage.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Storage.md; sourceTree = "<group>"; };
 		AFD0D4E12893DEE100363B6C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BF227DC02893E41600DD111A /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		BF227DC12893E41600DD111A /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		E8DA8DF6CE54DE53C1D8ECC7 /* Pods-Internship2022TeamSzabi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Internship2022TeamSzabi.release.xcconfig"; path = "Target Support Files/Pods-Internship2022TeamSzabi/Pods-Internship2022TeamSzabi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -148,6 +152,7 @@
 		AF79B84D288E763000AA99BD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BF227DBF2893E41600DD111A /* Register */,
 				ACEDF6AF2892948D00CCFF8B /* Login */,
 				17289A0D2890411000D6EFCE /* TabBarController */,
 				17289A0428901D6700D6EFCE /* ProfileViewController */,
@@ -189,6 +194,15 @@
 				AFA30AF3288FEAB000781179 /* Model.md */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		BF227DBF2893E41600DD111A /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				BF227DC02893E41600DD111A /* RegisterViewController.xib */,
+				BF227DC12893E41600DD111A /* RegisterViewController.swift */,
+			);
+			path = Register;
 			sourceTree = "<group>";
 		};
 		E2F5549BC7833CFE569EE387 /* Pods */ = {
@@ -269,6 +283,7 @@
 				17289A0328901B4800D6EFCE /* CoursesViewController.xib in Resources */,
 				17289A0C28901E5400D6EFCE /* GradesViewController.xib in Resources */,
 				AFD0D4E22893DEE100363B6C /* GoogleService-Info.plist in Resources */,
+				BF227DC22893E41600DD111A /* RegisterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +376,7 @@
 			files = (
 				ACEDF6B32892948D00CCFF8B /* LoginViewController.swift in Sources */,
 				17289A0728901D9500D6EFCE /* ProfileViewController.swift in Sources */,
+				BF227DC32893E41600DD111A /* RegisterViewController.swift in Sources */,
 				17289A0F2890415E00D6EFCE /* TabBarController.swift in Sources */,
 				AF79B837288E75B800AA99BD /* AppDelegate.swift in Sources */,
 				17289A0B28901E5400D6EFCE /* GradesViewController.swift in Sources */,
