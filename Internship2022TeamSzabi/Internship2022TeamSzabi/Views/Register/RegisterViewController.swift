@@ -8,7 +8,9 @@
 import UIKit
 
 class RegisterViewController: UIViewController {
+    @IBOutlet private weak var formView: UIView!
     @IBOutlet private weak var emailTextField: UITextField!
+    @IBOutlet private weak var nameTextField: UITextField!
     @IBOutlet private weak var personalIDTextfield: UITextField!
     @IBOutlet private weak var passwordTextfield: UITextField!
     @IBOutlet private weak var studentIDTextfield: UITextField!
@@ -21,6 +23,9 @@ class RegisterViewController: UIViewController {
     }
 
     @IBAction private func emailChanged(_ sender: Any) {
+        validateIfFormFilled()
+    }
+    @IBAction func nameChanged(_ sender: Any) {
         validateIfFormFilled()
     }
     @IBAction private func passwordChanged(_ sender: Any) {
@@ -39,7 +44,7 @@ class RegisterViewController: UIViewController {
     private func setupAppearence() {
         // for each view in subviews of type 'UITextField':
         // set style to said view
-        view.subviews.forEach { view in
+        formView.subviews.forEach { view in
             guard let textField = view as? UITextField else { return }
             addStyleToTextfield(textField: textField)
         }
@@ -51,7 +56,8 @@ class RegisterViewController: UIViewController {
 
     private func handleFormValidation() {
         guard let emailText = emailTextField.text,
-              let passwordText = passwordTextfield.text else { return }
+              let passwordText = passwordTextfield.text,
+              let personalIDText = personalIDTextfield.text else { return }
 
         if let emailError = validateEmail(emailText) {
             alertError(emailError)
@@ -59,6 +65,10 @@ class RegisterViewController: UIViewController {
         }
         if let passwordError = validatePassword(passwordText) {
             alertError(passwordError)
+            return
+        }
+        if let personalIDError = validatePersonalID(personalIDText) {
+            alertError(personalIDError)
             return
         }
 
@@ -95,8 +105,21 @@ class RegisterViewController: UIViewController {
         return nil
     }
 
+    func validatePersonalID(_ personalID: String) -> String? {
+        let personalIDRegEx = "^([a-zA-Z0-9]+(\\s|-))*[a-zA-Z0-9]+$"
+        let emailPred = NSPredicate(format: "SELF MATCHES %@", personalIDRegEx)
+        // must be of valid type:
+        // 1 space or 1 '-' between characters
+        guard emailPred.evaluate(with: personalID) else {
+            return "Invalid personal ID."
+        }
+        // valid password
+        return nil
+    }
+
+
     private func validateIfFormFilled() {
-        let firstEmpty = view.subviews.first { view in
+        let firstEmpty = formView.subviews.first { view in
             if let textField = view as? UITextField {
                 return textField.text?.isEmpty ?? true
             }
