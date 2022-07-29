@@ -1,0 +1,9 @@
+platform :ios, '14.0'
+use_frameworks!
+
+target 'Internship2022TeamSzabi' do
+  pod 'Firebase/Core', '8.1.0'
+  pod 'Firebase/Crashlytics'
+  pod 'Firebase/Messaging'
+  pod 'Firebase/Analytics'
+end
