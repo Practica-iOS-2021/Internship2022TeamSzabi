@@ -14,6 +14,7 @@
 		17289A0B28901E5400D6EFCE /* GradesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17289A0928901E5400D6EFCE /* GradesViewController.swift */; };
 		17289A0C28901E5400D6EFCE /* GradesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17289A0A28901E5400D6EFCE /* GradesViewController.xib */; };
 		17289A0F2890415E00D6EFCE /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17289A0E2890415E00D6EFCE /* TabBarController.swift */; };
+		17B328192893E683000B5D0B /* Inter-V.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 17B328182893E683000B5D0B /* Inter-V.ttf */; };
 		ACEDF6B22892948D00CCFF8B /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACEDF6B02892948D00CCFF8B /* LoginViewController.xib */; };
 		ACEDF6B32892948D00CCFF8B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEDF6B12892948D00CCFF8B /* LoginViewController.swift */; };
 		AF79B837288E75B800AA99BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF79B836288E75B800AA99BD /* AppDelegate.swift */; };
@@ -29,6 +30,7 @@
 		17289A0928901E5400D6EFCE /* GradesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradesViewController.swift; sourceTree = "<group>"; };
 		17289A0A28901E5400D6EFCE /* GradesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GradesViewController.xib; sourceTree = "<group>"; };
 		17289A0E2890415E00D6EFCE /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		17B328182893E683000B5D0B /* Inter-V.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-V.ttf"; sourceTree = "<group>"; };
 		ACEDF6B02892948D00CCFF8B /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		ACEDF6B12892948D00CCFF8B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AF79B833288E75B800AA99BD /* Internship2022TeamSzabi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Internship2022TeamSzabi.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +90,13 @@
 			path = CoursesViewController;
 			sourceTree = "<group>";
 		};
+		17B3281A2893E732000B5D0B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		ACEDF6AF2892948D00CCFF8B /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,11 +125,13 @@
 		AF79B835288E75B800AA99BD /* Internship2022TeamSzabi */ = {
 			isa = PBXGroup;
 			children = (
+				17B3281A2893E732000B5D0B /* Resources */,
 				AFA30AEF288FE15200781179 /* Models */,
 				AFA30AF0288FE15200781179 /* Networking */,
 				AFA30AEE288FE15200781179 /* Persistance */,
 				AF79B84D288E763000AA99BD /* Views */,
 				AF79B836288E75B800AA99BD /* AppDelegate.swift */,
+				17B328182893E683000B5D0B /* Inter-V.ttf */,
 				AF79B844288E75B900AA99BD /* Info.plist */,
 				AF79B83F288E75B900AA99BD /* Assets.xcassets */,
 			);
@@ -234,6 +245,7 @@
 				AF79B843288E75B900AA99BD /* LaunchScreen.storyboard in Resources */,
 				AF79B840288E75B900AA99BD /* Assets.xcassets in Resources */,
 				ACEDF6B22892948D00CCFF8B /* LoginViewController.xib in Resources */,
+				17B328192893E683000B5D0B /* Inter-V.ttf in Resources */,
 				17289A0828901D9500D6EFCE /* ProfileViewController.xib in Resources */,
 				17289A0328901B4800D6EFCE /* CoursesViewController.xib in Resources */,
 				17289A0C28901E5400D6EFCE /* GradesViewController.xib in Resources */,
