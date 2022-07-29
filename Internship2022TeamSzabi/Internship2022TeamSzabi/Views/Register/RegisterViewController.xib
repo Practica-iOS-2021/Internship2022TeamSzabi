@@ -6,12 +6,14 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterViewController" customModule="Internship2022TeamSzabi" customModuleProvider="target">
             <connections>
                 <outlet property="emailTextField" destination="gtm-Pq-uNy" id="G3M-fI-NAt"/>
+                <outlet property="errorLabel" destination="YHV-NJ-0B0" id="5TJ-r3-dmc"/>
                 <outlet property="formView" destination="3QE-BP-DCk" id="k9a-6a-fvS"/>
                 <outlet property="nameTextField" destination="8Nr-k1-Xd7" id="EbQ-U3-T7L"/>
                 <outlet property="passwordTextfield" destination="V9D-vv-PuF" id="g2t-DE-gUS"/>
@@ -45,7 +47,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WNe-so-Svv">
-                                    <rect key="frame" x="54" y="716" width="280" height="62"/>
+                                    <rect key="frame" x="54" y="712" width="280" height="62"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="62" id="Yef-0v-1GG"/>
                                         <constraint firstAttribute="width" constant="280" id="aG1-u2-iVm"/>
@@ -146,6 +148,12 @@
                                     <color key="textColor" red="0.1450980392" green="0.086274509799999996" blue="0.019607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YHV-NJ-0B0">
+                                    <rect key="frame" x="8" y="635" width="360" height="17"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <color key="textColor" systemColor="systemRedColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <constraints>
                                 <constraint firstItem="WNe-so-Svv" firstAttribute="centerX" secondItem="3QE-BP-DCk" secondAttribute="centerX" id="1CN-jL-33N"/>
@@ -155,6 +163,7 @@
                                 <constraint firstAttribute="trailing" secondItem="b8X-iY-j54" secondAttribute="trailing" id="4E2-J5-Mmh"/>
                                 <constraint firstItem="EcB-DZ-FTW" firstAttribute="top" secondItem="lLZ-uG-xp0" secondAttribute="bottom" constant="20" id="6LM-6E-3Ya"/>
                                 <constraint firstAttribute="trailing" secondItem="EcB-DZ-FTW" secondAttribute="trailing" constant="50" id="7HM-8w-fjP"/>
+                                <constraint firstItem="YHV-NJ-0B0" firstAttribute="top" secondItem="V9D-vv-PuF" secondAttribute="bottom" constant="20" id="8KK-Ew-vSJ"/>
                                 <constraint firstItem="8Nr-k1-Xd7" firstAttribute="leading" secondItem="3QE-BP-DCk" secondAttribute="leading" id="9dX-wl-Pfz"/>
                                 <constraint firstItem="V9D-vv-PuF" firstAttribute="top" secondItem="b8X-iY-j54" secondAttribute="bottom" constant="20" id="Avs-Xj-HTl"/>
                                 <constraint firstAttribute="trailing" secondItem="GyR-xJ-TKp" secondAttribute="trailing" id="Bc8-vR-gOJ"/>
@@ -166,13 +175,14 @@
                                 <constraint firstItem="f4E-NY-o9t" firstAttribute="leading" secondItem="3QE-BP-DCk" secondAttribute="leading" id="KbC-FM-fMm"/>
                                 <constraint firstItem="lLZ-uG-xp0" firstAttribute="leading" secondItem="3QE-BP-DCk" secondAttribute="leading" id="Kch-yk-UiL"/>
                                 <constraint firstItem="b8X-iY-j54" firstAttribute="leading" secondItem="3QE-BP-DCk" secondAttribute="leading" id="N0P-Hj-FoF"/>
-                                <constraint firstItem="WNe-so-Svv" firstAttribute="top" secondItem="V9D-vv-PuF" secondAttribute="bottom" constant="101" id="QOt-wg-rkp"/>
+                                <constraint firstItem="YHV-NJ-0B0" firstAttribute="leading" secondItem="3QE-BP-DCk" secondAttribute="leading" constant="8" id="OCH-d5-uwR"/>
                                 <constraint firstItem="b8X-iY-j54" firstAttribute="top" secondItem="f4E-NY-o9t" secondAttribute="bottom" constant="20" id="Rlc-9U-5f5"/>
                                 <constraint firstItem="8Nr-k1-Xd7" firstAttribute="top" secondItem="4mF-a2-N5D" secondAttribute="bottom" constant="20" id="Ss6-lG-s4m"/>
                                 <constraint firstItem="V9D-vv-PuF" firstAttribute="leading" secondItem="3QE-BP-DCk" secondAttribute="leading" id="UWw-V2-5XQ"/>
                                 <constraint firstItem="GyR-xJ-TKp" firstAttribute="top" secondItem="MrS-9O-eT2" secondAttribute="bottom" constant="41" id="Urk-yV-k35"/>
                                 <constraint firstItem="EcB-DZ-FTW" firstAttribute="leading" secondItem="3QE-BP-DCk" secondAttribute="leading" id="YMk-Dz-MiH"/>
                                 <constraint firstItem="4mF-a2-N5D" firstAttribute="top" secondItem="gtm-Pq-uNy" secondAttribute="bottom" constant="20" id="YyX-1i-ubP"/>
+                                <constraint firstItem="WNe-so-Svv" firstAttribute="top" secondItem="YHV-NJ-0B0" secondAttribute="bottom" constant="60" id="a3v-Rd-CWL"/>
                                 <constraint firstItem="eAj-S9-nQm" firstAttribute="top" secondItem="EcB-DZ-FTW" secondAttribute="bottom" constant="20" id="aC3-7N-bTr"/>
                                 <constraint firstAttribute="trailing" secondItem="lLZ-uG-xp0" secondAttribute="trailing" id="e2R-zN-rgW"/>
                                 <constraint firstItem="lLZ-uG-xp0" firstAttribute="top" secondItem="8Nr-k1-Xd7" secondAttribute="bottom" constant="20" id="gJ8-yb-mKD"/>
@@ -180,6 +190,7 @@
                                 <constraint firstAttribute="trailing" secondItem="gtm-Pq-uNy" secondAttribute="trailing" constant="50" id="jDy-M4-Q1m"/>
                                 <constraint firstItem="eAj-S9-nQm" firstAttribute="leading" secondItem="3QE-BP-DCk" secondAttribute="leading" id="jiX-Fy-mrY"/>
                                 <constraint firstItem="MrS-9O-eT2" firstAttribute="top" secondItem="3QE-BP-DCk" secondAttribute="top" constant="66" id="lMs-Zl-ZyN"/>
+                                <constraint firstAttribute="trailing" secondItem="YHV-NJ-0B0" secondAttribute="trailing" constant="20" id="oQC-ky-Xtq"/>
                                 <constraint firstAttribute="height" constant="1000" id="ugW-bI-OKs"/>
                                 <constraint firstAttribute="trailing" secondItem="4mF-a2-N5D" secondAttribute="trailing" id="wNc-mu-llk"/>
                                 <constraint firstAttribute="trailing" secondItem="f4E-NY-o9t" secondAttribute="trailing" constant="50" id="zwc-jd-Rak"/>
@@ -210,5 +221,8 @@
         <namedColor name="RegisterBackgroundColor">
             <color red="0.75294117647058822" green="0.93725490196078431" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

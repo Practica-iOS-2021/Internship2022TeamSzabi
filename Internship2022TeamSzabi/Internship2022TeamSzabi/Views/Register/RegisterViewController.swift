@@ -1,6 +1,6 @@
 //
 //  RegisterViewController.swift
-//  LoginForm
+//  Internship2022TeamSzabi
 //
 //  Created by Alin Huzmezan on 26.07.2022.
 //
@@ -15,7 +15,8 @@ class RegisterViewController: UIViewController {
     @IBOutlet private weak var passwordTextfield: UITextField!
     @IBOutlet private weak var studentIDTextfield: UITextField!
     @IBOutlet private weak var registerButton: UIButton!
-
+    @IBOutlet weak var errorLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,15 +25,21 @@ class RegisterViewController: UIViewController {
 
     @IBAction private func emailChanged(_ sender: Any) {
         validateIfFormFilled()
+        guard let input = emailTextField.text else { return }
+        checkForError(text: input, validationFunction: validateEmail)
     }
     @IBAction func nameChanged(_ sender: Any) {
         validateIfFormFilled()
     }
     @IBAction private func passwordChanged(_ sender: Any) {
         validateIfFormFilled()
+        guard let input = passwordTextfield.text else { return }
+        checkForError(text: input, validationFunction: validatePassword)
     }
     @IBAction private func personalIDChanged(_ sender: Any) {
         validateIfFormFilled()
+        guard let input = personalIDTextfield.text else { return }
+        checkForError(text: input, validationFunction: validatePersonalID)
     }
     @IBAction private func studentIDChanged(_ sender: Any) {
         validateIfFormFilled()
@@ -51,26 +58,13 @@ class RegisterViewController: UIViewController {
 
         addStyleToButton(button: registerButton)
         passwordTextfield.isSecureTextEntry = true
+        errorLabel.isHidden = true
         registerButton.isEnabled = false
     }
 
     private func handleFormValidation() {
-        guard let emailText = emailTextField.text,
-              let passwordText = passwordTextfield.text,
-              let personalIDText = personalIDTextfield.text else { return }
-
-        if let emailError = validateEmail(emailText) {
-            alertError(emailError)
-            return
-        }
-        if let passwordError = validatePassword(passwordText) {
-            alertError(passwordError)
-            return
-        }
-        if let personalIDError = validatePersonalID(personalIDText) {
-            alertError(personalIDError)
-            return
-        }
+        guard let errorText = errorLabel.text else { return }
+        guard errorText.isEmpty else { return }
 
         // all validations passed
         handleRegister()
@@ -80,26 +74,42 @@ class RegisterViewController: UIViewController {
         print("ready to register")
     }
 
+    func checkForError(text: String, validationFunction: (String) -> String?) {
+        if let foundError = validationFunction(text) {
+            errorLabel.text = foundError
+            errorLabel.isHidden = false
+            return
+        }
+        errorLabel.text = ""
+        errorLabel.isHidden = true
+    }
+
     func validateEmail(_ email: String) -> String? {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,20}"
         let emailPred = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
         // must be of valid type *@*.*
         guard emailPred.evaluate(with: email) else {
-            return "Invalid email."
+            return "* Invalid email."
         }
         // valid email
         return nil
     }
 
     func validatePassword(_ password: String) -> String? {
-        let passwordRegEx = "^(?=.{8,})(?=.*[A-Z])(?=.*[@#$%^&+=]).*$"
+        let passwordRegEx = "^(?=.{8,})(?=.*[A-Z])(?=.*[@#$%^&+=!]).*$"
         let emailPred = NSPredicate(format: "SELF MATCHES %@", passwordRegEx)
         // must be of valid type:
         //  at least 1 uppercase character
         //  at least 1 special character
         //  at leat 8 characters total
         guard emailPred.evaluate(with: password) else {
-            return "Invalid password."
+            return """
+* Invalid password.
+ - Must contain at least:
+    1 uppercase letter
+    1 special character
+ - Must be at least 8 characters long.
+"""
         }
         // valid password
         return nil
@@ -111,7 +121,10 @@ class RegisterViewController: UIViewController {
         // must be of valid type:
         // 1 space or 1 '-' between characters
         guard emailPred.evaluate(with: personalID) else {
-            return "Invalid personal ID."
+            return """
+*Invalid personal ID.
+ - Character(s) can only be separated by single space or '-'.
+"""
         }
         // valid password
         return nil
