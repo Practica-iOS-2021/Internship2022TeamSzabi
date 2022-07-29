@@ -7,8 +7,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
-    
+final class LoginViewController: UIViewController, UITextFieldDelegate {    
     @IBOutlet private var loginLabel: UILabel!
     @IBOutlet private var emailLabel: UILabel!
     @IBOutlet private var passwordLabel: UILabel!
@@ -17,10 +16,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet private var emailTextField: UITextField!
     @IBOutlet private var passwordTextField: UITextField!
     @IBOutlet private var loginButton: UIButton!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         emailTextField.delegate = self
         passwordTextField.delegate = self
         
@@ -31,29 +30,28 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         bottomBorder(textFields: emailTextField)
         bottomBorder(textFields: passwordTextField)
         
-        //calling the method for loginButton shadow
+        // calling the method for loginButton shadow
         buttonShadow(button: loginButton)
     }
     
     @IBAction private func loginButton(_ sender: UIButton) {
-        
         // validation for empty email textfield
-        guard !emailTextField.text!.isEmpty else {
+        guard let email = emailTextField.text, !email.isEmpty else {
             validationLabel.isHidden = false
             validationLabel.text = "Please enter Email"
             return
         }
         
         // validation for valid email format
-        if !isValidEmail(emailAddress: emailTextField.text!) {
+        if let email = emailTextField.text, !isValidEmail(emailAddress: email) {
             validationLabel.isHidden = false
-            validationLabel.text = "Email is invalid"}
-        else {
+            validationLabel.text = "Email is invalid"
+        } else {
             validationLabel.isHidden = true
         }
         
         // validation for empty password textfield
-        guard !passwordTextField.text!.isEmpty else {
+        guard let password = passwordTextField.text, !password.isEmpty else {
             validationLabel.isHidden = false
             validationLabel.text = "Please enter Password"
             return
@@ -61,10 +59,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction private func signupButton(_ sender: UIButton) {
-        
     }
     
-    //email RegEx function to verify if the email address introduced by the user is valid
+    // email RegEx function to verify if the email address introduced by the user is valid
     func isValidEmail(emailAddress: String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,20}"
         let emailTest = NSPredicate( format: "SELF MATCHES %@", emailRegEx)
@@ -74,7 +71,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     // method for the customization of the emailTextField and passwordTextField to only have a black bottom border
     func bottomBorder(textFields: UITextField) {
         let bottomLine = CALayer()
-        bottomLine.frame = CGRect(x: 0.0, y: textFields.frame.height - 3, width: textFields.frame.width, height: 1.0)
+        bottomLine.frame = CGRect(x: 0.0,
+                                  y: textFields.frame.height - 3,
+                                  width: textFields.frame.width,
+                                  height: 1.0)
         bottomLine.backgroundColor = UIColor.black.cgColor
         textFields.borderStyle = UITextField.BorderStyle.none
         textFields.layer.addSublayer(bottomLine)

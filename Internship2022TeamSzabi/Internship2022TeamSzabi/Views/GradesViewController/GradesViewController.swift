@@ -7,8 +7,7 @@
 
 import UIKit
 
-class GradesViewController: UIViewController {
-    
+final class GradesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
