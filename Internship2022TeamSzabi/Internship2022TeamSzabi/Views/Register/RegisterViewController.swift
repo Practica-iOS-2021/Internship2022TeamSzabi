@@ -8,7 +8,6 @@
 import UIKit
 
 class RegisterViewController: UIViewController {
-    // outlets
     @IBOutlet private weak var emailTextField: UITextField!
     @IBOutlet private weak var personalIDTextfield: UITextField!
     @IBOutlet private weak var passwordTextfield: UITextField!
@@ -18,14 +17,7 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.subviews.forEach { view in
-            guard let textField = view as? UITextField else { return }
-            addStyleToTextfield(textField: textField)
-        }
-
-        passwordTextfield.isSecureTextEntry = true
-        addStyleToButton(button: registerButton)
-        registerButton.isEnabled = false
+        setupAppearence()
     }
 
     @IBAction private func emailChanged(_ sender: Any) {
@@ -42,6 +34,19 @@ class RegisterViewController: UIViewController {
     }
     @IBAction private func submitAction(_ sender: Any) {
         handleFormValidation()
+    }
+
+    private func setupAppearence() {
+        // for each view in subviews of type 'UITextField':
+        // set style to said view
+        view.subviews.forEach { view in
+            guard let textField = view as? UITextField else { return }
+            addStyleToTextfield(textField: textField)
+        }
+
+        addStyleToButton(button: registerButton)
+        passwordTextfield.isSecureTextEntry = true
+        registerButton.isEnabled = false
     }
 
     private func handleFormValidation() {
@@ -112,9 +117,7 @@ class RegisterViewController: UIViewController {
     func addStyleToButton(button: UIButton) {
         // shadow
         button.layer.shadowColor = UIColor.black.cgColor
-        button.layer.shadowOffset = CGSize(
-            width: 1,
-            height: 4)
+        button.layer.shadowOffset = CGSize(width: 1, height: 4)
         button.layer.shadowRadius = 2
         button.layer.shadowOpacity = 0.2
     }
@@ -122,25 +125,9 @@ class RegisterViewController: UIViewController {
     func addStyleToTextfield(textField: UITextField) {
         // border bottom
         let bottomLine = CALayer()
-        bottomLine.frame = CGRect(
-            x: 0.0,
-            y: textField.frame.height - 1,
-            width: textField.frame.width,
-            height: 1.0)
+        bottomLine.frame = CGRect(x: 0.0, y: textField.frame.height - 1, width: textField.frame.width, height: 1.0)
         bottomLine.backgroundColor = UIColor(named: "TextFieldBorderColor")?.cgColor
         textField.borderStyle = UITextField.BorderStyle.none
         textField.layer.addSublayer(bottomLine)
-    }
-}
-
-// MARK: - for keyboard issues
-extension RegisterViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        // dismiss keyboard
-        emailTextField.resignFirstResponder()
-        personalIDTextfield.resignFirstResponder()
-        studentIDTextfield.resignFirstResponder()
-        passwordTextfield.resignFirstResponder()
-        return true
     }
 }
