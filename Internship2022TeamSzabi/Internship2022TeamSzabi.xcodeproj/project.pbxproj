@@ -14,12 +14,14 @@
 		17289A0B28901E5400D6EFCE /* GradesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17289A0928901E5400D6EFCE /* GradesViewController.swift */; };
 		17289A0C28901E5400D6EFCE /* GradesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17289A0A28901E5400D6EFCE /* GradesViewController.xib */; };
 		17289A0F2890415E00D6EFCE /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17289A0E2890415E00D6EFCE /* TabBarController.swift */; };
+		2D22048E14289603BD5BD549 /* Pods_Internship2022TeamSzabi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B51AA70F61F25053DDAE6FF /* Pods_Internship2022TeamSzabi.framework */; };
 		AF79B837288E75B800AA99BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF79B836288E75B800AA99BD /* AppDelegate.swift */; };
 		AF79B840288E75B900AA99BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF79B83F288E75B900AA99BD /* Assets.xcassets */; };
 		AF79B843288E75B900AA99BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF79B841288E75B900AA99BD /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B51AA70F61F25053DDAE6FF /* Pods_Internship2022TeamSzabi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Internship2022TeamSzabi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		17289A0028901B4800D6EFCE /* CoursesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesViewController.swift; sourceTree = "<group>"; };
 		17289A0128901B4800D6EFCE /* CoursesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoursesViewController.xib; sourceTree = "<group>"; };
 		17289A0528901D9500D6EFCE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -27,6 +29,8 @@
 		17289A0928901E5400D6EFCE /* GradesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradesViewController.swift; sourceTree = "<group>"; };
 		17289A0A28901E5400D6EFCE /* GradesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GradesViewController.xib; sourceTree = "<group>"; };
 		17289A0E2890415E00D6EFCE /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		23D2AAEFE5897FE2FB8DED11 /* Pods-Internship2022TeamSzabi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Internship2022TeamSzabi.release.xcconfig"; path = "Target Support Files/Pods-Internship2022TeamSzabi/Pods-Internship2022TeamSzabi.release.xcconfig"; sourceTree = "<group>"; };
+		525A87035F21EDD9FFF94A03 /* Pods-Internship2022TeamSzabi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Internship2022TeamSzabi.debug.xcconfig"; path = "Target Support Files/Pods-Internship2022TeamSzabi/Pods-Internship2022TeamSzabi.debug.xcconfig"; sourceTree = "<group>"; };
 		AF79B833288E75B800AA99BD /* Internship2022TeamSzabi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Internship2022TeamSzabi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF79B836288E75B800AA99BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF79B83F288E75B900AA99BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -43,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D22048E14289603BD5BD549 /* Pods_Internship2022TeamSzabi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,11 +89,31 @@
 			path = CoursesViewController;
 			sourceTree = "<group>";
 		};
+		225C67F224F8CC9AB788818D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				525A87035F21EDD9FFF94A03 /* Pods-Internship2022TeamSzabi.debug.xcconfig */,
+				23D2AAEFE5897FE2FB8DED11 /* Pods-Internship2022TeamSzabi.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		5D6E8859CB9387A7FBE527F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0B51AA70F61F25053DDAE6FF /* Pods_Internship2022TeamSzabi.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AF79B82A288E75B800AA99BD = {
 			isa = PBXGroup;
 			children = (
 				AF79B835288E75B800AA99BD /* Internship2022TeamSzabi */,
 				AF79B834288E75B800AA99BD /* Products */,
+				225C67F224F8CC9AB788818D /* Pods */,
+				5D6E8859CB9387A7FBE527F5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -166,9 +191,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AF79B847288E75B900AA99BD /* Build configuration list for PBXNativeTarget "Internship2022TeamSzabi" */;
 			buildPhases = (
+				AAA919BBEEB6D53B5A131EC0 /* [CP] Check Pods Manifest.lock */,
 				AF79B82F288E75B800AA99BD /* Sources */,
 				AF79B830288E75B800AA99BD /* Frameworks */,
 				AF79B831288E75B800AA99BD /* Resources */,
+				89BBE29DD58728BBDE49D0C1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -226,6 +253,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		89BBE29DD58728BBDE49D0C1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Internship2022TeamSzabi/Pods-Internship2022TeamSzabi-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Internship2022TeamSzabi/Pods-Internship2022TeamSzabi-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Internship2022TeamSzabi/Pods-Internship2022TeamSzabi-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AAA919BBEEB6D53B5A131EC0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Internship2022TeamSzabi-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AF79B82F288E75B800AA99BD /* Sources */ = {
@@ -370,6 +439,7 @@
 		};
 		AF79B848288E75B900AA99BD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 525A87035F21EDD9FFF94A03 /* Pods-Internship2022TeamSzabi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -401,6 +471,7 @@
 		};
 		AF79B849288E75B900AA99BD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23D2AAEFE5897FE2FB8DED11 /* Pods-Internship2022TeamSzabi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
