@@ -71,11 +71,15 @@ class RegisterViewController: UIViewController {
         // get text from need-be valid textFields
         guard let emailText = emailTextField.text,
               let personalIDText = personalIDTextfield.text,
-              let passwordText = passwordTextfield.text else { return false }
+              let passwordText = passwordTextfield.text,
+              let nameText = nameTextField.text
+        else { return false }
 
         // 2) if said texts aren't valid
         guard checkInputError(text: emailText,
                               validationFunction: validateEmail),
+              checkInputError(text: nameText,
+                              validationFunction: validateName),
               checkInputError(text: personalIDText,
                               validationFunction: validatePersonalID),
               checkInputError(text: passwordText,
@@ -132,15 +136,30 @@ class RegisterViewController: UIViewController {
         return nil
     }
     
-    func validatePersonalID(_ personalID: String) -> String? {
+    func validateName(_ name: String) -> String? {
         let personalIDRegEx = "^([a-zA-Z0-9]+(\\s|-))*[a-zA-Z0-9]+$"
+        let emailPred = NSPredicate(format: "SELF MATCHES %@", personalIDRegEx)
+        // must be of valid type:
+        // 1 space or 1 '-' between characters
+        guard emailPred.evaluate(with: name) else {
+            return """
+*Invalid Name.
+ - Can only be separated by single space or '-'.
+"""
+        }
+        // valid password
+        return nil
+    }
+    
+    func validatePersonalID(_ personalID: String) -> String? {
+        let personalIDRegEx = "^[1-9]\\d{2}(0[1-9]|1[0-2])(0[1-9]|[12]\\d|3[01])(0[1-9]|[1-4]\\d|5[0-2]|99)(00[1-9]|0[1-9]\\d|[1-9]\\d\\d)\\d$"
         let emailPred = NSPredicate(format: "SELF MATCHES %@", personalIDRegEx)
         // must be of valid type:
         // 1 space or 1 '-' between characters
         guard emailPred.evaluate(with: personalID) else {
             return """
 *Invalid personal ID.
- - Character(s) can only be separated by single space or '-'.
+ - Must be a valid Romanian CNP.
 """
         }
         // valid password
@@ -186,4 +205,4 @@ class RegisterViewController: UIViewController {
         textField.borderStyle = UITextField.BorderStyle.none
         textField.layer.addSublayer(bottomLine)
     }
-} // eOF RegisterViewController
+}
