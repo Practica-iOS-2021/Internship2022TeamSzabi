@@ -11,21 +11,31 @@ class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // MARK: - Instantiate view controllers
-        let gradesController = createNavController(viewControl: GradesViewController(),
-                                                   tabBarImage: UIImage(named: "grades-tabbar-icon"))
-        let coursesController = createNavController(viewControl: CoursesViewController(),
-                                                    tabBarImage: UIImage(named: "courses-tabbar-icon"))
-        let profileController = createNavController(viewControl: ProfileViewController(),
-                                                    tabBarImage: UIImage(named: "profile-tabbar-icon"))
+        setViewController()
+        tabBarConfiguration()
+    }
+    // MARK: - UINavigationController
+    private func createNavigationController(viewController: UIViewController, tabBarImage: UIImage?) -> UINavigationController {
+        let navigationController = NavigationBar(rootViewController: viewController)
+        navigationController.tabBarItem.image = tabBarImage
         
+        return navigationController
+    }
+    // MARK: - Instantiate view controllers
+    private func setViewController() {
+        let gradesController = createNavigationController(viewController: GradesViewController(),
+                                                          tabBarImage: UIImage(named: "grades-tabbar-icon"))
+        let coursesController = createNavigationController(viewController: CoursesViewController(),
+                                                           tabBarImage: UIImage(named: "courses-tabbar-icon"))
+        let profileController = createNavigationController(viewController: ProfileViewController(),
+                                                           tabBarImage: UIImage(named: "profile-tabbar-icon"))
         // MARK: - Asigning view controllers
         setViewControllers([gradesController, coursesController, profileController], animated: false)
-        
         // MARK: - Setting CoursesView as initial display view
         selectedIndex = 1
-        
-        // MARK: - TabBar configuration
+    }
+    // MARK: - TabBar configuration
+    private func tabBarConfiguration() {
         tabBar.itemPositioning = .fill
         tabBar.tintColor = UIColor(named: "TabBarSelectedColor")
         tabBar.unselectedItemTintColor = UIColor(named: "TabBarColor")
@@ -41,19 +51,8 @@ class TabBarController: UITabBarController {
         }
     }
 }
-
-extension TabBarController {
-    // MARK: - UINavigationController
-    private func createNavController(viewControl: UIViewController, tabBarImage: UIImage?) -> UINavigationController {
-        let viewController = viewControl
-        let navController = NavBar(rootViewController: viewController)
-        navController.tabBarItem.image = tabBarImage
-        
-        return navController
-    }
-}
-
-class NavBar: UINavigationController {
+// MARK: - NavigationBar Configuration
+class NavigationBar: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
