@@ -135,7 +135,7 @@ class RegisterViewController: UIViewController {
         // valid password
         return nil
     }
-    
+
     func validateName(_ name: String) -> String? {
         let personalIDRegEx = "^([a-zA-Z0-9]+(\\s|-))*[a-zA-Z0-9]+$"
         let emailPred = NSPredicate(format: "SELF MATCHES %@", personalIDRegEx)
@@ -150,7 +150,7 @@ class RegisterViewController: UIViewController {
         // valid password
         return nil
     }
-    
+
     func validatePersonalID(_ personalID: String) -> String? {
         let personalIDRegEx = "^[1-9]\\d{2}(0[1-9]|1[0-2])(0[1-9]|[12]\\d|3[01])(0[1-9]|[1-4]\\d|5[0-2]|99)(00[1-9]|0[1-9]\\d|[1-9]\\d\\d)\\d$"
         let emailPred = NSPredicate(format: "SELF MATCHES %@", personalIDRegEx)
