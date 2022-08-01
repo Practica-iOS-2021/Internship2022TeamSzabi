@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // MARK: - Assigning initial display view
         window = UIWindow()
         window?.frame = UIScreen.main.bounds
-        window?.rootViewController = TabBarController()
+        window?.rootViewController = RegisterViewController()
         window?.makeKeyAndVisible()
         
         print("-------------------------------")
@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             studentID: "test",
             password: "123456")
         
-        let error = AuthApiManager.createUser(newUser: newUser)
+        let error = AuthApiManager.sharedInstance.createUser(newUser: newUser)
         print(error ?? "No error.")
         print("-------------------------------")
 

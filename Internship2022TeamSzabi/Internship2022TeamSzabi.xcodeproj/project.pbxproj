@@ -25,6 +25,7 @@
 		BF227DC32893E41600DD111A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF227DC12893E41600DD111A /* RegisterViewController.swift */; };
 		BF227DC728957F2F00DD111A /* AuthApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF227DC628957F2F00DD111A /* AuthApiManager.swift */; };
 		BF227DC92895AFC000DD111A /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF227DC82895AFC000DD111A /* UserModel.swift */; };
+		BF5DD2FB2897CD92002F8244 /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5DD2FA2897CD92002F8244 /* config.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,14 +46,13 @@
 		AF79B842288E75B900AA99BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF79B844288E75B900AA99BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFA30AF2288FEA8B00781179 /* Model.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Model.md; sourceTree = "<group>"; };
-		AFA30AF3288FEAB000781179 /* Model.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Model.md; sourceTree = "<group>"; };
-		AFA30AF4288FEACA00781179 /* ApiManager.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ApiManager.md; sourceTree = "<group>"; };
 		AFA30AF5288FEADB00781179 /* Storage.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Storage.md; sourceTree = "<group>"; };
 		AFD0D4E12893DEE100363B6C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BF227DC02893E41600DD111A /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
 		BF227DC12893E41600DD111A /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		BF227DC628957F2F00DD111A /* AuthApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthApiManager.swift; sourceTree = "<group>"; };
 		BF227DC82895AFC000DD111A /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		BF5DD2FA2897CD92002F8244 /* config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
 		E8DA8DF6CE54DE53C1D8ECC7 /* Pods-Internship2022TeamSzabi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Internship2022TeamSzabi.release.xcconfig"; path = "Target Support Files/Pods-Internship2022TeamSzabi/Pods-Internship2022TeamSzabi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -179,7 +179,6 @@
 			isa = PBXGroup;
 			children = (
 				AFA30AF2288FEA8B00781179 /* Model.md */,
-				BF227DC82895AFC000DD111A /* UserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -188,8 +187,8 @@
 			isa = PBXGroup;
 			children = (
 				AFA30AF1288FE15200781179 /* Models */,
-				AFA30AF4288FEACA00781179 /* ApiManager.md */,
 				BF227DC628957F2F00DD111A /* AuthApiManager.swift */,
+				BF5DD2FA2897CD92002F8244 /* config.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -197,7 +196,7 @@
 		AFA30AF1288FE15200781179 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				AFA30AF3288FEAB000781179 /* Model.md */,
+				BF227DC82895AFC000DD111A /* UserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -383,6 +382,7 @@
 				ACEDF6B32892948D00CCFF8B /* LoginViewController.swift in Sources */,
 				17289A0728901D9500D6EFCE /* ProfileViewController.swift in Sources */,
 				BF227DC32893E41600DD111A /* RegisterViewController.swift in Sources */,
+				BF5DD2FB2897CD92002F8244 /* config.swift in Sources */,
 				17289A0F2890415E00D6EFCE /* TabBarController.swift in Sources */,
 				AF79B837288E75B800AA99BD /* AppDelegate.swift in Sources */,
 				17289A0B28901E5400D6EFCE /* GradesViewController.swift in Sources */,

@@ -12,20 +12,19 @@ import FirebaseAuth
 
 class AuthApiManager {
     static let sharedInstance = AuthApiManager()
-    static let db = Firestore.firestore()
-    static let usersCollection = "users"
-    
-    static func createUser(newUser: UserModel) -> String? {
-        
-        // check if 'personalID' of newUser is already in use
-        if !isUniquePersonalID(personalID: newUser.personalID!, completion: (taken) {
-            return "Personal ID already in use."
-        }
-        
+    private let db = Firestore.firestore()
+
+    func createUser(newUser: UserModel) -> String? {
         // check if email and password were given for FirebaseAuth
         guard let email = newUser.email,
-              let password = newUser.password
+              let password = newUser.password,
+              let personalID = newUser.personalID
         else { return "Not enough credentials." }
+
+        // check if 'personalID' of newUser is already in use
+        if !isUniquePersonalID(personalID: personalID) {
+            return "Personal ID already in use."
+        }
 
         // createUser in FirebaseAuth with email and password
         var displayError: String? = nil
@@ -33,14 +32,14 @@ class AuthApiManager {
 
             guard let newUserDocumentID = authResult?.user.uid else { return }
             print("successfully created user:  \(String(describing: newUserDocumentID))")
-            
+
             let docData: [String: Any] = [
                 "email": newUser.email ?? "",
                 "name": newUser.name ?? "",
                 "personalID": newUser.personalID ?? "",
                 "studentID": newUser.studentID ?? ""
             ]
-            db.collection(usersCollection).document(newUserDocumentID).setData(docData) { err in
+            self.db.collection(usersCollection).document(newUserDocumentID).setData(docData) { err in
                 if let err = err {
                     displayError = "Error writing document: \(err)"
                 }
@@ -49,21 +48,20 @@ class AuthApiManager {
         })
         return displayError
     }
-    
-    static func isUniquePersonalID(personalID: String, completion: @escaping (_ uniqueUser: Bool) -> Void) {
-        let docRef = db.collection("users").document(personalID)
+
+    func isUniquePersonalID(personalID: String) {
+        let docRef = db.collection(usersCollection).document(personalID)
         docRef.getDocument { (document, error) in
             if let document = document, document.exists {
-                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-                print("Document data: \(dataDescription)")
-                completion(false)
+                print("Document data: ")
+                //completion(false)
             } else {
                 print("Document does not exist")
-                completion(true)
-                
+                //completion(true)
             }
             return
                         
+        }
     }
-    
+
 }
