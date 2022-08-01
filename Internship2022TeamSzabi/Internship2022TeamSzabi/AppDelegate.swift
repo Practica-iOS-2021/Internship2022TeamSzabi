@@ -22,6 +22,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = TabBarController()
         window?.makeKeyAndVisible()
         
+        print("-------------------------------")
+        let newUser: UserModel = UserModel(
+            email: "test@222.com",
+            name: "test",
+            personalID: "test",
+            studentID: "test",
+            password: "123456")
+        
+        let error = AuthApiManager.createUser(newUser: newUser)
+        print(error ?? "No error.")
+        print("-------------------------------")
+
         return true
     }
 }
