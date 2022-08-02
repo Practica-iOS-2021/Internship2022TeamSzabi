@@ -72,36 +72,24 @@
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personal ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLZ-uG-xp0">
                                     <rect key="frame" x="0.0" y="341" width="388" height="24"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="24" id="I1t-gh-auz"/>
-                                    </constraints>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                     <color key="textColor" red="0.1450980392" green="0.086274509799999996" blue="0.019607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4mF-a2-N5D">
                                     <rect key="frame" x="0.0" y="243" width="388" height="24"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="24" id="1C6-wX-Oj3"/>
-                                    </constraints>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                     <color key="textColor" red="0.1450980392" green="0.086274509799999996" blue="0.019607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAj-S9-nQm">
                                     <rect key="frame" x="0.0" y="439" width="388" height="24"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="24" id="RgT-Rw-11G"/>
-                                    </constraints>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                     <color key="textColor" red="0.1450980392" green="0.086274509799999996" blue="0.019607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gtm-Pq-uNy" userLabel="Email Textfield">
                                     <rect key="frame" x="0.0" y="189" width="338" height="34"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="34" id="T51-mW-gbU"/>
-                                    </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <textInputTraits key="textInputTraits"/>
                                     <connections>
@@ -110,9 +98,6 @@
                                 </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Nr-k1-Xd7" userLabel="Name Textfield">
                                     <rect key="frame" x="0.0" y="287" width="338" height="34"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="34" id="9gc-bg-moz"/>
-                                    </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <textInputTraits key="textInputTraits"/>
                                     <connections>
@@ -130,9 +115,6 @@
                                 </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EcB-DZ-FTW" userLabel="Personal ID Textfield">
                                     <rect key="frame" x="0.0" y="385" width="338" height="34"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="34" id="St5-Hx-UE8"/>
-                                    </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <textInputTraits key="textInputTraits"/>
                                     <connections>
@@ -141,9 +123,6 @@
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GyR-xJ-TKp">
                                     <rect key="frame" x="0.0" y="145" width="388" height="24"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="24" id="5tG-i9-S2O"/>
-                                    </constraints>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                     <color key="textColor" red="0.1450980392" green="0.086274509799999996" blue="0.019607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
