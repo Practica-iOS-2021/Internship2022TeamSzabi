@@ -13,13 +13,21 @@ class RegisterViewController: UIViewController {
     @IBOutlet private weak var passwordTextfield: UITextField!
     @IBOutlet private weak var studentIDTextfield: UITextField!
     @IBOutlet private weak var registerButton: UIButton!
-
+    
+    static let identifier = "RegisterViewController"
+    
+    static func nib() -> UINib {
+        return UINib ( nibName: "RegisterViewController", bundle: nil)
+    }
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupAppearence()
     }
-
+    
     @IBAction private func emailChanged(_ sender: Any) {
         validateIfFormFilled()
     }
@@ -35,7 +43,7 @@ class RegisterViewController: UIViewController {
     @IBAction private func submitAction(_ sender: Any) {
         handleFormValidation()
     }
-
+    
     private func setupAppearence() {
         // for each view in subviews of type 'UITextField':
         // set style to said view
@@ -43,16 +51,16 @@ class RegisterViewController: UIViewController {
             guard let textField = view as? UITextField else { return }
             addStyleToTextfield(textField: textField)
         }
-
+        
         addStyleToButton(button: registerButton)
         passwordTextfield.isSecureTextEntry = true
         registerButton.isEnabled = false
     }
-
+    
     private func handleFormValidation() {
         guard let emailText = emailTextField.text,
               let passwordText = passwordTextfield.text else { return }
-
+        
         if let emailError = validateEmail(emailText) {
             alertError(emailError)
             return
@@ -61,15 +69,15 @@ class RegisterViewController: UIViewController {
             alertError(passwordError)
             return
         }
-
+        
         // all validations passed
         handleRegister()
     }
-
+    
     private func handleRegister() {
         print("ready to register")
     }
-
+    
     func validateEmail(_ email: String) -> String? {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,20}"
         let emailPred = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
@@ -80,7 +88,7 @@ class RegisterViewController: UIViewController {
         // valid email
         return nil
     }
-
+    
     func validatePassword(_ password: String) -> String? {
         let passwordRegEx = "^(?=.{8,})(?=.*[A-Z])(?=.*[@#$%^&+=]).*$"
         let emailPred = NSPredicate(format: "SELF MATCHES %@", passwordRegEx)
@@ -94,7 +102,7 @@ class RegisterViewController: UIViewController {
         // valid password
         return nil
     }
-
+    
     private func validateIfFormFilled() {
         let firstEmpty = view.subviews.first { view in
             if let textField = view as? UITextField {
@@ -102,18 +110,18 @@ class RegisterViewController: UIViewController {
             }
             return false
         }
-
+        
         // enable/disable 'register' button
         registerButton.isEnabled = firstEmpty == nil
     }
-
+    
     func alertError(_ error: String) {
         let dialogMessage = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default)
         dialogMessage.addAction(okAction)
         self.present(dialogMessage, animated: true, completion: nil)
     }
-
+    
     func addStyleToButton(button: UIButton) {
         // shadow
         button.layer.shadowColor = UIColor.black.cgColor
@@ -121,7 +129,7 @@ class RegisterViewController: UIViewController {
         button.layer.shadowRadius = 2
         button.layer.shadowOpacity = 0.2
     }
-
+    
     func addStyleToTextfield(textField: UITextField) {
         // border bottom
         let bottomLine = CALayer()

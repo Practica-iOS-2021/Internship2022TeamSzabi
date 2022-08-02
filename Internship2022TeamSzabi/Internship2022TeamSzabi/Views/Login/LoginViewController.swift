@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 final class LoginViewController: UIViewController, UITextFieldDelegate {    
     @IBOutlet private var loginLabel: UILabel!
@@ -16,10 +17,10 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet private var emailTextField: UITextField!
     @IBOutlet private var passwordTextField: UITextField!
     @IBOutlet private var loginButton: UIButton!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         emailTextField.delegate = self
         passwordTextField.delegate = self
         
@@ -56,9 +57,24 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
             validationLabel.text = "Please enter Password"
             return
         }
+        
+        // authentication of the users in Firebase
+        Auth.auth().signIn(withEmail: email, password: password) {
+            (result, error) in
+            if error != nil {
+                // couldn't sign in
+                self.validationLabel.isHidden = false
+                self.validationLabel.text = "Password invalid or user doesn't exist"
+            } else {
+                
+            }
+        }
     }
     
     @IBAction private func signupButton(_ sender: UIButton) {
+        
+        let vc = RegisterViewController(nibName: "RegisterViewController", bundle: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     // email RegEx function to verify if the email address introduced by the user is valid

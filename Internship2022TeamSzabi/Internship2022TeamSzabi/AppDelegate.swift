@@ -19,9 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // MARK: - Assigning initial display view
         window = UIWindow()
         window?.frame = UIScreen.main.bounds
-        window?.rootViewController = TabBarController()
+        let navigationController = UINavigationController()
+        let mainView = LoginViewController()
+        navigationController.viewControllers = [mainView]
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
-        
         return true
     }
 }
