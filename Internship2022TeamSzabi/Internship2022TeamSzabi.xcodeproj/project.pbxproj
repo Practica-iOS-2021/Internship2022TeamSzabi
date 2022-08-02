@@ -15,6 +15,8 @@
 		17289A0B28901E5400D6EFCE /* GradesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17289A0928901E5400D6EFCE /* GradesViewController.swift */; };
 		17289A0C28901E5400D6EFCE /* GradesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17289A0A28901E5400D6EFCE /* GradesViewController.xib */; };
 		17289A0F2890415E00D6EFCE /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17289A0E2890415E00D6EFCE /* TabBarController.swift */; };
+		17A7F9F12897BF8700A6D4B7 /* InterV.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 17B3281F2893F88B000B5D0B /* InterV.ttf */; };
+		17B328212893F8D0000B5D0B /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B328202893F8D0000B5D0B /* UIFont.swift */; };
 		ACEDF6B22892948D00CCFF8B /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACEDF6B02892948D00CCFF8B /* LoginViewController.xib */; };
 		ACEDF6B32892948D00CCFF8B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEDF6B12892948D00CCFF8B /* LoginViewController.swift */; };
 		AF79B837288E75B800AA99BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF79B836288E75B800AA99BD /* AppDelegate.swift */; };
@@ -37,6 +39,8 @@
 		17289A0928901E5400D6EFCE /* GradesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradesViewController.swift; sourceTree = "<group>"; };
 		17289A0A28901E5400D6EFCE /* GradesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GradesViewController.xib; sourceTree = "<group>"; };
 		17289A0E2890415E00D6EFCE /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		17B3281F2893F88B000B5D0B /* InterV.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = InterV.ttf; sourceTree = "<group>"; };
+		17B328202893F8D0000B5D0B /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		6C7B69DF5BC9AAEE4762FCA0 /* Pods_Internship2022TeamSzabi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Internship2022TeamSzabi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D3D3B9698794A59ACE11F08 /* Pods-Internship2022TeamSzabi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Internship2022TeamSzabi.debug.xcconfig"; path = "Target Support Files/Pods-Internship2022TeamSzabi/Pods-Internship2022TeamSzabi.debug.xcconfig"; sourceTree = "<group>"; };
 		ACEDF6B02892948D00CCFF8B /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -104,6 +108,22 @@
 			path = CoursesViewController;
 			sourceTree = "<group>";
 		};
+		17B3281C2893F71C000B5D0B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				17B328202893F8D0000B5D0B /* UIFont.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		17B3281E2893F85F000B5D0B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				17B3281F2893F88B000B5D0B /* InterV.ttf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		ACEDF6AF2892948D00CCFF8B /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +162,8 @@
 		AF79B835288E75B800AA99BD /* Internship2022TeamSzabi */ = {
 			isa = PBXGroup;
 			children = (
+				17B3281E2893F85F000B5D0B /* Resources */,
+				17B3281C2893F71C000B5D0B /* Extensions */,
 				AFA30AEF288FE15200781179 /* Models */,
 				AFA30AF0288FE15200781179 /* Networking */,
 				AFA30AEE288FE15200781179 /* Persistance */,
@@ -288,6 +310,7 @@
 				17289A0828901D9500D6EFCE /* ProfileViewController.xib in Resources */,
 				17289A0328901B4800D6EFCE /* CoursesViewController.xib in Resources */,
 				17289A0C28901E5400D6EFCE /* GradesViewController.xib in Resources */,
+				17A7F9F12897BF8700A6D4B7 /* InterV.ttf in Resources */,
 				AFD0D4E22893DEE100363B6C /* GoogleService-Info.plist in Resources */,
 				BF227DC22893E41600DD111A /* RegisterViewController.xib in Resources */,
 			);
@@ -371,7 +394,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -380,6 +403,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17B328212893F8D0000B5D0B /* UIFont.swift in Sources */,
 				ACEDF6B32892948D00CCFF8B /* LoginViewController.swift in Sources */,
 				17289A0728901D9500D6EFCE /* ProfileViewController.swift in Sources */,
 				BF227DC32893E41600DD111A /* RegisterViewController.swift in Sources */,
