@@ -26,7 +26,7 @@
 		BF227DC22893E41600DD111A /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF227DC02893E41600DD111A /* RegisterViewController.xib */; };
 		BF227DC32893E41600DD111A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF227DC12893E41600DD111A /* RegisterViewController.swift */; };
 		BF227DC728957F2F00DD111A /* AuthApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF227DC628957F2F00DD111A /* AuthApiManager.swift */; };
-		BF227DC92895AFC000DD111A /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF227DC82895AFC000DD111A /* UserModel.swift */; };
+		BF227DC92895AFC000DD111A /* AuthUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF227DC82895AFC000DD111A /* AuthUserModel.swift */; };
 		BF5DD2FD28994158002F8244 /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5DD2FC28994158002F8244 /* Encodable.swift */; };
 		BF5DD2FF28994397002F8244 /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5DD2FE28994397002F8244 /* FirestoreManager.swift */; };
 /* End PBXBuildFile section */
@@ -55,7 +55,7 @@
 		BF227DC02893E41600DD111A /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
 		BF227DC12893E41600DD111A /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		BF227DC628957F2F00DD111A /* AuthApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthApiManager.swift; sourceTree = "<group>"; };
-		BF227DC82895AFC000DD111A /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		BF227DC82895AFC000DD111A /* AuthUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUserModel.swift; sourceTree = "<group>"; };
 		BF5DD2FC28994158002F8244 /* Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encodable.swift; sourceTree = "<group>"; };
 		BF5DD2FE28994397002F8244 /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
 		E8DA8DF6CE54DE53C1D8ECC7 /* Pods-Internship2022TeamSzabi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Internship2022TeamSzabi.release.xcconfig"; path = "Target Support Files/Pods-Internship2022TeamSzabi/Pods-Internship2022TeamSzabi.release.xcconfig"; sourceTree = "<group>"; };
@@ -219,7 +219,7 @@
 		AFA30AF1288FE15200781179 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				BF227DC82895AFC000DD111A /* UserModel.swift */,
+				BF227DC82895AFC000DD111A /* AuthUserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -412,7 +412,7 @@
 				17289A0B28901E5400D6EFCE /* GradesViewController.swift in Sources */,
 				BF5DD2FF28994397002F8244 /* FirestoreManager.swift in Sources */,
 				BF227DC728957F2F00DD111A /* AuthApiManager.swift in Sources */,
-				BF227DC92895AFC000DD111A /* UserModel.swift in Sources */,
+				BF227DC92895AFC000DD111A /* AuthUserModel.swift in Sources */,
 				17289A0228901B4800D6EFCE /* CoursesViewController.swift in Sources */,
 				BF5DD2FD28994158002F8244 /* Encodable.swift in Sources */,
 			);
