@@ -68,6 +68,21 @@ class RegisterViewController: UIViewController {
 
     private func handleRegister() {
         print("ready to register")
+        let newUser = UserModel()
+        
+        AuthApiManager.sharedInstance.registerUser(newUser: newUser, completion: { authenticated, errorString in
+            print("=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+            if let error = errorString {
+                // alert
+            }
+            else if authenticated {
+                // save to NSDefault
+                // redirect to tabBarController
+                print("SUCCES: Authentificated user")
+                print("----------------------------")
+            }
+            print("=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+        })
     }
 
     func validateEmail(_ email: String) -> String? {

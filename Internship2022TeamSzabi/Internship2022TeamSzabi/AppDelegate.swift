@@ -22,18 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = RegisterViewController()
         window?.makeKeyAndVisible()
         
-        print("-------------------------------")
-        let newUser: UserModel = UserModel(
-            email: "test@222.com",
-            name: "test",
-            personalID: "test",
-            studentID: "test",
-            password: "123456")
-        
-        let error = AuthApiManager.sharedInstance.createUser(newUser: newUser)
-        print(error ?? "No error.")
-        print("-------------------------------")
-
         return true
     }
 }
