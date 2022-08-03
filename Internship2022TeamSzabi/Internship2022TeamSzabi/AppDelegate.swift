@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.frame = UIScreen.main.bounds
         window?.rootViewController = RegisterViewController()
         window?.makeKeyAndVisible()
-        
+
         return true
     }
 }
