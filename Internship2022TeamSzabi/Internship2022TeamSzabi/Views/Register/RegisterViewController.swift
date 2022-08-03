@@ -56,9 +56,10 @@ class RegisterViewController: UIViewController {
             name: nameText,
             personalID: personalIDText,
             studentID: studentIDText,
-            password: passwordText)
+            photo: "")
         
-        AuthApiManager.sharedInstance.registerUser(newUser: newUser) { authenticated, errorString in
+        AuthApiManager.sharedInstance.registerUser(
+            newUser: newUser, password: passwordText) { authenticated, errorString in
             if let error = errorString {
                 self.alertError(error)
             } else if authenticated {
@@ -175,7 +176,8 @@ class RegisterViewController: UIViewController {
     }
     
     func validatePersonalID(_ personalID: String) -> String? {
-        let personalIDRegEx = "^[1-9]\\d{2}(0[1-9]|1[0-2])(0[1-9]|[12]\\d|3[01])(0[1-9]|[1-4]\\d|5[0-2]|99)(00[1-9]|0[1-9]\\d|[1-9]\\d\\d)\\d$"
+        let personalIDRegEx = "^[1-9]\\d{2}(0[1-9]|1[0-2])(0[1-9]|[12]\\d|3[01])" +
+        "(0[1-9]|[1-4]\\d|5[0-2]|99)(00[1-9]|0[1-9]\\d|[1-9]\\d\\d)\\d$"
         let emailPred = NSPredicate(format: "SELF MATCHES %@", personalIDRegEx)
         // must be of valid type:
         // 1 space or 1 '-' between characters

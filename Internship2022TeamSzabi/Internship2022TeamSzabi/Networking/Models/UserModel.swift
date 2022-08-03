@@ -12,5 +12,5 @@ struct UserModel: Codable {
     let name: String
     let personalID: String
     let studentID: String
-    let password: String
+    let photo: String?
 }
