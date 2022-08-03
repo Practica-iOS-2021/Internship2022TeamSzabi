@@ -10,15 +10,15 @@ import UIKit
 class CoursesCollectionViewCell: UICollectionViewCell {
     static let identifier = "CoursesCollectionViewCell"
     
-    @IBOutlet var courseName: UILabel!
-    @IBOutlet var courseIcon: UIImageView!
-
+    @IBOutlet private var courseName: UILabel!
+    @IBOutlet private var courseIcon: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        cellStyle()
+        styleCell()
     }
     
-    func cellStyle() {
+    func styleCell() {
         // Apply rounded corners
         contentView.layer.cornerRadius = 20.0
         contentView.layer.masksToBounds = true

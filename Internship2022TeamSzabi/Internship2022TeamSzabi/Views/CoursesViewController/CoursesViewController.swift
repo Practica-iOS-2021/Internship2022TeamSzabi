@@ -8,7 +8,7 @@
 import UIKit
 
 final class CoursesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-    @IBOutlet var courseCollectionView: UICollectionView!
+    @IBOutlet private var courseCollectionView: UICollectionView!
     private var courseNames: [String] = ["Geography", "Mathematics", "Biology", "Chemistry", "Informatics"]
     private var courseIcons: [String] = ["Geography", "Mathematics", "Biology", "Chemistry", "Informatics"]
     
@@ -28,10 +28,9 @@ final class CoursesViewController: UIViewController, UICollectionViewDelegate, U
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = courseCollectionView.dequeueReusableCell(withReuseIdentifier: "CoursesCollectionViewCell",
                                                                for: indexPath) as? CoursesCollectionViewCell {
-            cell.setup(imageName: courseIcons[indexPath.row], name: courseNames[indexPath.row])
+            cell.setup(imageName: courseNames[indexPath.row], name: courseIcons[indexPath.row])
             return cell
-        } else {
-            return UICollectionViewCell()
         }
+        return UICollectionViewCell()
     }
 }
