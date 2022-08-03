@@ -71,11 +71,11 @@ class AuthApiManager {
             .getDocuments { querySnapshot, err in
                 if err != nil {
                     // error occured while getting document
-                    completion(false, "Error getting documents")
+                    completion(false, err?.localizedDescription)
                 } else if let empty = querySnapshot?.documents.isEmpty {
                         completion(empty, nil)
                 } else {
-                    completion(false, err?.localizedDescription)
+                    completion(false, "Error getting documents")
                 }
             }
     }
