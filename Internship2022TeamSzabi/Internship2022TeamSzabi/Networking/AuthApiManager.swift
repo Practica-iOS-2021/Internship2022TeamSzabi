@@ -8,9 +8,9 @@
 import Foundation
 
 class AuthApiManager {
-    static let sharedInstance = AuthApiManager()    
+    static let sharedInstance = AuthApiManager()
     
-    func registerUser(newUser: UserModel, completion: @escaping (Bool, String?) -> Void) {
+    func registerUser(newUser: UserModel, password: String ,completion: @escaping (Bool, String?) -> Void) {
         // validate newUser's data for uniqueness
         validateUserData(newUser: newUser) { unique, errorMessage in
             // if newUser's validated data is unique
@@ -18,7 +18,7 @@ class AuthApiManager {
                 completion(false, errorMessage)
             } else if unique {
                 // create FirebaseAuth for user
-                self.createFirebaseAuthUser(newUser: newUser) { userID, _ in
+                self.createFirebaseAuthUser(email: newUser.email, password: password) { userID, _ in
                     if let userID = userID {
                         // create document for user
                         self.createUserDocument(newUser: newUser, newUserDocumentID: userID) { succes, errorMessage in
@@ -42,10 +42,10 @@ class AuthApiManager {
         }
     }
     
-    private func createFirebaseAuthUser(newUser: UserModel, completion: @escaping ((String?, Error?) -> Void)) {
+    private func createFirebaseAuthUser(email: String, password: String, completion: @escaping ((String?, Error?) -> Void)) {
         // createUser in FirebaseAuth with email and password
-        FirestoreManager.auth.createUser(withEmail: newUser.email,
-                                         password: newUser.password) { authResult, error in
+        FirestoreManager.auth.createUser(withEmail: email,
+                                         password: password) { authResult, error in
             completion(authResult?.user.uid, error)
         }
     }
@@ -55,7 +55,6 @@ class AuthApiManager {
             completion(false, "Unable to encode user")
             return
         }
-        
         FirestoreManager.db.collection(usersCollection).document(newUserDocumentID).setData(newUserData) { error in
             if error != nil {
                 completion(false, "Error writing user document")

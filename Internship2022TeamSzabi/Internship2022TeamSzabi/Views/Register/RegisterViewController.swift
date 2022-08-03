@@ -56,9 +56,10 @@ class RegisterViewController: UIViewController {
             name: nameText,
             personalID: personalIDText,
             studentID: studentIDText,
-            password: passwordText)
+            photo: "")
         
-        AuthApiManager.sharedInstance.registerUser(newUser: newUser) { authenticated, errorString in
+        AuthApiManager.sharedInstance.registerUser(
+            newUser: newUser, password: passwordText) { authenticated, errorString in
             if let error = errorString {
                 self.alertError(error)
             } else if authenticated {
