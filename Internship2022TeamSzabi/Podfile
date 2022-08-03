@@ -8,5 +8,4 @@ target 'Internship2022TeamSzabi' do
   pod 'Firebase/Analytics'
   pod 'FirebaseFirestore'
   pod 'Firebase/Auth'
-
 end
