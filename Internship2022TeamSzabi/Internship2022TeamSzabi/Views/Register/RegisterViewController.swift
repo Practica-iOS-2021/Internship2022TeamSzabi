@@ -51,7 +51,7 @@ class RegisterViewController: UIViewController {
               let passwordText = passwordTextfield.text
         else { return }
         
-        let newUser = AuthUserModel(
+        let newUser = UserModel(
             email: emailText,
             name: nameText,
             personalID: personalIDText,

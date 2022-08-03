@@ -9,7 +9,8 @@ import Foundation
 
 class AuthApiManager {
     static let sharedInstance = AuthApiManager()    
-    func registerUser(newUser: AuthUserModel, completion: @escaping (Bool, String?) -> Void) {
+    
+    func registerUser(newUser: UserModel, completion: @escaping (Bool, String?) -> Void) {
         // validate newUser's data for uniqueness
         validateUserData(newUser: newUser) { unique, errorMessage in
             // if newUser's validated data is unique
@@ -21,7 +22,7 @@ class AuthApiManager {
                     if let userID = userID {
                         // create document for user
                         self.createUserDocument(newUser: newUser, newUserDocumentID: userID) { succes, errorMessage in
-                                completion(succes, errorMessage)
+                            completion(succes, errorMessage)
                         }
                     } else {
                         completion(false, "Email already in use")
@@ -33,7 +34,7 @@ class AuthApiManager {
         }
     }
     
-    private func validateUserData(newUser: AuthUserModel, completion: @escaping (Bool, String?) -> Void) {
+    private func validateUserData(newUser: UserModel, completion: @escaping (Bool, String?) -> Void) {
         // check if 'personalID' of newUser is already in use
         isUniquePersonalID(personalID: newUser.personalID) { unique, errorMessage in
             let errorMessage = unique ? nil : errorMessage
@@ -41,7 +42,7 @@ class AuthApiManager {
         }
     }
     
-    private func createFirebaseAuthUser(newUser: AuthUserModel, completion: @escaping ((String?, Error?) -> Void)) {
+    private func createFirebaseAuthUser(newUser: UserModel, completion: @escaping ((String?, Error?) -> Void)) {
         // createUser in FirebaseAuth with email and password
         FirestoreManager.auth.createUser(withEmail: newUser.email,
                                          password: newUser.password) { authResult, error in
@@ -49,7 +50,7 @@ class AuthApiManager {
         }
     }
     
-    private func createUserDocument(newUser: AuthUserModel, newUserDocumentID: String, completion: @escaping (Bool, String?) -> Void) {
+    private func createUserDocument(newUser: UserModel, newUserDocumentID: String, completion: @escaping (Bool, String?) -> Void) {
         guard let newUserData = newUser.dict else {
             completion(false, "Unable to encode user")
             return
@@ -71,10 +72,10 @@ class AuthApiManager {
                 if err != nil {
                     // error occured while getting document
                     completion(false, "Error getting documents")
-                } else {
-                    if let empty = querySnapshot?.documents.isEmpty {
+                } else if let empty = querySnapshot?.documents.isEmpty {
                         completion(empty, nil)
-                    }
+                } else {
+                    completion(false, err?.localizedDescription)
                 }
             }
     }
