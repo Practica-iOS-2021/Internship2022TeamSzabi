@@ -27,40 +27,46 @@
             <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" canCancelContentTouches="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7QD-pe-MBe">
-                    <rect key="frame" x="0.0" y="44" width="428" height="768"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log out" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0Y-Fc-HkG" userLabel="Logout Label">
+                    <rect key="frame" x="24.999999999999993" y="847.66666666666663" width="88.333333333333314" height="29.333333333333371"/>
+                    <fontDescription key="fontDescription" name="InterV_Bold" family="Inter V" pointSize="24"/>
+                    <color key="textColor" name="ProfileLogoutButtonColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" canCancelContentTouches="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7QD-pe-MBe">
+                    <rect key="frame" x="0.0" y="44" width="428" height="788.66666666666663"/>
                     <subviews>
-                        <view userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="3eq-Ik-NWg" userLabel="Container View">
-                            <rect key="frame" x="0.0" y="0.0" width="428" height="768"/>
+                        <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="3eq-Ik-NWg">
+                            <rect key="frame" x="0.0" y="0.0" width="428" height="788.66666666666663"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student ID" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7d4-kr-c05">
-                                    <rect key="frame" x="25" y="368" width="101" height="24.333333333333314"/>
+                                    <rect key="frame" x="25" y="338" width="101" height="24.333333333333314"/>
                                     <fontDescription key="fontDescription" name="InterV_Medium" family="Inter V" pointSize="20"/>
                                     <color key="textColor" name="ProfileLabelColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2951110000000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gU1-Is-bH2" userLabel="PersonalID  Number Label">
-                                    <rect key="frame" x="25" y="313.66666666666669" width="156.33333333333334" height="24.333333333333314"/>
+                                    <rect key="frame" x="25" y="283.66666666666669" width="156.33333333333334" height="24.333333333333314"/>
                                     <color key="tintColor" name="TabBarColor"/>
                                     <fontDescription key="fontDescription" name="InterV_Medium" family="Inter V" pointSize="20"/>
                                     <color key="textColor" name="TabBarColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lipsum Lipsum Lipsum" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1o6-ZL-fPi" userLabel="Name Label">
-                                    <rect key="frame" x="83.666666666666686" y="225" width="261" height="29.333333333333343"/>
+                                    <rect key="frame" x="83.666666666666686" y="195" width="261" height="29.333333333333343"/>
                                     <fontDescription key="fontDescription" name="InterV_Medium" family="Inter V" pointSize="24"/>
                                     <color key="textColor" name="ProfileLabelColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="678934" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1uV-mw-7Fe">
-                                    <rect key="frame" x="25" y="397.33333333333331" width="75.333333333333329" height="24.333333333333314"/>
+                                    <rect key="frame" x="25" y="367.33333333333331" width="75.333333333333329" height="24.333333333333314"/>
                                     <color key="tintColor" name="TabBarColor"/>
                                     <fontDescription key="fontDescription" name="InterV_Medium" family="Inter V" pointSize="20"/>
                                     <color key="textColor" name="TabBarColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aVM-Lc-mJK">
-                                    <rect key="frame" x="144" y="55" width="140" height="140"/>
+                                    <rect key="frame" x="144" y="25" width="140" height="140"/>
                                     <color key="backgroundColor" name="RegisterBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="aVM-Lc-mJK" secondAttribute="height" id="m9d-hH-nT9"/>
@@ -68,33 +74,36 @@
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personal ID" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lnv-bM-cfM" userLabel="PersonalID Label">
-                                    <rect key="frame" x="24.999999999999993" y="284.33333333333331" width="108.33333333333331" height="24.333333333333314"/>
+                                    <rect key="frame" x="24.999999999999993" y="254.33333333333334" width="108.33333333333331" height="24.333333333333343"/>
                                     <fontDescription key="fontDescription" name="InterV_Medium" family="Inter V" pointSize="20"/>
                                     <color key="textColor" name="ProfileLabelColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QTk-in-hJV">
-                                    <rect key="frame" x="25.000000000000004" y="451.66666666666669" width="51.333333333333343" height="24.333333333333314"/>
+                                    <rect key="frame" x="25.000000000000004" y="421.66666666666669" width="51.333333333333343" height="24.333333333333314"/>
                                     <fontDescription key="fontDescription" name="InterV_Medium" family="Inter V" pointSize="20"/>
                                     <color key="textColor" name="ProfileLabelColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="blabla@batman.com" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="THM-du-K3m">
-                                    <rect key="frame" x="25" y="481" width="196.33333333333334" height="24.333333333333314"/>
+                                    <rect key="frame" x="25" y="451" width="196.33333333333334" height="21"/>
                                     <color key="tintColor" name="TabBarColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="21" id="xHA-XF-gQ3"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" name="InterV_Medium" family="Inter V" pointSize="20"/>
                                     <color key="textColor" name="TabBarColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstItem="THM-du-K3m" firstAttribute="leading" secondItem="3eq-Ik-NWg" secondAttribute="leading" constant="25" id="00t-u2-VZz"/>
                                 <constraint firstItem="1o6-ZL-fPi" firstAttribute="top" secondItem="aVM-Lc-mJK" secondAttribute="bottom" constant="30" id="0BI-g9-FJC"/>
                                 <constraint firstItem="aVM-Lc-mJK" firstAttribute="centerX" secondItem="3eq-Ik-NWg" secondAttribute="centerX" id="2cS-im-Xs5"/>
                                 <constraint firstItem="gU1-Is-bH2" firstAttribute="top" secondItem="lnv-bM-cfM" secondAttribute="bottom" constant="5" id="5mx-p3-t9l"/>
                                 <constraint firstItem="1uV-mw-7Fe" firstAttribute="top" secondItem="7d4-kr-c05" secondAttribute="bottom" constant="5" id="BUN-Ki-xcr"/>
-                                <constraint firstItem="aVM-Lc-mJK" firstAttribute="top" secondItem="3eq-Ik-NWg" secondAttribute="top" constant="55" id="KSd-Eh-ugh"/>
+                                <constraint firstItem="aVM-Lc-mJK" firstAttribute="top" secondItem="3eq-Ik-NWg" secondAttribute="top" constant="25" id="KSd-Eh-ugh"/>
                                 <constraint firstItem="gU1-Is-bH2" firstAttribute="leading" secondItem="3eq-Ik-NWg" secondAttribute="leading" constant="25" id="KW0-Zj-fWj"/>
                                 <constraint firstItem="THM-du-K3m" firstAttribute="top" secondItem="QTk-in-hJV" secondAttribute="bottom" constant="5" id="PFL-1H-Gxg"/>
                                 <constraint firstItem="1o6-ZL-fPi" firstAttribute="centerX" secondItem="3eq-Ik-NWg" secondAttribute="centerX" id="THi-7W-YwL"/>
@@ -113,39 +122,28 @@
                     <constraints>
                         <constraint firstItem="2tu-2z-tZj" firstAttribute="trailing" secondItem="3eq-Ik-NWg" secondAttribute="trailing" id="8LM-17-sZo"/>
                         <constraint firstItem="3eq-Ik-NWg" firstAttribute="leading" secondItem="Wri-Gr-t7C" secondAttribute="leading" id="8VK-CH-qJ1"/>
-                        <constraint firstItem="3eq-Ik-NWg" firstAttribute="width" secondItem="7QD-pe-MBe" secondAttribute="width" id="9IF-lH-v1G"/>
                         <constraint firstItem="Wri-Gr-t7C" firstAttribute="trailing" secondItem="3eq-Ik-NWg" secondAttribute="trailing" id="9tb-td-fP8"/>
                         <constraint firstItem="2tu-2z-tZj" firstAttribute="bottom" secondItem="3eq-Ik-NWg" secondAttribute="bottom" id="A2K-Nn-dIj"/>
                         <constraint firstItem="3eq-Ik-NWg" firstAttribute="top" secondItem="2tu-2z-tZj" secondAttribute="top" id="A5l-Dv-H4C"/>
                         <constraint firstAttribute="trailing" secondItem="3eq-Ik-NWg" secondAttribute="trailing" id="Eoz-vL-f0I"/>
-                        <constraint firstItem="Wri-Gr-t7C" firstAttribute="bottom" secondItem="3eq-Ik-NWg" secondAttribute="bottom" constant="10" id="FHR-7q-1de"/>
+                        <constraint firstItem="Wri-Gr-t7C" firstAttribute="bottom" secondItem="3eq-Ik-NWg" secondAttribute="bottom" constant="1" id="FHR-7q-1de"/>
                         <constraint firstItem="3eq-Ik-NWg" firstAttribute="top" secondItem="Wri-Gr-t7C" secondAttribute="top" id="QNV-gm-Zr7"/>
-                        <constraint firstItem="3eq-Ik-NWg" firstAttribute="height" secondItem="7QD-pe-MBe" secondAttribute="height" id="cEu-xK-FDi"/>
                         <constraint firstItem="3eq-Ik-NWg" firstAttribute="leading" secondItem="2tu-2z-tZj" secondAttribute="leading" id="fES-es-seY"/>
                         <constraint firstItem="3eq-Ik-NWg" firstAttribute="leading" secondItem="Wri-Gr-t7C" secondAttribute="leading" id="jex-Ap-KrQ"/>
                     </constraints>
                     <viewLayoutGuide key="contentLayoutGuide" id="Wri-Gr-t7C"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="2tu-2z-tZj"/>
                 </scrollView>
-                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" placeholderIntrinsicWidth="125" placeholderIntrinsicHeight="50" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SgM-ne-EWe">
-                    <rect key="frame" x="25" y="827" width="125" height="50"/>
-                    <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
-                    <fontDescription key="fontDescription" name="InterV_Bold" family="Inter V" pointSize="24"/>
-                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" title="Log out">
-                        <color key="titleColor" name="ProfileLogoutButtonColor"/>
-                    </state>
-                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="b0Y-Fc-HkG" firstAttribute="top" secondItem="7QD-pe-MBe" secondAttribute="bottom" constant="15" id="7DH-fH-LkH"/>
+                <constraint firstItem="7QD-pe-MBe" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Dag-FM-DwG"/>
                 <constraint firstItem="7QD-pe-MBe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="FrP-9j-3pm"/>
                 <constraint firstItem="7QD-pe-MBe" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="JYR-Iu-Geb"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="SgM-ne-EWe" secondAttribute="bottom" constant="15" id="Vp8-ZW-hFj"/>
-                <constraint firstItem="SgM-ne-EWe" firstAttribute="top" secondItem="7QD-pe-MBe" secondAttribute="bottom" constant="15" id="sg1-La-18H"/>
-                <constraint firstItem="SgM-ne-EWe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="wmQ-xx-A9q"/>
-                <constraint firstItem="7QD-pe-MBe" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="zUh-am-Vnm"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="b0Y-Fc-HkG" secondAttribute="bottom" constant="15" id="ORr-1Y-TUn"/>
+                <constraint firstItem="b0Y-Fc-HkG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="y8T-Cq-dea"/>
             </constraints>
             <point key="canvasLocation" x="473.83177570093454" y="126.99784017278618"/>
         </view>
