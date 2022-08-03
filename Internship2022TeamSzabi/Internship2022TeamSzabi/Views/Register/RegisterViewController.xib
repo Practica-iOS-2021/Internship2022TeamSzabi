@@ -9,6 +9,12 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="InterV.ttf">
+            <string>InterV</string>
+            <string>InterV_Extra-Bold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterViewController" customModule="Internship2022TeamSzabi" customModuleProvider="target">
             <connections>
@@ -35,26 +41,26 @@
                             <rect key="frame" x="20" y="0.0" width="388" height="1000"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8X-iY-j54">
-                                    <rect key="frame" x="0.0" y="537" width="388" height="24"/>
-                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                    <rect key="frame" x="0.0" y="539.33333333333337" width="388" height="24.333333333333371"/>
+                                    <fontDescription key="fontDescription" name="InterV" family="Inter V" pointSize="20"/>
                                     <color key="textColor" red="0.1450980392" green="0.086274509799999996" blue="0.019607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MrS-9O-eT2">
-                                    <rect key="frame" x="131.33333333333334" y="66" width="125.33333333333334" height="38"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                    <rect key="frame" x="127.33333333333336" y="66" width="133.66666666666663" height="39"/>
+                                    <fontDescription key="fontDescription" name="InterV_Extra-Bold" family="Inter V" pointSize="32"/>
                                     <color key="textColor" red="0.1450980392" green="0.086274509799999996" blue="0.019607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WNe-so-Svv">
-                                    <rect key="frame" x="54" y="712" width="280" height="62"/>
+                                    <rect key="frame" x="54" y="714.66666666666663" width="280" height="62"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="62" id="Yef-0v-1GG"/>
                                         <constraint firstAttribute="width" constant="280" id="aG1-u2-iVm"/>
                                     </constraints>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="filled" title="Register" cornerStyle="capsule">
-                                        <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                                        <fontDescription key="titleFontDescription" name="InterV" family="Inter V" pointSize="20"/>
                                         <color key="baseForegroundColor" red="0.14509803921568626" green="0.086274509803921567" blue="0.019607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </buttonConfiguration>
@@ -63,7 +69,7 @@
                                     </connections>
                                 </button>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V9D-vv-PuF" userLabel="Password Textfield">
-                                    <rect key="frame" x="0.0" y="581" width="338" height="34"/>
+                                    <rect key="frame" x="0.0" y="583.66666666666663" width="338" height="34"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <textInputTraits key="textInputTraits"/>
                                     <connections>
@@ -71,25 +77,25 @@
                                     </connections>
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personal ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLZ-uG-xp0">
-                                    <rect key="frame" x="0.0" y="341" width="388" height="24"/>
-                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                    <rect key="frame" x="0.0" y="342.66666666666669" width="388" height="24.333333333333314"/>
+                                    <fontDescription key="fontDescription" name="InterV" family="Inter V" pointSize="20"/>
                                     <color key="textColor" red="0.1450980392" green="0.086274509799999996" blue="0.019607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4mF-a2-N5D">
-                                    <rect key="frame" x="0.0" y="243" width="388" height="24"/>
-                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                    <rect key="frame" x="0.0" y="244.33333333333334" width="388" height="24.333333333333343"/>
+                                    <fontDescription key="fontDescription" name="InterV" family="Inter V" pointSize="20"/>
                                     <color key="textColor" red="0.1450980392" green="0.086274509799999996" blue="0.019607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAj-S9-nQm">
-                                    <rect key="frame" x="0.0" y="439" width="388" height="24"/>
-                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                    <rect key="frame" x="0.0" y="441" width="388" height="24.333333333333314"/>
+                                    <fontDescription key="fontDescription" name="InterV" family="Inter V" pointSize="20"/>
                                     <color key="textColor" red="0.1450980392" green="0.086274509799999996" blue="0.019607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gtm-Pq-uNy" userLabel="Email Textfield">
-                                    <rect key="frame" x="0.0" y="189" width="338" height="34"/>
+                                    <rect key="frame" x="0.0" y="190.33333333333334" width="338" height="34"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <textInputTraits key="textInputTraits"/>
                                     <connections>
@@ -97,7 +103,7 @@
                                     </connections>
                                 </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Nr-k1-Xd7" userLabel="Name Textfield">
-                                    <rect key="frame" x="0.0" y="287" width="338" height="34"/>
+                                    <rect key="frame" x="0.0" y="288.66666666666669" width="338" height="34"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <textInputTraits key="textInputTraits"/>
                                     <connections>
@@ -106,7 +112,7 @@
                                     </connections>
                                 </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f4E-NY-o9t" userLabel="Student ID Textfield">
-                                    <rect key="frame" x="0.0" y="483" width="338" height="34"/>
+                                    <rect key="frame" x="0.0" y="485.33333333333337" width="338" height="34"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <textInputTraits key="textInputTraits"/>
                                     <connections>
@@ -114,7 +120,7 @@
                                     </connections>
                                 </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EcB-DZ-FTW" userLabel="Personal ID Textfield">
-                                    <rect key="frame" x="0.0" y="385" width="338" height="34"/>
+                                    <rect key="frame" x="0.0" y="387" width="338" height="34"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <textInputTraits key="textInputTraits"/>
                                     <connections>
@@ -122,13 +128,13 @@
                                     </connections>
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GyR-xJ-TKp">
-                                    <rect key="frame" x="0.0" y="145" width="388" height="24"/>
-                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                    <rect key="frame" x="0.0" y="146" width="388" height="24.333333333333343"/>
+                                    <fontDescription key="fontDescription" name="InterV" family="Inter V" pointSize="20"/>
                                     <color key="textColor" red="0.1450980392" green="0.086274509799999996" blue="0.019607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YHV-NJ-0B0">
-                                    <rect key="frame" x="8" y="635" width="360" height="17"/>
+                                    <rect key="frame" x="8" y="637.66666666666663" width="360" height="17"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <color key="textColor" systemColor="systemRedColor"/>
                                     <nil key="highlightedColor"/>
