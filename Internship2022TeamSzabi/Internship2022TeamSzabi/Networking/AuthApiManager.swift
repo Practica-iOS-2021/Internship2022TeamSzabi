@@ -10,7 +10,7 @@ import Foundation
 class AuthApiManager {
     static let sharedInstance = AuthApiManager()
     
-    func registerUser(newUser: UserModel, password: String ,completion: @escaping (Bool, String?) -> Void) {
+    func registerUser(newUser: UserModel, password: String, completion: @escaping (Bool, String?) -> Void) {
         // validate newUser's data for uniqueness
         validateUserData(newUser: newUser) { unique, errorMessage in
             // if newUser's validated data is unique
@@ -55,7 +55,7 @@ class AuthApiManager {
             completion(false, "Unable to encode user")
             return
         }
-        FirestoreManager.db.collection(usersCollection).document(newUserDocumentID).setData(newUserData) { error in
+        FirestoreManager.dbConn.collection(usersCollection).document(newUserDocumentID).setData(newUserData) { error in
             if error != nil {
                 completion(false, "Error writing user document")
             } else {
@@ -65,7 +65,7 @@ class AuthApiManager {
     }
     
     private func isUniquePersonalID(personalID: String, completion: @escaping (Bool, String?) -> Void) {
-        FirestoreManager.db.collection(usersCollection)
+        FirestoreManager.dbConn.collection(usersCollection)
             .whereField("personalID", isEqualTo: personalID)
             .getDocuments { querySnapshot, err in
                 if err != nil {

@@ -11,7 +11,7 @@ import FirebaseAuth
 
 let usersCollection = "users"
 
-class FirestoreManager {
-    static let db = Firestore.firestore()
+enum FirestoreManager {
+    static let dbConn = Firestore.firestore()
     static let auth = Auth.auth()
 }
