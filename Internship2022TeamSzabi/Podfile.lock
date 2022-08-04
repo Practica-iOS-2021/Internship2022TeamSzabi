@@ -413,6 +413,7 @@ SPEC REPOS:
     - gRPC-Core
     - GTMSessionFetcher
     - leveldb-library
+    - Libuv-gRPC
     - nanopb
     - PromisesObjC
 
@@ -440,5 +441,4 @@ SPEC CHECKSUMS:
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
 
 PODFILE CHECKSUM: 4a9ce8b7e3c69f40e169356d9c15ba52e97da4ed
-
 COCOAPODS: 1.11.3

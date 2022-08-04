@@ -41,24 +41,48 @@ class RegisterViewController: UIViewController {
     @IBAction private func submitAction(_ sender: Any) {
         handleFormValidation()
     }
-
+    
     private func handleRegister() {
         print("ready to register")
-    }
-
+        guard let emailText = emailTextField.text,
+              let nameText = nameTextField.text,
+              let personalIDText = personalIDTextfield.text,
+              let studentIDText = studentIDTextfield.text,
+              let passwordText = passwordTextfield.text
+        else { return }
+        
+        let newUser = UserModel(
+            email: emailText,
+            name: nameText,
+            personalID: personalIDText,
+            studentID: studentIDText,
+            photo: "")
+        
+        AuthApiManager.sharedInstance.registerUser(
+            newUser: newUser, password: passwordText) { authenticated, errorString in
+            if let error = errorString {
+                self.alertError(error)
+            } else if authenticated {
+                // save to NSDefault
+                // redirect to tabBarController
+                let appDelegate = UIApplication.shared.delegate as? AppDelegate
+                appDelegate?.window?.rootViewController = TabBarController()
+            }
+        }}
+    
     private func handleFormValidation() {
         guard validateForm() else { return }
         
         // all validations passed
         handleRegister()
     }
-
+    
     // MARK: - Check against invalidations in form
     @discardableResult
     private func validateForm() -> Bool {
         // supose form initially valid
         var valid = true
-
+        
         // 1) if not all textFields filled
         formView.subviews.forEach { view in
             if let textField = view as? UITextField {
@@ -67,14 +91,14 @@ class RegisterViewController: UIViewController {
                 }
             }
         }
-
+        
         // get text from need-be valid textFields
         guard let emailText = emailTextField.text,
               let personalIDText = personalIDTextfield.text,
               let passwordText = passwordTextfield.text,
               let nameText = nameTextField.text
         else { return false }
-
+        
         // 2) if said texts aren't valid
         guard checkInputError(text: emailText,
                               validationFunction: validateEmail),
@@ -90,7 +114,7 @@ class RegisterViewController: UIViewController {
         registerButton.isEnabled = valid
         return valid
     }
-
+    
     // MARK: - Validation methods
     // checkInputError uses given 'text'
     // validated by given 'validationFunction'
@@ -104,7 +128,7 @@ class RegisterViewController: UIViewController {
         errorLabel.isHidden = true
         return true
     }
-
+    
     func validateEmail(_ email: String) -> String? {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,20}"
         let emailPred = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
@@ -135,7 +159,7 @@ class RegisterViewController: UIViewController {
         // valid password
         return nil
     }
-
+    
     func validateName(_ name: String) -> String? {
         let personalIDRegEx = "^([a-zA-Z0-9]+(\\s|-))*[a-zA-Z0-9]+$"
         let emailPred = NSPredicate(format: "SELF MATCHES %@", personalIDRegEx)
@@ -150,9 +174,10 @@ class RegisterViewController: UIViewController {
         // valid password
         return nil
     }
-
+    
     func validatePersonalID(_ personalID: String) -> String? {
-        let personalIDRegEx = "^[1-9]\\d{2}(0[1-9]|1[0-2])(0[1-9]|[12]\\d|3[01])(0[1-9]|[1-4]\\d|5[0-2]|99)(00[1-9]|0[1-9]\\d|[1-9]\\d\\d)\\d$"
+        let personalIDRegEx = "^[1-9]\\d{2}(0[1-9]|1[0-2])(0[1-9]|[12]\\d|3[01])" +
+        "(0[1-9]|[1-4]\\d|5[0-2]|99)(00[1-9]|0[1-9]\\d|[1-9]\\d\\d)\\d$"
         let emailPred = NSPredicate(format: "SELF MATCHES %@", personalIDRegEx)
         // must be of valid type:
         // 1 space or 1 '-' between characters
@@ -165,7 +190,7 @@ class RegisterViewController: UIViewController {
         // valid password
         return nil
     }
-
+    
     // MARK: - Alert for errors
     func alertError(_ error: String) {
         let dialogMessage = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
