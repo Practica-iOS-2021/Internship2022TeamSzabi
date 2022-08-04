@@ -147,7 +147,7 @@
                         <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </buttonConfiguration>
                     <connections>
-                        <action selector="signupButton:" destination="-1" eventType="touchUpInside" id="v8U-Op-11x"/>
+                        <action selector="signUpButton:" destination="-1" eventType="touchUpInside" id="Gkh-cO-ioW"/>
                     </connections>
                 </button>
             </subviews>
