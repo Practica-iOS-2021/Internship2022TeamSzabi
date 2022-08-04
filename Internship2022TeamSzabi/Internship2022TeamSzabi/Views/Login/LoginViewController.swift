@@ -59,6 +59,8 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction private func signupButton(_ sender: UIButton) {
+        let vc = RegisterViewController(nibName: "RegisterViewController", bundle: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     // email RegEx function to verify if the email address introduced by the user is valid
