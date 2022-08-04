@@ -25,10 +25,10 @@ final class CoursesViewController: UIViewController,
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let flowayout = collectionViewLayout as? UICollectionViewFlowLayout
-        let space: CGFloat = (flowayout?.minimumInteritemSpacing ?? 0.0) +
-        (flowayout?.sectionInset.left ?? 0.0) +
-        (flowayout?.sectionInset.right ?? 0.0)
+        let flowlayout = collectionViewLayout as? UICollectionViewFlowLayout
+        let space: CGFloat = (flowlayout?.minimumInteritemSpacing ?? 0.0) +
+        (flowlayout?.sectionInset.left ?? 0.0) +
+        (flowlayout?.sectionInset.right ?? 0.0)
         let size: CGFloat = (collectionView.frame.size.width - space) / 2.0
         return CGSize(width: size, height: size)
     }
