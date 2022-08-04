@@ -6,7 +6,6 @@ target 'Internship2022TeamSzabi' do
   pod 'Firebase/Crashlytics'
   pod 'Firebase/Messaging'
   pod 'Firebase/Analytics'
-  pod 'FirebaseFirestore'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'Firebase/Firestore'
