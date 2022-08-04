@@ -16,10 +16,10 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet private var emailTextField: UITextField!
     @IBOutlet private var passwordTextField: UITextField!
     @IBOutlet private var loginButton: UIButton!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         emailTextField.delegate = self
         passwordTextField.delegate = self
         
@@ -56,9 +56,20 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
             validationLabel.text = "Please enter Password"
             return
         }
+        AuthApiManager.sharedInstance.signin(email: email, password: password) { success, _ in
+            if success {
+                self.validationLabel.isHidden = true
+                let appDelegate = UIApplication.shared.delegate as? AppDelegate
+                appDelegate?.window?.rootViewController = TabBarController()
+            } else {
+                self.invalidMessage()
+            }
+        }
     }
     
-    @IBAction private func signupButton(_ sender: UIButton) {
+    @IBAction private func signUpButton(_ sender: UIButton) {
+        let viewController = RegisterViewController(nibName: "RegisterViewController", bundle: nil)
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
     // email RegEx function to verify if the email address introduced by the user is valid
@@ -88,5 +99,10 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
         button.layer.shadowOpacity = 0.8
         button.layer.shadowRadius = 0.0
         button.layer.masksToBounds = false
+    }
+    
+    func invalidMessage() {
+        validationLabel.isHidden = false
+        validationLabel.text = "Invalid email or password."
     }
 }
