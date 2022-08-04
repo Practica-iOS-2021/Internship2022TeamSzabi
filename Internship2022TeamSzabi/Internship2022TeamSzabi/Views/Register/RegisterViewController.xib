@@ -69,6 +69,7 @@
                                 </button>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V9D-vv-PuF" userLabel="Password Textfield">
                                     <rect key="frame" x="20" y="580" width="335" height="34"/>
+                                    <color key="backgroundColor" name="RegisterBackgroundColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <textInputTraits key="textInputTraits"/>
                                     <connections>
@@ -95,6 +96,7 @@
                                 </label>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gtm-Pq-uNy" userLabel="Email Textfield">
                                     <rect key="frame" x="20" y="187.66666666666666" width="335" height="34"/>
+                                    <color key="backgroundColor" name="RegisterBackgroundColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <textInputTraits key="textInputTraits"/>
                                     <connections>
@@ -103,6 +105,7 @@
                                 </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Nr-k1-Xd7" userLabel="Name Textfield">
                                     <rect key="frame" x="20" y="286" width="335" height="34"/>
+                                    <color key="backgroundColor" name="RegisterBackgroundColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <textInputTraits key="textInputTraits"/>
                                     <connections>
@@ -112,6 +115,7 @@
                                 </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f4E-NY-o9t" userLabel="Student ID Textfield">
                                     <rect key="frame" x="20" y="482.66666666666663" width="335" height="34"/>
+                                    <color key="backgroundColor" name="RegisterBackgroundColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <textInputTraits key="textInputTraits"/>
                                     <connections>
@@ -120,6 +124,7 @@
                                 </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EcB-DZ-FTW" userLabel="Personal ID Textfield">
                                     <rect key="frame" x="20" y="384.33333333333331" width="335" height="34"/>
+                                    <color key="backgroundColor" name="RegisterBackgroundColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <textInputTraits key="textInputTraits"/>
                                     <connections>
