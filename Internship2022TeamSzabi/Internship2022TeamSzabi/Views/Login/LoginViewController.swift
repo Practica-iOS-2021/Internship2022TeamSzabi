@@ -62,14 +62,14 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
                 let appDelegate = UIApplication.shared.delegate as? AppDelegate
                 appDelegate?.window?.rootViewController = TabBarController()
             } else {
-                self.invalidMsg()
+                self.invalidMessage()
             }
         }
     }
     
-    @IBAction private func signupButton(_ sender: UIButton) {
+    @IBAction private func signUpButton(_ sender: UIButton) {
         let viewController = RegisterViewController(nibName: "RegisterViewController", bundle: nil)
-        self.navigationController?.pushViewController(viewController, animated: true)
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
     // email RegEx function to verify if the email address introduced by the user is valid
@@ -101,8 +101,8 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
         button.layer.masksToBounds = false
     }
     
-    func invalidMsg() {
-        self.validationLabel.isHidden = false
-        self.validationLabel.text = "Invalid email or password."
+    func invalidMessage() {
+        validationLabel.isHidden = false
+        validationLabel.text = "Invalid email or password."
     }
 }

@@ -84,7 +84,6 @@ class AuthApiManager {
             if let error = error {
                 completion(false, error.localizedDescription)
             } else {
-                // couldn't sign in
                 completion(true, nil)
             }
         }
