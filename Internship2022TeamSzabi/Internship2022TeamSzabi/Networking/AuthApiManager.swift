@@ -72,10 +72,21 @@ class AuthApiManager {
                     // error occured while getting document
                     completion(false, err?.localizedDescription)
                 } else if let empty = querySnapshot?.documents.isEmpty {
-                        completion(empty, nil)
+                    completion(empty, nil)
                 } else {
                     completion(false, "Error getting documents")
                 }
             }
+    }
+    
+    func signin(email: String, password: String, completion: @escaping (Bool, String?) -> Void) {
+        FirestoreManager.auth.signIn(withEmail: email, password: password) { _, error in
+            if let error = error {
+                completion(false, error.localizedDescription)
+            } else {
+                // couldn't sign in
+                completion(true, nil)
+            }
+        }
     }
 }
