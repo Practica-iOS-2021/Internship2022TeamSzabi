@@ -17,11 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // MARK: - Assigning initial display view
         window = UIWindow()
-        window?.frame = UIScreen.main.bounds
-        let navigationController = UINavigationController()
-        let mainView = LoginViewController()
-        navigationController.viewControllers = [mainView]
-        window?.rootViewController = navigationController
+        window?.rootViewController = SplashViewController()
         window?.frame = UIScreen.main.bounds
         window?.makeKeyAndVisible()
         return true

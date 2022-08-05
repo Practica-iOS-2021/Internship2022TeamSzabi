@@ -6,62 +6,48 @@
 //
 
 import UIKit
-import FirebaseCore
-import FirebaseAuth
-import FirebaseFirestore
-
-struct CurrentUser {
-    let uid, email, name, personalID, photo, studentID: String
-}
 
 final class ProfileViewController: UIViewController {
+    @IBOutlet private weak var profileName: UILabel!
     @IBOutlet private weak var profilePhoto: UIImageView!
+    @IBOutlet private weak var profileStudentID: UILabel!
+    @IBOutlet private weak var profilePersonalID: UILabel!
+    @IBOutlet private weak var profileEmail: UILabel!
     
-    var currentUser: CurrentUser?
-    let dataBaseRef = Firestore.firestore()
+    private var userData: [UserModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        assignUserData()
         navigationItem.title = "Profile"
         
+        // ProfilePhoto round corners
         profilePhoto.layer.cornerRadius = profilePhoto.layer.frame.width / 2
         profilePhoto.layer.masksToBounds = false
-        getUserData()
     }
-    
-    private func getUserData() {
-        //        let defaults = UserDefaults.standard
-        
-        guard let uid = Auth.auth().currentUser?.uid else { return }
-        
-        dataBaseRef.collection("users").document(uid).getDocument { snapshot, error in
-            if let error = error {
-                    print("failed to get user", error)
-                return
-            }
-            guard let data = snapshot?.data() else { return }
-            
-            let uid = data["uid"] as? String ?? ""
-            let email = data["email"] as? String ?? ""
-            let name = data["name"] as? String ?? ""
-            let personalID = data["personalID"] as? String ?? ""
-            let photo = data["photo"] as? String ?? ""
-            let studentID = data["studentID"] as? String ?? ""
-            
-            self.currentUser = CurrentUser(uid: uid, email: email,
-                                          name: name, personalID: personalID,
-                                          photo: photo, studentID: studentID)
+    // MARK: - Assign fetched UserData to Profile Screen
+    private func assignUserData() {
+        DataApiManager.sharedUserData.fetchUserData { userData in
+            self.profileEmail.text = userData?.email
+            self.profileName.text = userData?.name
+            self.profilePersonalID.text = userData?.personalID
+            self.profileStudentID.text = userData?.studentID
+            self.profilePhoto.image = UIImage(named: "\(userData?.photo ?? "")")
         }
     }
     
-    
-    func signOut() {
-        let firebaseAuth = Auth.auth()
+    // MARK: - SignOut
+    @IBAction func logOutButton(_ sender: Any) {
+        let logOut = FirestoreManager.auth
+        let defaults = UserDefaults.standard
         do {
-            try firebaseAuth.signOut()
+            try logOut.signOut()
+            defaults.set(false, forKey: "isUserLoggedIn")
+            // Push to SplashViewController
+            let appDelegate = UIApplication.shared.delegate as? AppDelegate
+            appDelegate?.window?.rootViewController = SplashViewController()
         } catch let signOutError as NSError {
-            print("Error signing out: %@", signOutError)
+            print("error signing out: \(signOutError)")
         }
     }
 }
