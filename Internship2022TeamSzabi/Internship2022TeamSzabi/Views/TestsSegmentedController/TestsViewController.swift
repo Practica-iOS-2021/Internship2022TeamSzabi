@@ -7,43 +7,66 @@
 
 import UIKit
 
-
 class TestsViewController: UIViewController {
+    @IBOutlet private weak var testsTableView: UITableView!
     @IBOutlet private weak var navStackView: UIStackView!
     @IBOutlet private weak var chaptersButton: UIButton!
     @IBOutlet private weak var finalButton: UIButton!
     @IBOutlet private weak var passedButton: UIButton!
     @IBOutlet private weak var navView: UIView!
-    
+    // MARK: - Enum for selected nav button
     private enum NavButtons {
-        case chaptersBtn
-        case finalBtn
-        case passedBtn
+        case chaptersButton
+        case finalButton
+        case passedButton
     }
-    private var currentButton = NavButtons.chaptersBtn
+    private var currentButton = NavButtons.chaptersButton
+    
+    // MARK: - Cells reuse identifiers
+    let chapterCellIdentifier = "chapterCell"
+    let finalCellIdentifier = "finalCell"
+    let passedCellIdentifier = "passedCell"
+    
+    // MARK: - DataSet for 'chapters', 'final' 'passed' tests
+    let chaptersDataSource: [String] = ["1", "2", "3"]
+    let finalDataSource: [String] = ["1", "2"]
+    let passedDataSource: [String] = ["1", "2", "3", "4"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // register cells Nib's
+        testsTableView.register(
+            UINib(nibName: "ChaptersTableViewCell", bundle: nil), forCellReuseIdentifier: chapterCellIdentifier)
+        testsTableView.register(
+            UINib(nibName: "FinalTableViewCell", bundle: nil), forCellReuseIdentifier: finalCellIdentifier)
+        testsTableView.register(
+            UINib(nibName: "PassedTableViewCell", bundle: nil), forCellReuseIdentifier: passedCellIdentifier)
+        // set dataSource & delegate
+        testsTableView.dataSource = self
+        testsTableView.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         setAppearence()
+        testsTableView.reloadData()
     }
     
+    // MARK: - nav buttons tapped actions
     @IBAction private func chaptersTap(_ sender: Any) {
-        currentButton = .chaptersBtn
+        currentButton = .chaptersButton
         makeButtonSelected()
     }
     @IBAction private func finalTap(_ sender: Any) {
-        currentButton = .finalBtn
+        currentButton = .finalButton
         makeButtonSelected()
     }
     @IBAction private func passedTap(_ sender: Any) {
-        currentButton = .passedBtn
+        currentButton = .passedButton
         makeButtonSelected()
     }
     
+    // MARK: - Appearence
     private func setAppearence() {
         view.backgroundColor = .white
         navAppearence()
@@ -85,18 +108,69 @@ class TestsViewController: UIViewController {
     
     private func makeButtonSelected() {
         switch currentButton {
-        case NavButtons.chaptersBtn:
+        case NavButtons.chaptersButton:
             setSelectedButtonAppearence(button: chaptersButton)
             setNormalButtonAppearence(button: finalButton)
             setNormalButtonAppearence(button: passedButton)
-        case NavButtons.finalBtn:
+        case NavButtons.finalButton:
             setNormalButtonAppearence(button: chaptersButton)
             setSelectedButtonAppearence(button: finalButton)
             setNormalButtonAppearence(button: passedButton)
-        case NavButtons.passedBtn:
+        case NavButtons.passedButton:
             setNormalButtonAppearence(button: chaptersButton)
             setNormalButtonAppearence(button: finalButton)
             setSelectedButtonAppearence(button: passedButton)
+        }
+        testsTableView.reloadData()
+    }
+}
+
+extension TestsViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch self.currentButton {
+        case NavButtons.chaptersButton:
+            return self.chaptersDataSource.count
+        case NavButtons.finalButton:
+            return self.finalDataSource.count
+        case NavButtons.passedButton:
+            return self.passedDataSource.count
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // let cell =
+        //  chaptersCell
+        //  finalCell
+        //  passedCell
+        // depending on 'currentButton'
+        switch self.currentButton {
+        case NavButtons.chaptersButton:
+            guard
+                let cell = tableView.dequeueReusableCell(withIdentifier: chapterCellIdentifier, for: indexPath)
+                    as? ChaptersTableViewCell
+            else {
+                return UITableViewCell()
+            }
+            cell.updateCellView()
+            return cell
+        case NavButtons.finalButton:
+            guard
+                let cell = tableView.dequeueReusableCell(withIdentifier: finalCellIdentifier, for: indexPath)
+                    as? FinalTableViewCell
+            else {
+                return UITableViewCell()
+            }
+            cell.updateCellView()
+            return cell
+        case NavButtons.passedButton:
+            guard
+                let cell = tableView.dequeueReusableCell(withIdentifier: passedCellIdentifier, for: indexPath)
+                    as? PassedTableViewCell
+            else {
+                return UITableViewCell()
+            }
+            cell.updateCellView()
+            return cell
         }
     }
 }

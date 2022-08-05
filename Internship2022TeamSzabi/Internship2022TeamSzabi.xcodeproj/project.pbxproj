@@ -33,6 +33,12 @@
 		BF5DD2FF28994397002F8244 /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5DD2FE28994397002F8244 /* FirestoreManager.swift */; };
 		BF887268289BCF7C00AA009B /* TestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF887266289BCF7C00AA009B /* TestsViewController.swift */; };
 		BF887269289BCF7C00AA009B /* TestsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF887267289BCF7C00AA009B /* TestsViewController.xib */; };
+		BF88726D289D4F1600AA009B /* ChaptersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF88726B289D4F1600AA009B /* ChaptersTableViewCell.swift */; };
+		BF88726E289D4F1600AA009B /* ChaptersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF88726C289D4F1600AA009B /* ChaptersTableViewCell.xib */; };
+		BF887271289D567300AA009B /* FinalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF88726F289D567300AA009B /* FinalTableViewCell.swift */; };
+		BF887272289D567300AA009B /* FinalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF887270289D567300AA009B /* FinalTableViewCell.xib */; };
+		BF887275289D56A200AA009B /* PassedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF887273289D56A200AA009B /* PassedTableViewCell.swift */; };
+		BF887276289D56A200AA009B /* PassedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF887274289D56A200AA009B /* PassedTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +72,12 @@
 		BF5DD2FE28994397002F8244 /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
 		BF887266289BCF7C00AA009B /* TestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsViewController.swift; sourceTree = "<group>"; };
 		BF887267289BCF7C00AA009B /* TestsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestsViewController.xib; sourceTree = "<group>"; };
+		BF88726B289D4F1600AA009B /* ChaptersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaptersTableViewCell.swift; sourceTree = "<group>"; };
+		BF88726C289D4F1600AA009B /* ChaptersTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChaptersTableViewCell.xib; sourceTree = "<group>"; };
+		BF88726F289D567300AA009B /* FinalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalTableViewCell.swift; sourceTree = "<group>"; };
+		BF887270289D567300AA009B /* FinalTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FinalTableViewCell.xib; sourceTree = "<group>"; };
+		BF887273289D56A200AA009B /* PassedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassedTableViewCell.swift; sourceTree = "<group>"; };
+		BF887274289D56A200AA009B /* PassedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PassedTableViewCell.xib; sourceTree = "<group>"; };
 		E8DA8DF6CE54DE53C1D8ECC7 /* Pods-Internship2022TeamSzabi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Internship2022TeamSzabi.release.xcconfig"; path = "Target Support Files/Pods-Internship2022TeamSzabi/Pods-Internship2022TeamSzabi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -249,8 +261,22 @@
 			children = (
 				BF887266289BCF7C00AA009B /* TestsViewController.swift */,
 				BF887267289BCF7C00AA009B /* TestsViewController.xib */,
+				BF88726A289D4EB800AA009B /* TestsCustomCells */,
 			);
 			path = TestsSegmentedController;
+			sourceTree = "<group>";
+		};
+		BF88726A289D4EB800AA009B /* TestsCustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				BF88726C289D4F1600AA009B /* ChaptersTableViewCell.xib */,
+				BF88726B289D4F1600AA009B /* ChaptersTableViewCell.swift */,
+				BF887270289D567300AA009B /* FinalTableViewCell.xib */,
+				BF88726F289D567300AA009B /* FinalTableViewCell.swift */,
+				BF887274289D56A200AA009B /* PassedTableViewCell.xib */,
+				BF887273289D56A200AA009B /* PassedTableViewCell.swift */,
+			);
+			path = TestsCustomCells;
 			sourceTree = "<group>";
 		};
 		E2F5549BC7833CFE569EE387 /* Pods */ = {
@@ -335,6 +361,9 @@
 				17A7F9F12897BF8700A6D4B7 /* InterV.ttf in Resources */,
 				AFD0D4E22893DEE100363B6C /* GoogleService-Info.plist in Resources */,
 				BF227DC22893E41600DD111A /* RegisterViewController.xib in Resources */,
+				BF88726E289D4F1600AA009B /* ChaptersTableViewCell.xib in Resources */,
+				BF887272289D567300AA009B /* FinalTableViewCell.xib in Resources */,
+				BF887276289D56A200AA009B /* PassedTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,6 +454,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF887271289D567300AA009B /* FinalTableViewCell.swift in Sources */,
 				17B328212893F8D0000B5D0B /* UIFont.swift in Sources */,
 				ACEDF6B32892948D00CCFF8B /* LoginViewController.swift in Sources */,
 				AC66F743289956A90050925A /* CoursesCollectionViewCell.swift in Sources */,
@@ -432,6 +462,8 @@
 				BF227DC32893E41600DD111A /* RegisterViewController.swift in Sources */,
 				17289A0F2890415E00D6EFCE /* TabBarController.swift in Sources */,
 				AF79B837288E75B800AA99BD /* AppDelegate.swift in Sources */,
+				BF887275289D56A200AA009B /* PassedTableViewCell.swift in Sources */,
+				BF88726D289D4F1600AA009B /* ChaptersTableViewCell.swift in Sources */,
 				17289A0B28901E5400D6EFCE /* GradesViewController.swift in Sources */,
 				BF5DD2FF28994397002F8244 /* FirestoreManager.swift in Sources */,
 				BF227DC728957F2F00DD111A /* AuthApiManager.swift in Sources */,
