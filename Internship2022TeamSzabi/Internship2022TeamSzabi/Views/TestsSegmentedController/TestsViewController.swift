@@ -136,12 +136,9 @@ extension TestsViewController: UITableViewDataSource, UITableViewDelegate {
             return self.passedDataSource.count
         }
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // let cell =
-        //  chaptersCell
-        //  finalCell
-        //  passedCell
+        // MARK: - let cell = chaptersCell/ finalCell/ passedCell
         // depending on 'currentButton'
         switch self.currentButton {
         case NavButtons.chaptersButton:
