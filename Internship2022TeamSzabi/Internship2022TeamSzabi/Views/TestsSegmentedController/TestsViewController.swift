@@ -9,47 +9,94 @@ import UIKit
 
 
 class TestsViewController: UIViewController {
-    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet private weak var navStackView: UIStackView!
+    @IBOutlet private weak var chaptersButton: UIButton!
+    @IBOutlet private weak var finalButton: UIButton!
+    @IBOutlet private weak var passedButton: UIButton!
+    @IBOutlet private weak var navView: UIView!
+    
+    private enum NavButtons {
+        case chaptersBtn
+        case finalBtn
+        case passedBtn
+    }
+    private var currentButton = NavButtons.chaptersBtn
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         setAppearence()
     }
     
-    func setAppearence() {
-        view.backgroundColor = .white
-        setSegmentedControlAppearence()
-        
+    @IBAction private func chaptersTap(_ sender: Any) {
+        currentButton = .chaptersBtn
+        makeButtonSelected()
+    }
+    @IBAction private func finalTap(_ sender: Any) {
+        currentButton = .finalBtn
+        makeButtonSelected()
+    }
+    @IBAction private func passedTap(_ sender: Any) {
+        currentButton = .passedBtn
+        makeButtonSelected()
     }
     
-    private func setSegmentedControlAppearence() {
-        segmentedControl.layer.masksToBounds = false
-        // segmentedControl background
-        segmentedControl.layer.cornerRadius = 20
-        // segmentedControl shadow
-        segmentedControl.layer.shadowOffset = CGSize(width: 0, height: 4)
-        segmentedControl.layer.shadowColor = UIColor.lightGray.cgColor
-        segmentedControl.layer.shadowOpacity = 0.25
-// segmentedControl corner radius
-        //segmentedControl.layer.borderColor = UIColor.white.cgColor
-        //segmentedControl.layer.borderWidth = 1.0
-        //segmentedControl.layer.cornerRadius = 25.0
-// segmentedControl font
-        let font = UIFont.interFont(size: 22) ?? UIFont.systemFont(ofSize: 22)
-        segmentedControl.setTitleTextAttributes([NSAttributedString.Key.font: font], for: .normal)
-        segmentedControl.setTitleTextAttributes([NSAttributedString.Key.font: font], for: .selected)
-
-        // colors
-        let selectedFontColor = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        let normalFontColor = [NSAttributedString.Key.foregroundColor: UIColor(named: "TabBarSelectedColor")]
-        // default background color
-        segmentedControl.backgroundColor = UIColor(ciColor: .white)
-        // selected background color
-        segmentedControl.tintColor = UIColor(named: "TabBarSelectedColor")
-        // selected title text color
-        segmentedControl.setTitleTextAttributes(selectedFontColor, for: .selected)
-        // default title text color
-        segmentedControl.setTitleTextAttributes(normalFontColor, for: .normal)
+    private func setAppearence() {
+        view.backgroundColor = .white
+        navAppearence()
+    }
+    
+    private func navAppearence() {
+        // MARK: - navView containing nav components appearence
+        // shadow
+        navView.layer.masksToBounds = false
+        navView.layer.shadowOffset = CGSize(width: 0, height: 4)
+        navView.layer.shadowColor = UIColor.lightGray.cgColor
+        navView.layer.shadowOpacity = 0.25
+        // MARK: - StackView inside navView appearence
+        // padding and item spacing
+        navStackView.isLayoutMarginsRelativeArrangement = true
+        navStackView.directionalLayoutMargins = NSDirectionalEdgeInsets(
+            top: 6, leading: 7, bottom: 6, trailing: 7)
+        navStackView.spacing = 6
+        // MARK: - Buttons inside StackView appearence
+        // subview (buttons) corner radius
+        navStackView.subviews.forEach { button in
+            if let button = button as? UIButton {
+                button.layer.cornerRadius = 20
+            }
+        }
+        // set currentSelected button ('chapter') appearence
+        makeButtonSelected()
+    }
+    
+    private func setNormalButtonAppearence(button: UIButton) {
+        button.backgroundColor = .white
+        button.tintColor = UIColor(named: "TabBarSelectedColor")
+    }
+    
+    private func setSelectedButtonAppearence(button: UIButton) {
+        button.backgroundColor = UIColor(named: "TabBarSelectedColor")
+        button.tintColor = .white
+    }
+    
+    private func makeButtonSelected() {
+        switch currentButton {
+        case NavButtons.chaptersBtn:
+            setSelectedButtonAppearence(button: chaptersButton)
+            setNormalButtonAppearence(button: finalButton)
+            setNormalButtonAppearence(button: passedButton)
+        case NavButtons.finalBtn:
+            setNormalButtonAppearence(button: chaptersButton)
+            setSelectedButtonAppearence(button: finalButton)
+            setNormalButtonAppearence(button: passedButton)
+        case NavButtons.passedBtn:
+            setNormalButtonAppearence(button: chaptersButton)
+            setNormalButtonAppearence(button: finalButton)
+            setSelectedButtonAppearence(button: passedButton)
+        }
     }
 }
