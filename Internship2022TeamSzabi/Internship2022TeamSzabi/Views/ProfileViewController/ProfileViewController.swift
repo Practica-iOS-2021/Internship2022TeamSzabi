@@ -19,6 +19,11 @@ final class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         assignUserData()
+        profileEmail.text = "-"
+        profileName.text = "-"
+        profilePersonalID.text = "-"
+        profileStudentID.text = "-"
+        profilePhoto.image = UIImage(named: "")
         navigationItem.title = "Profile"
         
         // ProfilePhoto round corners
@@ -39,10 +44,9 @@ final class ProfileViewController: UIViewController {
     // MARK: - SignOut
     @IBAction func logOutButton(_ sender: Any) {
         let logOut = FirestoreManager.auth
-        let defaults = UserDefaults.standard
+        StorageManager.shared.setUserLoggedIn(value: false)
         do {
             try logOut.signOut()
-            defaults.set(false, forKey: "isUserLoggedIn")
             // Push to SplashViewController
             let appDelegate = UIApplication.shared.delegate as? AppDelegate
             appDelegate?.window?.rootViewController = SplashViewController()

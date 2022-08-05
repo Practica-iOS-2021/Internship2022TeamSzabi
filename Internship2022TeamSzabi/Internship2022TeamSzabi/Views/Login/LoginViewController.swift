@@ -57,15 +57,14 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
             return
         }
         AuthApiManager.sharedInstance.signin(email: email, password: password) { success, _ in
-          let defaults = UserDefaults.standard
             if success {
+                StorageManager.shared.setUserLoggedIn(value: true)
                 self.validationLabel.isHidden = true
                 let appDelegate = UIApplication.shared.delegate as? AppDelegate
                 appDelegate?.window?.rootViewController = TabBarController()
-                defaults.set(true, forKey: "isUserLoggedIn")
             } else {
+                StorageManager.shared.setUserLoggedIn(value: false)
                 self.invalidMessage()
-                defaults.set(false, forKey: "isUserLoggedIn")
             }
         }
     }

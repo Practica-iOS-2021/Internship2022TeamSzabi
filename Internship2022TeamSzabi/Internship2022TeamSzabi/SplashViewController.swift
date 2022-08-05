@@ -14,23 +14,14 @@ class SplashViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        // Setting UserDefaults
-        let defaults = UserDefaults.standard
-        if defaults.bool(forKey: "isUserLoggedIn") {
-            perform(#selector(showTabBarController), with: nil, afterDelay: 1.00)
+            if StorageManager.shared.userLoggedIn() {
+                StorageManager.shared.setUserLoggedIn(value: true)
+                let appDelegate = UIApplication.shared.delegate as? AppDelegate
+                appDelegate?.window?.rootViewController = TabBarController()
+            } else {
+                StorageManager.shared.setUserLoggedIn(value: false)
+                let appDelegate = UIApplication.shared.delegate as? AppDelegate
+                appDelegate?.window?.rootViewController = LoginViewController()
+            }
         }
-        perform(#selector(showLoginViewController), with: nil, afterDelay: 1.00)
     }
-    
-    @objc func showLoginViewController() {
-        let loginViewController = LoginViewController()
-        loginViewController.modalPresentationStyle = .fullScreen
-        present(loginViewController, animated: true)
-    }
-    
-    @objc func showTabBarController() {
-        let tabBarController = TabBarController()
-        tabBarController.modalPresentationStyle = .fullScreen
-        present(tabBarController, animated: true)
-    }
-}
