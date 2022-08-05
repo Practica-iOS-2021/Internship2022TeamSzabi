@@ -20,6 +20,8 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        dismissKeyboard()
+        
         emailTextField.delegate = self
         passwordTextField.delegate = self
         
@@ -104,5 +106,12 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
     func invalidMessage() {
         validationLabel.isHidden = false
         validationLabel.text = "Invalid email or password."
+    }
+    
+    func dismissKeyboard() {
+        // this allows the user to dismiss the keyboard by tapping anywhere on the screen
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
     }
 }
