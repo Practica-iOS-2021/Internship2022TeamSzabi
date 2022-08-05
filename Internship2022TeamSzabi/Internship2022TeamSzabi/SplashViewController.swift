@@ -14,6 +14,7 @@ class SplashViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        // Setting UserDefaults
         let defaults = UserDefaults.standard
         if defaults.bool(forKey: "isUserLoggedIn") {
             perform(#selector(showTabBarController), with: nil, afterDelay: 1.00)

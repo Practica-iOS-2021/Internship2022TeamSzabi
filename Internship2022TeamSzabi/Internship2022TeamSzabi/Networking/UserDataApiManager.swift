@@ -19,7 +19,6 @@ class DataApiManager {
         userRefrence.getDocument { document, _  in
             if let document = document, document.exists {
                 let data = document.data()
-//                DispatchQueue.main.async {
                     let emailData = data?["email"] as? String ?? ""
                     let nameData = data?["name"] as? String ?? ""
                     let personalIDData = data?["personalID"] as? String ?? ""
@@ -29,7 +28,6 @@ class DataApiManager {
                     currentUser = UserModel(email: emailData, name: nameData, personalID: personalIDData,
                                             studentID: studentIDData, photo: photoData)
                     completion(currentUser)
-//                }
             } else {
                     completion(nil)
             }

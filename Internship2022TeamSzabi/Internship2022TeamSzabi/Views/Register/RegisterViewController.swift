@@ -63,19 +63,18 @@ class RegisterViewController: UIViewController {
         
         AuthApiManager.sharedInstance.registerUser(
             newUser: newUser, password: passwordText) { authenticated, errorString in
-            let defaults = UserDefaults.standard
+                // setting UserDefault
+                let defaults = UserDefaults.standard
                 
-            if let error = errorString {
-                self.alertError(error)
-                defaults.set(false, forKey: "isUserLoggedIn")
-            } else if authenticated {
-                // save to NSDefault
-                // redirect to tabBarController
-                defaults.set(true, forKey: "isUserLoggedIn")
-                let appDelegate = UIApplication.shared.delegate as? AppDelegate
-                appDelegate?.window?.rootViewController = TabBarController()
+                if let error = errorString {
+                    self.alertError(error)
+                    defaults.set(false, forKey: "isUserLoggedIn")
+                } else if authenticated {
+                    defaults.set(true, forKey: "isUserLoggedIn")
+                    let appDelegate = UIApplication.shared.delegate as? AppDelegate
+                    appDelegate?.window?.rootViewController = TabBarController()
+                }
             }
-        }
     }
     
     private func handleFormValidation() {
