@@ -16,11 +16,11 @@ class TestsViewController: UIViewController {
     @IBOutlet private weak var navView: UIView!
     
     private enum NavButtons {
-        case chaptersBtn
-        case finalBtn
-        case passedBtn
+        case chaptersButton
+        case finalButton
+        case passedButton
     }
-    private var currentButton = NavButtons.chaptersBtn
+    private var currentButton = NavButtons.chaptersButton
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,15 +32,15 @@ class TestsViewController: UIViewController {
     }
     
     @IBAction private func chaptersTap(_ sender: Any) {
-        currentButton = .chaptersBtn
+        currentButton = .chaptersButton
         makeButtonSelected()
     }
     @IBAction private func finalTap(_ sender: Any) {
-        currentButton = .finalBtn
+        currentButton = .finalButton
         makeButtonSelected()
     }
     @IBAction private func passedTap(_ sender: Any) {
-        currentButton = .passedBtn
+        currentButton = .passedButton
         makeButtonSelected()
     }
     
@@ -85,15 +85,15 @@ class TestsViewController: UIViewController {
     
     private func makeButtonSelected() {
         switch currentButton {
-        case NavButtons.chaptersBtn:
+        case NavButtons.chaptersButton:
             setSelectedButtonAppearence(button: chaptersButton)
             setNormalButtonAppearence(button: finalButton)
             setNormalButtonAppearence(button: passedButton)
-        case NavButtons.finalBtn:
+        case NavButtons.finalButton:
             setNormalButtonAppearence(button: chaptersButton)
             setSelectedButtonAppearence(button: finalButton)
             setNormalButtonAppearence(button: passedButton)
-        case NavButtons.passedBtn:
+        case NavButtons.passedButton:
             setNormalButtonAppearence(button: chaptersButton)
             setNormalButtonAppearence(button: finalButton)
             setSelectedButtonAppearence(button: passedButton)
