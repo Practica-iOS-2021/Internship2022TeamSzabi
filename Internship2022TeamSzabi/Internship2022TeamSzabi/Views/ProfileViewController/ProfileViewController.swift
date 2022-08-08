@@ -30,7 +30,8 @@ final class ProfileViewController: UIViewController {
     }
     // MARK: - Assign fetched UserData to Profile Screen
     private func assignUserData() {
-        DataApiManager.sharedUserData.fetchUserData { userData in
+        DataApiManager.sharedUserData.fetchUserData { [weak self] userData in
+            guard let self = self else { return }
             self.profileEmail.text = userData?.email
             self.profileName.text = userData?.name
             self.profilePersonalID.text = userData?.personalID
