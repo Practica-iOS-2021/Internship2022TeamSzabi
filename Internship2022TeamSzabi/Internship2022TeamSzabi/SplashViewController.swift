@@ -15,11 +15,9 @@ class SplashViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
             if StorageManager.shared.userLoggedIn() {
-                StorageManager.shared.setUserLoggedIn(value: true)
                 let appDelegate = UIApplication.shared.delegate as? AppDelegate
                 appDelegate?.window?.rootViewController = TabBarController()
             } else {
-                StorageManager.shared.setUserLoggedIn(value: false)
                 let appDelegate = UIApplication.shared.delegate as? AppDelegate
                 appDelegate?.window?.rootViewController = LoginViewController()
             }
