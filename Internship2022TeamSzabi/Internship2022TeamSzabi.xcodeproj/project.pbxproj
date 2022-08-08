@@ -15,8 +15,8 @@
 		17289A0B28901E5400D6EFCE /* GradesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17289A0928901E5400D6EFCE /* GradesViewController.swift */; };
 		17289A0C28901E5400D6EFCE /* GradesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17289A0A28901E5400D6EFCE /* GradesViewController.xib */; };
 		17289A0F2890415E00D6EFCE /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17289A0E2890415E00D6EFCE /* TabBarController.swift */; };
-		1742C56D2899005600F765D8 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1742C56B2899005600F765D8 /* SplashViewController.swift */; };
-		1742C56E2899005600F765D8 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1742C56C2899005600F765D8 /* SplashViewController.xib */; };
+		17350D6B28A1181E00EBD90E /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17350D6928A1181E00EBD90E /* SplashViewController.xib */; };
+		17350D6C28A1181E00EBD90E /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17350D6A28A1181E00EBD90E /* SplashViewController.swift */; };
 		17A7F9F12897BF8700A6D4B7 /* InterV.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 17B3281F2893F88B000B5D0B /* InterV.ttf */; };
 		17B328212893F8D0000B5D0B /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B328202893F8D0000B5D0B /* UIFont.swift */; };
 		17D1D858289D4A3400C8350C /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1D857289D4A3400C8350C /* StorageManager.swift */; };
@@ -45,8 +45,8 @@
 		17289A0928901E5400D6EFCE /* GradesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradesViewController.swift; sourceTree = "<group>"; };
 		17289A0A28901E5400D6EFCE /* GradesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GradesViewController.xib; sourceTree = "<group>"; };
 		17289A0E2890415E00D6EFCE /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		1742C56B2899005600F765D8 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SplashViewController.swift; path = Internship2022TeamSzabi/SplashViewController.swift; sourceTree = SOURCE_ROOT; };
-		1742C56C2899005600F765D8 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SplashViewController.xib; path = Internship2022TeamSzabi/SplashViewController.xib; sourceTree = SOURCE_ROOT; };
+		17350D6928A1181E00EBD90E /* SplashViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
+		17350D6A28A1181E00EBD90E /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		17B3281F2893F88B000B5D0B /* InterV.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = InterV.ttf; sourceTree = "<group>"; };
 		17B328202893F8D0000B5D0B /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		17D1D857289D4A3400C8350C /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
@@ -125,8 +125,8 @@
 		1742C56A2898FF9700F765D8 /* SplashViewController */ = {
 			isa = PBXGroup;
 			children = (
-				1742C56B2899005600F765D8 /* SplashViewController.swift */,
-				1742C56C2899005600F765D8 /* SplashViewController.xib */,
+				17350D6A28A1181E00EBD90E /* SplashViewController.swift */,
+				17350D6928A1181E00EBD90E /* SplashViewController.xib */,
 			);
 			path = SplashViewController;
 			sourceTree = "<group>";
@@ -341,7 +341,7 @@
 				AF79B843288E75B900AA99BD /* LaunchScreen.storyboard in Resources */,
 				AF79B840288E75B900AA99BD /* Assets.xcassets in Resources */,
 				ACEDF6B22892948D00CCFF8B /* LoginViewController.xib in Resources */,
-				1742C56E2899005600F765D8 /* SplashViewController.xib in Resources */,
+				17350D6B28A1181E00EBD90E /* SplashViewController.xib in Resources */,
 				17289A0828901D9500D6EFCE /* ProfileViewController.xib in Resources */,
 				AC66F744289956A90050925A /* CoursesCollectionViewCell.xib in Resources */,
 				17289A0328901B4800D6EFCE /* CoursesViewController.xib in Resources */,
@@ -444,7 +444,6 @@
 				AC66F743289956A90050925A /* CoursesCollectionViewCell.swift in Sources */,
 				17FE032D289C05A6001B6C78 /* UserDataApiManager.swift in Sources */,
 				17289A0728901D9500D6EFCE /* ProfileViewController.swift in Sources */,
-				1742C56D2899005600F765D8 /* SplashViewController.swift in Sources */,
 				BF227DC32893E41600DD111A /* RegisterViewController.swift in Sources */,
 				17289A0F2890415E00D6EFCE /* TabBarController.swift in Sources */,
 				AF79B837288E75B800AA99BD /* AppDelegate.swift in Sources */,
@@ -455,6 +454,7 @@
 				17289A0228901B4800D6EFCE /* CoursesViewController.swift in Sources */,
 				BF5DD2FD28994158002F8244 /* Encodable.swift in Sources */,
 				17D1D858289D4A3400C8350C /* StorageManager.swift in Sources */,
+				17350D6C28A1181E00EBD90E /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

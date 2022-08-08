@@ -42,9 +42,9 @@ final class ProfileViewController: UIViewController {
     // MARK: - SignOut
     @IBAction func logOutButton(_ sender: Any) {
         let logOut = FirestoreManager.auth
-        StorageManager.shared.setUserLoggedIn(value: false)
         do {
             try logOut.signOut()
+            StorageManager.shared.setUserLoggedIn(value: false)
             let appDelegate = UIApplication.shared.delegate as? AppDelegate
             appDelegate?.window?.rootViewController = SplashViewController()
         } catch let signOutError as NSError {
