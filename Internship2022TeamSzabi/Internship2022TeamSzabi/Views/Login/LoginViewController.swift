@@ -60,18 +60,21 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
         }
         AuthApiManager.sharedInstance.signin(email: email, password: password) { success, _ in
             if success {
+                StorageManager.shared.setUserLoggedIn(value: true)
                 self.validationLabel.isHidden = true
                 let appDelegate = UIApplication.shared.delegate as? AppDelegate
                 appDelegate?.window?.rootViewController = TabBarController()
             } else {
+                StorageManager.shared.setUserLoggedIn(value: false)
                 self.invalidMessage()
             }
         }
     }
     
     @IBAction private func signUpButton(_ sender: UIButton) {
-        let viewController = RegisterViewController(nibName: "RegisterViewController", bundle: nil)
-        navigationController?.pushViewController(viewController, animated: true)
+        let viewController = RegisterViewController()
+        viewController.modalPresentationStyle = .fullScreen
+        present(viewController, animated: true)
     }
     
     // email RegEx function to verify if the email address introduced by the user is valid
