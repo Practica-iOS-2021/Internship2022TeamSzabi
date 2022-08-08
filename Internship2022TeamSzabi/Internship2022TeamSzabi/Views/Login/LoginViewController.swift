@@ -83,15 +83,15 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
     
     // method for the customization of the emailTextField and passwordTextField to only have a black bottom border
     func bottomBorder(textFields: UITextField) {
-        let bottomLine = CALayer()
-        bottomLine.frame = CGRect(x: 0.0,
-                                  y: textFields.frame.height - 3,
-                                  width: textFields.frame.width,
-                                  height: 1.0)
-        bottomLine.backgroundColor = UIColor.black.cgColor
+        let spaceView = UIView()
+        textFields.addSubview(spaceView)
         textFields.borderStyle = UITextField.BorderStyle.none
-        textFields.layer.addSublayer(bottomLine)
-        textFields.borderStyle = UITextField.BorderStyle.none
+        spaceView.backgroundColor = .black
+        spaceView.translatesAutoresizingMaskIntoConstraints = false
+        spaceView.heightAnchor.constraint(equalToConstant: 1).isActive = true
+        spaceView.leadingAnchor.constraint(equalTo: textFields.leadingAnchor).isActive = true
+        spaceView.trailingAnchor.constraint(equalTo: textFields.trailingAnchor).isActive = true
+        spaceView.bottomAnchor.constraint(equalTo: textFields.bottomAnchor, constant: 3).isActive = true
     }
     
     // method for the shadow of the login button

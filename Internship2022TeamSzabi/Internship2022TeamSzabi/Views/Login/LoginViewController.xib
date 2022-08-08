@@ -12,6 +12,7 @@
         <array key="InterV.ttf">
             <string>InterV</string>
             <string>InterV_Bold</string>
+            <string>InterV_Medium</string>
         </array>
     </customFonts>
     <objects>
@@ -54,7 +55,7 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="35" id="oX5-tN-Ayz"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" name="InterV" family="Inter V" pointSize="20"/>
+                                    <fontDescription key="fontDescription" name="InterV_Medium" family="Inter V" pointSize="20"/>
                                     <color key="textColor" red="0.14509803921568626" green="0.086274509803921567" blue="0.019607843137254902" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -70,7 +71,7 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="35" id="rBw-ei-4VZ"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" name="InterV" family="Inter V" pointSize="20"/>
+                                    <fontDescription key="fontDescription" name="InterV_Medium" family="Inter V" pointSize="20"/>
                                     <color key="textColor" red="0.1450980392" green="0.086274509799999996" blue="0.019607843140000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -98,7 +99,7 @@
                                     </constraints>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="filled" title="Login" cornerStyle="large">
-                                        <fontDescription key="titleFontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
+                                        <fontDescription key="titleFontDescription" name="InterV_Medium" family="Inter V" pointSize="20"/>
                                         <color key="baseForegroundColor" red="0.1450980392" green="0.086274509799999996" blue="0.019607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </buttonConfiguration>
@@ -112,7 +113,7 @@
                                         <constraint firstAttribute="width" constant="140" id="ZG9-Im-uR9"/>
                                         <constraint firstAttribute="height" constant="36" id="w5Z-kh-CFF"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                     <color key="textColor" red="0.14509803921568626" green="0.086274509803921567" blue="0.019607843137254902" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -126,7 +127,7 @@
                                         <fragment content="Forgot password?">
                                             <attributes>
                                                 <color key="NSColor" red="0.14509803921568626" green="0.086274509803921567" blue="0.019607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <font key="NSFont" metaFont="system" size="17"/>
+                                                <font key="NSFont" size="16" name="InterV_Medium"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 <integer key="NSUnderline" value="1"/>
                                             </attributes>
@@ -145,7 +146,7 @@
                                         <attributedString key="attributedTitle">
                                             <fragment content="Sign up">
                                                 <attributes>
-                                                    <font key="NSFont" metaFont="systemBold" size="21"/>
+                                                    <font key="NSFont" size="20" name="InterV_Bold"/>
                                                     <font key="NSOriginalFont" metaFont="systemBold" size="21"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     <integer key="NSUnderline" value="1"/>
@@ -171,23 +172,21 @@
                                 <constraint firstItem="4w2-ez-ImI" firstAttribute="top" secondItem="BnI-Ww-CPI" secondAttribute="bottom" constant="50" id="DXY-iu-Gg8"/>
                                 <constraint firstItem="fh6-Yt-YhV" firstAttribute="top" secondItem="nXg-nL-jiN" secondAttribute="bottom" constant="15" id="Faa-0z-yT2"/>
                                 <constraint firstAttribute="bottom" secondItem="IuM-5e-Fnz" secondAttribute="bottom" constant="10" id="H5f-IK-b7n"/>
-                                <constraint firstAttribute="trailing" secondItem="nXg-nL-jiN" secondAttribute="trailing" constant="40" id="Iqb-hN-Nhy"/>
                                 <constraint firstItem="uRB-sP-OMD" firstAttribute="top" secondItem="UOT-vI-vCB" secondAttribute="bottom" constant="10" id="O7U-n2-AzS"/>
                                 <constraint firstAttribute="trailing" secondItem="UOT-vI-vCB" secondAttribute="trailing" constant="40" id="Qz0-Lf-IJG"/>
                                 <constraint firstItem="E6Y-y1-VsY" firstAttribute="top" secondItem="PLB-VR-dnj" secondAttribute="top" constant="59" id="U5B-eT-cFe"/>
+                                <constraint firstAttribute="trailing" secondItem="nXg-nL-jiN" secondAttribute="trailing" constant="40" id="Y1w-eZ-ZTL"/>
                                 <constraint firstItem="LWP-S1-TqH" firstAttribute="top" secondItem="E6Y-y1-VsY" secondAttribute="bottom" constant="76" id="YLe-Tv-DhZ"/>
+                                <constraint firstItem="nXg-nL-jiN" firstAttribute="leading" secondItem="PLB-VR-dnj" secondAttribute="leading" constant="40" id="bt9-Uw-cPK"/>
                                 <constraint firstItem="BnI-Ww-CPI" firstAttribute="top" secondItem="uRB-sP-OMD" secondAttribute="bottom" constant="10" id="dO0-be-vyE"/>
                                 <constraint firstAttribute="height" constant="1000" id="dbl-CW-Esd"/>
-                                <constraint firstItem="nXg-nL-jiN" firstAttribute="leading" secondItem="PLB-VR-dnj" secondAttribute="leading" constant="40" id="eqF-21-se7"/>
                                 <constraint firstItem="XSk-mb-qai" firstAttribute="top" secondItem="BnI-Ww-CPI" secondAttribute="bottom" constant="50" id="hkK-gl-ZlJ"/>
                                 <constraint firstItem="LWP-S1-TqH" firstAttribute="leading" secondItem="PLB-VR-dnj" secondAttribute="leading" constant="40" id="i39-Cl-qOp"/>
                                 <constraint firstItem="UOT-vI-vCB" firstAttribute="top" secondItem="fh6-Yt-YhV" secondAttribute="bottom" constant="15" id="j5L-z2-v7B"/>
                                 <constraint firstAttribute="trailing" secondItem="uRB-sP-OMD" secondAttribute="trailing" constant="40" id="lMV-Ma-pxo"/>
                                 <constraint firstItem="4w2-ez-ImI" firstAttribute="leading" secondItem="PLB-VR-dnj" secondAttribute="leading" constant="40" id="njI-gD-4uz"/>
-                                <constraint firstItem="UOT-vI-vCB" firstAttribute="centerX" secondItem="PLB-VR-dnj" secondAttribute="centerX" id="ntY-Cu-rfl"/>
                                 <constraint firstAttribute="trailing" secondItem="fh6-Yt-YhV" secondAttribute="trailing" constant="104" id="nu8-mf-zDF"/>
                                 <constraint firstItem="fh6-Yt-YhV" firstAttribute="leading" secondItem="PLB-VR-dnj" secondAttribute="leading" constant="40" id="pqN-DK-eVb"/>
-                                <constraint firstItem="nXg-nL-jiN" firstAttribute="centerX" secondItem="PLB-VR-dnj" secondAttribute="centerX" id="qXv-4a-BNR"/>
                                 <constraint firstItem="BnI-Ww-CPI" firstAttribute="centerX" secondItem="PLB-VR-dnj" secondAttribute="centerX" id="qn4-Uc-kkX"/>
                                 <constraint firstAttribute="trailing" secondItem="LWP-S1-TqH" secondAttribute="trailing" constant="104" id="yud-pW-XHJ"/>
                             </constraints>
@@ -210,7 +209,7 @@
                 <constraint firstItem="9eH-Sq-sxi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="eJM-Ar-KUd"/>
                 <constraint firstItem="9eH-Sq-sxi" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="yqc-GK-Rpg"/>
             </constraints>
-            <point key="canvasLocation" x="-957.47663551401865" y="-3.2397408207343417"/>
+            <point key="canvasLocation" x="-1264" y="-118"/>
         </view>
     </objects>
     <resources>
