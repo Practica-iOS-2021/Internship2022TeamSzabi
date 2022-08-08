@@ -19,7 +19,10 @@ class DataApiManager {
         }
         let userRefrence = FirestoreManager.dbConn.collection(usersCollection).document(uid)
         userRefrence.getDocument { document, _  in
-            guard let document = document, document.exists else {completion(nil) return }
+            guard let document = document, document.exists else {
+                completion(nil)
+                return
+            }
             let data = document.data()
             let email = data?["email"] as? String ?? ""
             let name = data?["name"] as? String ?? ""
