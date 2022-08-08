@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TestsViewController" customModule="Internship2022TeamSzabi" customModuleProvider="target">
+            <connections>
+                <outlet property="chaptersButton" destination="TWi-jr-iAs" id="wDc-a2-Hf6"/>
+                <outlet property="finalButton" destination="tkh-0H-s7z" id="1B7-cX-AZr"/>
+                <outlet property="navStackView" destination="Fur-04-h6b" id="rlp-SK-ztu"/>
+                <outlet property="navView" destination="nvo-IH-aE5" id="y3b-YE-jMS"/>
+                <outlet property="passedButton" destination="vja-Ou-4XT" id="kjG-87-pbV"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="nvo-IH-aE5" userLabel="navView">
+                    <rect key="frame" x="0.0" y="44" width="414" height="33.5"/>
+                    <subviews>
+                        <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fur-04-h6b" userLabel="segmentedStackView">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="33.5"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TWi-jr-iAs">
+                                    <rect key="frame" x="0.0" y="0.0" width="138" height="33.5"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="tintColor" name="TabBarSelectedColor"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Chapters" subtitle="">
+                                        <fontDescription key="titleFontDescription" name="InterV_Extra-Bold" family="Inter V" pointSize="16"/>
+                                    </buttonConfiguration>
+                                    <connections>
+                                        <action selector="chaptersTap:" destination="-1" eventType="touchUpInside" id="EqT-yn-q6I"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tkh-0H-s7z">
+                                    <rect key="frame" x="138" y="0.0" width="138" height="33.5"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="tintColor" name="TabBarSelectedColor"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Final" subtitle="">
+                                        <fontDescription key="titleFontDescription" name="InterV_Extra-Bold" family="Inter V" pointSize="16"/>
+                                    </buttonConfiguration>
+                                    <connections>
+                                        <action selector="finalTap:" destination="-1" eventType="touchUpInside" id="Aho-Bn-oYs"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vja-Ou-4XT">
+                                    <rect key="frame" x="276" y="0.0" width="138" height="33.5"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="tintColor" name="TabBarSelectedColor"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Passed" subtitle="">
+                                        <fontDescription key="titleFontDescription" name="InterV_Extra-Bold" family="Inter V" pointSize="16"/>
+                                    </buttonConfiguration>
+                                    <connections>
+                                        <action selector="passedTap:" destination="-1" eventType="touchUpInside" id="rBF-hP-hnh"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="Fur-04-h6b" secondAttribute="trailing" id="Efs-zW-aW9"/>
+                        <constraint firstAttribute="bottom" secondItem="Fur-04-h6b" secondAttribute="bottom" id="HxD-L1-aLU"/>
+                        <constraint firstItem="Fur-04-h6b" firstAttribute="top" secondItem="nvo-IH-aE5" secondAttribute="top" id="P2y-Ar-ZOa"/>
+                        <constraint firstItem="Fur-04-h6b" firstAttribute="leading" secondItem="nvo-IH-aE5" secondAttribute="leading" id="dPI-bx-R0V"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="nvo-IH-aE5" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="AS0-8D-X4m"/>
+                <constraint firstItem="nvo-IH-aE5" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Gd1-OY-Hdm"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="nvo-IH-aE5" secondAttribute="trailing" id="UTk-fC-jOx"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="nvo-IH-aE5" secondAttribute="trailing" id="mc9-9k-jlh"/>
+                <constraint firstItem="nvo-IH-aE5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="tnc-2d-8oT"/>
+                <constraint firstItem="nvo-IH-aE5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="wfn-Y7-Qtb"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="61"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="TabBarSelectedColor">
+            <color red="0.47058823529411764" green="0.78823529411764703" blue="0.82352941176470584" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
