@@ -4,21 +4,109 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="InterV.ttf">
+            <string>InterV</string>
+            <string>InterV_Medium</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="chapterCell" id="KGk-i7-Jjw" customClass="ChaptersTableViewCell" customModule="Internship2022TeamSzabi" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="chapterCell" rowHeight="119" id="KGk-i7-Jjw" customClass="ChaptersTableViewCell" customModule="Internship2022TeamSzabi" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="328" height="119"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <rect key="frame" x="0.0" y="0.0" width="328" height="119"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9So-FF-ggA" userLabel="cellView">
+                        <rect key="frame" x="12" y="25" width="304" height="94"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mathematics" translatesAutoresizingMaskIntoConstraints="NO" id="Vcc-DP-KfT">
+                                <rect key="frame" x="20" y="27" width="40" height="40"/>
+                                <color key="tintColor" name="ProfileLabelColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="G0e-fW-8IJ"/>
+                                    <constraint firstAttribute="width" constant="40" id="hTq-vZ-Yd8"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oMT-MY-Rd2" userLabel="Chapter">
+                                <rect key="frame" x="80" y="20" width="52" height="24.5"/>
+                                <fontDescription key="fontDescription" name="InterV" family="Inter V" pointSize="20"/>
+                                <color key="textColor" name="ProfileLabelColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="drE-h3-TKX" userLabel="Questions">
+                                <rect key="frame" x="80" y="54.5" width="41.5" height="19.5"/>
+                                <fontDescription key="fontDescription" name="InterV" family="Inter V" pointSize="16"/>
+                                <color key="textColor" name="TabBarColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="25" placeholderIntrinsicHeight="50" image="RightArrow" translatesAutoresizingMaskIntoConstraints="NO" id="5ry-hr-Kox">
+                                <rect key="frame" x="264" y="27" width="25" height="40"/>
+                                <color key="tintColor" name="TabBarColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="EHv-sf-URs"/>
+                                    <constraint firstAttribute="height" constant="40" id="cHm-e5-ZMG"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Imc-5Y-Cts" userLabel="Grade">
+                                <rect key="frame" x="212" y="32.5" width="37" height="29.5"/>
+                                <fontDescription key="fontDescription" name="InterV_Medium" family="Inter V" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="RegisterBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Vcc-DP-KfT" firstAttribute="centerY" secondItem="9So-FF-ggA" secondAttribute="centerY" id="313-1O-VWM"/>
+                            <constraint firstItem="Imc-5Y-Cts" firstAttribute="centerY" secondItem="9So-FF-ggA" secondAttribute="centerY" id="C5W-c4-z20"/>
+                            <constraint firstAttribute="bottom" secondItem="drE-h3-TKX" secondAttribute="bottom" constant="20" id="Dle-wu-adV"/>
+                            <constraint firstItem="5ry-hr-Kox" firstAttribute="leading" secondItem="Imc-5Y-Cts" secondAttribute="trailing" constant="15" id="GS2-ua-tDU"/>
+                            <constraint firstAttribute="trailing" secondItem="5ry-hr-Kox" secondAttribute="trailing" constant="15" id="ZVy-8o-VNE"/>
+                            <constraint firstItem="drE-h3-TKX" firstAttribute="leading" secondItem="oMT-MY-Rd2" secondAttribute="leading" id="ifY-4k-GuB"/>
+                            <constraint firstItem="oMT-MY-Rd2" firstAttribute="top" secondItem="9So-FF-ggA" secondAttribute="top" constant="20" id="lRU-Ud-IZ3"/>
+                            <constraint firstItem="oMT-MY-Rd2" firstAttribute="leading" secondItem="Vcc-DP-KfT" secondAttribute="trailing" constant="20" id="laI-LD-rqx"/>
+                            <constraint firstItem="5ry-hr-Kox" firstAttribute="centerY" secondItem="9So-FF-ggA" secondAttribute="centerY" id="nNb-zI-29f"/>
+                            <constraint firstItem="Vcc-DP-KfT" firstAttribute="leading" secondItem="9So-FF-ggA" secondAttribute="leading" constant="20" id="wzx-dT-qEF"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="9So-FF-ggA" secondAttribute="trailing" constant="12" id="bgC-BL-Jcn"/>
+                    <constraint firstItem="9So-FF-ggA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="25" id="mhq-xj-NLr"/>
+                    <constraint firstAttribute="bottom" secondItem="9So-FF-ggA" secondAttribute="bottom" id="ppA-s6-I05"/>
+                    <constraint firstItem="9So-FF-ggA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="sOM-eL-CMf"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="139" y="91"/>
+            <connections>
+                <outlet property="arrow" destination="5ry-hr-Kox" id="1aO-gz-muM"/>
+                <outlet property="cellView" destination="9So-FF-ggA" id="uTo-cc-JAz"/>
+                <outlet property="grade" destination="Imc-5Y-Cts" id="deK-UU-wQA"/>
+                <outlet property="icon" destination="Vcc-DP-KfT" id="yUA-Ut-XeP"/>
+                <outlet property="subTitle" destination="drE-h3-TKX" id="lEy-tV-tCj"/>
+                <outlet property="title" destination="oMT-MY-Rd2" id="mqn-Zc-WYi"/>
+            </connections>
+            <point key="canvasLocation" x="130.43478260869566" y="115.51339285714285"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="Mathematics" width="54" height="54"/>
+        <image name="RightArrow" width="23" height="40"/>
+        <namedColor name="ProfileLabelColor">
+            <color red="0.14509803921568629" green="0.086274509803921567" blue="0.019607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="RegisterBackgroundColor">
+            <color red="0.75294117647058822" green="0.93725490196078431" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TabBarColor">
+            <color red="0.48627450980392156" green="0.47843137254901963" blue="0.47843137254901963" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

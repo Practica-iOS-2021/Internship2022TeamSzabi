@@ -25,7 +25,7 @@ class TestsViewController: UIViewController {
     // MARK: - Cells reuse identifiers
     let chapterCellIdentifier = "chapterCell"
     let finalCellIdentifier = "finalCell"
-    let passedCellIdentifier = "passedCell"
+    //let passedCellIdentifier = "passedCell"
     
     // MARK: - DataSet for 'chapters', 'final' 'passed' tests
     let chaptersDataSource: [String] = ["1", "2", "3"]
@@ -39,8 +39,8 @@ class TestsViewController: UIViewController {
             UINib(nibName: "ChaptersTableViewCell", bundle: nil), forCellReuseIdentifier: chapterCellIdentifier)
         testsTableView.register(
             UINib(nibName: "FinalTableViewCell", bundle: nil), forCellReuseIdentifier: finalCellIdentifier)
-        testsTableView.register(
-            UINib(nibName: "PassedTableViewCell", bundle: nil), forCellReuseIdentifier: passedCellIdentifier)
+       // testsTableView.register(
+       //     UINib(nibName: "ChaptersTableViewCell", bundle: nil), forCellReuseIdentifier: chapterCellIdentifier)
         // set dataSource & delegate
         testsTableView.dataSource = self
         testsTableView.delegate = self
@@ -148,7 +148,7 @@ extension TestsViewController: UITableViewDataSource, UITableViewDelegate {
             else {
                 return UITableViewCell()
             }
-            cell.updateCellView()
+            cell.updateCellView(/* ChapterModel @ indexPath */)
             return cell
         case NavButtons.finalButton:
             guard
@@ -161,13 +161,17 @@ extension TestsViewController: UITableViewDataSource, UITableViewDelegate {
             return cell
         case NavButtons.passedButton:
             guard
-                let cell = tableView.dequeueReusableCell(withIdentifier: passedCellIdentifier, for: indexPath)
+                let cell = tableView.dequeueReusableCell(withIdentifier: chapterCellIdentifier, for: indexPath)
                     as? PassedTableViewCell
             else {
                 return UITableViewCell()
             }
-            cell.updateCellView()
+            cell.updateCellView(/* PassedModel @ indexPath */)
             return cell
         }
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+          return 115
+      }
 }

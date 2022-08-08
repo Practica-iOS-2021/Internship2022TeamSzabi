@@ -8,18 +8,31 @@
 import UIKit
 
 class ChaptersTableViewCell: UITableViewCell {
-    func updateCellView() {
-        self.backgroundColor = .red
+    @IBOutlet private weak var cellView: UIView!
+    @IBOutlet private weak var icon: UIImageView!
+    @IBOutlet private weak var title: UILabel!
+    @IBOutlet private weak var subTitle: UILabel!
+    @IBOutlet private weak var grade: UILabel!
+    @IBOutlet private weak var arrow: UIImageView!
+
+    func updateCellView(/* ChapterModel */) {
+        grade.isHidden = true
+        arrow.isHidden = false
+        self.backgroundColor = .blue
     }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        cellView.layer.cornerRadius = 20
+        cellView.layer.masksToBounds = false
     }
+}
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+class PassedTableViewCell: ChaptersTableViewCell {
+    override func updateCellView(/* PassedModel */) {
+        //grade.isHidden = false
+        //arrow.isHidden = true
+        self.backgroundColor = .red
     }
 }

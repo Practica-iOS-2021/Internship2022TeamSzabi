@@ -7,19 +7,10 @@
 
 import UIKit
 
-class PassedTableViewCell: UITableViewCell {
-    func updateCellView() {
-        self.backgroundColor = .blue
-    }
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-}
+//class PassedTableViewCell: ChaptersTableViewCell {
+//    override func updateCellView() {
+//        grade.isHidden = false
+//        arrow.isHidden = true
+//        self.backgroundColor = .red
+//    }
+//}
