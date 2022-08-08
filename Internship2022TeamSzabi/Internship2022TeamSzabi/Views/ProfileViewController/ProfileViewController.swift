@@ -18,17 +18,15 @@ final class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        assignUserData()
+        navigationItem.title = "Profile"
         profileEmail.text = "-"
         profileName.text = "-"
         profilePersonalID.text = "-"
         profileStudentID.text = "-"
         profilePhoto.image = UIImage(named: "")
-        navigationItem.title = "Profile"
-        
-        // ProfilePhoto round corners
         profilePhoto.layer.cornerRadius = profilePhoto.layer.frame.width / 2
         profilePhoto.layer.masksToBounds = false
+        assignUserData()
     }
     // MARK: - Assign fetched UserData to Profile Screen
     private func assignUserData() {
@@ -47,7 +45,6 @@ final class ProfileViewController: UIViewController {
         StorageManager.shared.setUserLoggedIn(value: false)
         do {
             try logOut.signOut()
-            // Push to SplashViewController
             let appDelegate = UIApplication.shared.delegate as? AppDelegate
             appDelegate?.window?.rootViewController = SplashViewController()
         } catch let signOutError as NSError {

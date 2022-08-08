@@ -21,14 +21,14 @@ class DataApiManager {
         userRefrence.getDocument { document, _  in
             if let document = document, document.exists {
                 let data = document.data()
-                let emailData = data?["email"] as? String ?? ""
-                let nameData = data?["name"] as? String ?? ""
-                let personalIDData = data?["personalID"] as? String ?? ""
-                let photoData = data?["photo"] as? String ?? ""
-                let studentIDData = data?["studentID"] as? String ?? ""
+                let email = data?["email"] as? String ?? ""
+                let name = data?["name"] as? String ?? ""
+                let personalID = data?["personalID"] as? String ?? ""
+                let photo = data?["photo"] as? String ?? ""
+                let studentID = data?["studentID"] as? String ?? ""
                 
-                let currentUser = UserModel(email: emailData, name: nameData, personalID: personalIDData,
-                                            studentID: studentIDData, photo: photoData)
+                let currentUser = UserModel(email: email, name: name, personalID: personalID,
+                                            studentID: studentID, photo: photo)
                 completion(currentUser)
             } else {
                 completion(nil)

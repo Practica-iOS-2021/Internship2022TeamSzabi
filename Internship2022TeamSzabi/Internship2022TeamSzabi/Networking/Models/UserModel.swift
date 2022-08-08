@@ -14,10 +14,3 @@ struct UserModel: Codable {
     let studentID: String
     let photo: String?
 }
-
-struct Grades: Codable {
-    let chapter: String
-    let course: String
-    let grade: Int
-    let semester: Int
-}
