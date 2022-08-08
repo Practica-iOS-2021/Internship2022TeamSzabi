@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // MARK: - Assigning initial display view
         window = UIWindow()
         window?.frame = UIScreen.main.bounds
-        window?.rootViewController = SplashViewController()
+        window?.rootViewController = TestsViewController()
         window?.makeKeyAndVisible()
         
         return true

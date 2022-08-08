@@ -23,9 +23,8 @@ class TestsViewController: UIViewController {
     private var currentButton = NavButtons.chaptersButton
     
     // MARK: - Cells reuse identifiers
-    let chapterCellIdentifier = "chapterCell"
+    
     let finalCellIdentifier = "finalCell"
-    //let passedCellIdentifier = "passedCell"
     
     // MARK: - DataSet for 'chapters', 'final' 'passed' tests
     let chaptersDataSource: [String] = ["1", "2", "3"]
@@ -36,7 +35,8 @@ class TestsViewController: UIViewController {
         super.viewDidLoad()
         // register cells Nib's
         testsTableView.register(
-            UINib(nibName: "ChaptersTableViewCell", bundle: nil), forCellReuseIdentifier: chapterCellIdentifier)
+            UINib(nibName: "ChaptersTableViewCell", bundle: nil),
+            forCellReuseIdentifier: ChaptersTableViewCell.identifier)
         testsTableView.register(
             UINib(nibName: "FinalTableViewCell", bundle: nil), forCellReuseIdentifier: finalCellIdentifier)
        // testsTableView.register(
@@ -143,12 +143,13 @@ extension TestsViewController: UITableViewDataSource, UITableViewDelegate {
         switch self.currentButton {
         case NavButtons.chaptersButton:
             guard
-                let cell = tableView.dequeueReusableCell(withIdentifier: chapterCellIdentifier, for: indexPath)
+                let cell = tableView.dequeueReusableCell(
+                    withIdentifier: ChaptersTableViewCell.identifier, for: indexPath)
                     as? ChaptersTableViewCell
             else {
                 return UITableViewCell()
             }
-            cell.updateCellView(/* ChapterModel @ indexPath */)
+            cell.updateCellViewForChapter(/* ChapterModel @ indexPath */)
             return cell
         case NavButtons.finalButton:
             guard
@@ -161,12 +162,13 @@ extension TestsViewController: UITableViewDataSource, UITableViewDelegate {
             return cell
         case NavButtons.passedButton:
             guard
-                let cell = tableView.dequeueReusableCell(withIdentifier: chapterCellIdentifier, for: indexPath)
-                    as? PassedTableViewCell
+                let cell = tableView.dequeueReusableCell(
+                    withIdentifier: ChaptersTableViewCell.identifier, for: indexPath)
+                    as? ChaptersTableViewCell
             else {
                 return UITableViewCell()
             }
-            cell.updateCellView(/* PassedModel @ indexPath */)
+            cell.updateCellViewforPassed(/* PassedModel @ indexPath */)
             return cell
         }
     }

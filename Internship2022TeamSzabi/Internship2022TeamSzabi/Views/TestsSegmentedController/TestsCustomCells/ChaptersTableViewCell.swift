@@ -15,10 +15,16 @@ class ChaptersTableViewCell: UITableViewCell {
     @IBOutlet private weak var grade: UILabel!
     @IBOutlet private weak var arrow: UIImageView!
 
-    func updateCellView(/* ChapterModel */) {
+    static let identifier = "chapterCell"
+    
+    func updateCellViewForChapter(/* ChapterModel */) {
         grade.isHidden = true
         arrow.isHidden = false
-        self.backgroundColor = .blue
+    }
+    
+    func updateCellViewforPassed(/* PassedModel */) {
+        grade.isHidden = false
+        arrow.isHidden = true
     }
 
     override func awakeFromNib() {
@@ -26,13 +32,5 @@ class ChaptersTableViewCell: UITableViewCell {
         // Initialization code
         cellView.layer.cornerRadius = 20
         cellView.layer.masksToBounds = false
-    }
-}
-
-class PassedTableViewCell: ChaptersTableViewCell {
-    override func updateCellView(/* PassedModel */) {
-        //grade.isHidden = false
-        //arrow.isHidden = true
-        self.backgroundColor = .red
     }
 }
