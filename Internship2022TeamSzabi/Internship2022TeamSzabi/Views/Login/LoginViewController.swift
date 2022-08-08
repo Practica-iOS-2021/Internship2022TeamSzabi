@@ -20,6 +20,8 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        dismissKeyboard()
+        
         emailTextField.delegate = self
         passwordTextField.delegate = self
         
@@ -58,18 +60,21 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
         }
         AuthApiManager.sharedInstance.signin(email: email, password: password) { success, _ in
             if success {
+                StorageManager.shared.setUserLoggedIn(value: true)
                 self.validationLabel.isHidden = true
                 let appDelegate = UIApplication.shared.delegate as? AppDelegate
                 appDelegate?.window?.rootViewController = TabBarController()
             } else {
+                StorageManager.shared.setUserLoggedIn(value: false)
                 self.invalidMessage()
             }
         }
     }
     
     @IBAction private func signUpButton(_ sender: UIButton) {
-        let viewController = RegisterViewController(nibName: "RegisterViewController", bundle: nil)
-        navigationController?.pushViewController(viewController, animated: true)
+        let viewController = RegisterViewController()
+        viewController.modalPresentationStyle = .fullScreen
+        present(viewController, animated: true)
     }
     
     // email RegEx function to verify if the email address introduced by the user is valid
@@ -81,15 +86,15 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
     
     // method for the customization of the emailTextField and passwordTextField to only have a black bottom border
     func bottomBorder(textFields: UITextField) {
-        let bottomLine = CALayer()
-        bottomLine.frame = CGRect(x: 0.0,
-                                  y: textFields.frame.height - 3,
-                                  width: textFields.frame.width,
-                                  height: 1.0)
-        bottomLine.backgroundColor = UIColor.black.cgColor
+        let spaceView = UIView()
+        textFields.addSubview(spaceView)
         textFields.borderStyle = UITextField.BorderStyle.none
-        textFields.layer.addSublayer(bottomLine)
-        textFields.borderStyle = UITextField.BorderStyle.none
+        spaceView.backgroundColor = .black
+        spaceView.translatesAutoresizingMaskIntoConstraints = false
+        spaceView.heightAnchor.constraint(equalToConstant: 1).isActive = true
+        spaceView.leadingAnchor.constraint(equalTo: textFields.leadingAnchor).isActive = true
+        spaceView.trailingAnchor.constraint(equalTo: textFields.trailingAnchor).isActive = true
+        spaceView.bottomAnchor.constraint(equalTo: textFields.bottomAnchor, constant: 3).isActive = true
     }
     
     // method for the shadow of the login button
@@ -104,5 +109,12 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
     func invalidMessage() {
         validationLabel.isHidden = false
         validationLabel.text = "Invalid email or password."
+    }
+    
+    func dismissKeyboard() {
+        // this allows the user to dismiss the keyboard by tapping anywhere on the screen
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
     }
 }

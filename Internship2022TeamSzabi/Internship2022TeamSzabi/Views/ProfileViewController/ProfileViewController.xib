@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <device id="retina6_7" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -18,7 +17,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController" customModule="Internship2022TeamSzabi" customModuleProvider="target">
             <connections>
+                <outlet property="profileEmail" destination="THM-du-K3m" id="Mxk-GD-BB7"/>
+                <outlet property="profileName" destination="1o6-ZL-fPi" id="auJ-dP-aJ6"/>
+                <outlet property="profilePersonalID" destination="gU1-Is-bH2" id="5w3-Jc-xWi"/>
                 <outlet property="profilePhoto" destination="aVM-Lc-mJK" id="F3v-An-kTs"/>
+                <outlet property="profileStudentID" destination="1uV-mw-7Fe" id="GSW-8f-Sh3"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -135,10 +138,13 @@
                     <state key="normal" title="Log out">
                         <color key="titleColor" name="ProfileLogoutButtonColor"/>
                     </state>
+                    <connections>
+                        <action selector="logOutButton:" destination="-1" eventType="touchUpInside" id="8ps-Ts-cnq"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="7QD-pe-MBe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="FrP-9j-3pm"/>
                 <constraint firstItem="7QD-pe-MBe" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="JYR-Iu-Geb"/>
@@ -163,8 +169,5 @@
         <namedColor name="TabBarColor">
             <color red="0.48627450980392156" green="0.47843137254901963" blue="0.47843137254901963" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

@@ -63,15 +63,16 @@ class RegisterViewController: UIViewController {
         
         AuthApiManager.sharedInstance.registerUser(
             newUser: newUser, password: passwordText) { authenticated, errorString in
-            if let error = errorString {
-                self.alertError(error)
-            } else if authenticated {
-                // save to NSDefault
-                // redirect to tabBarController
-                let appDelegate = UIApplication.shared.delegate as? AppDelegate
-                appDelegate?.window?.rootViewController = TabBarController()
-            }
-        }}
+                if let error = errorString {
+                    self.alertError(error)
+                    StorageManager.shared.setUserLoggedIn(value: false)
+                } else if authenticated {
+                    StorageManager.shared.setUserLoggedIn(value: true)
+                    let appDelegate = UIApplication.shared.delegate as? AppDelegate
+                    appDelegate?.window?.rootViewController = TabBarController()
+                }
+        }
+    }
     
     private func handleFormValidation() {
         guard validateForm() else { return }
