@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="InterV.ttf">
+            <string>InterV_Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="QuizQuestionTableViewCell" rowHeight="262" id="KGk-i7-Jjw" customClass="QuizQuestionTableViewCell" customModule="Internship2022TeamSzabi" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="432" height="262"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="432" height="262"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UFR-S6-MSH">
+                        <rect key="frame" x="30" y="15" width="372" height="247"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="1. A cel membrane is __________ ?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="owP-Kz-7mL">
+                                <rect key="frame" x="20" y="15" width="332" height="22"/>
+                                <fontDescription key="fontDescription" name="InterV_Medium" family="Inter V" pointSize="18"/>
+                                <color key="textColor" name="FinishColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleAspectFit" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="30" contentHorizontalAlignment="leading" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSu-hF-R4R" userLabel="Button A">
+                                <rect key="frame" x="30" y="52" width="312" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="InterV_Medium" family="Inter V" pointSize="18"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="asdasdasdasdasdas">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <imageReference key="image" image="circle-unselected-icon" symbolScale="default"/>
+                                </state>
+                                <state key="selected" image="circle-selected-icon">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="23"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonSelected:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="0WP-9T-3Td"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleAspectFit" contentHorizontalAlignment="leading" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G9U-r7-uOm" userLabel="Button B">
+                                <rect key="frame" x="30" y="97" width="312" height="35"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="InterV_Medium" family="Inter V" pointSize="18"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="asdasdasdasdasdas">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <imageReference key="image" image="circle-unselected-icon" symbolScale="default"/>
+                                </state>
+                                <state key="selected" image="circle-selected-icon"/>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonSelected:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="r7Z-B3-4L9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleAspectFit" contentHorizontalAlignment="leading" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r43-O8-iFN" userLabel="Button C">
+                                <rect key="frame" x="30" y="147" width="312" height="35.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="InterV_Medium" family="Inter V" pointSize="18"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="asdasdasdasdasdas">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <imageReference key="image" image="circle-unselected-icon" symbolScale="default"/>
+                                </state>
+                                <state key="selected" image="circle-selected-icon"/>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonSelected:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ebl-Jj-lx8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleAspectFit" verticalCompressionResistancePriority="749" contentHorizontalAlignment="leading" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="679-cs-2RR" userLabel="Button D">
+                                <rect key="frame" x="30" y="197.5" width="312" height="34.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="InterV_Medium" family="Inter V" pointSize="18"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="asdasdasdasdasdas">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <imageReference key="image" image="circle-unselected-icon" symbolScale="default"/>
+                                </state>
+                                <state key="selected" image="circle-selected-icon"/>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonSelected:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="n1q-QV-PZI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" name="QuizQuestionBackgroundColor"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <accessibilityTraits key="traits" button="YES" allowsDirectInteraction="YES"/>
+                        </accessibility>
+                        <constraints>
+                            <constraint firstItem="r43-O8-iFN" firstAttribute="leading" secondItem="UFR-S6-MSH" secondAttribute="leading" constant="30" id="0bc-6t-PLV"/>
+                            <constraint firstItem="679-cs-2RR" firstAttribute="height" secondItem="r43-O8-iFN" secondAttribute="height" multiplier="0.985915" id="2n9-pe-z3O"/>
+                            <constraint firstAttribute="trailing" secondItem="owP-Kz-7mL" secondAttribute="trailing" constant="20" id="7Ec-Ah-iFK"/>
+                            <constraint firstItem="679-cs-2RR" firstAttribute="centerX" secondItem="UFR-S6-MSH" secondAttribute="centerX" id="8iC-Wh-MiG"/>
+                            <constraint firstItem="hSu-hF-R4R" firstAttribute="centerX" secondItem="UFR-S6-MSH" secondAttribute="centerX" id="Bg9-nQ-bMY"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hSu-hF-R4R" secondAttribute="trailing" constant="30" id="Gbs-Rg-9Er"/>
+                            <constraint firstItem="owP-Kz-7mL" firstAttribute="leading" secondItem="UFR-S6-MSH" secondAttribute="leading" constant="20" id="Ggm-gJ-Upc"/>
+                            <constraint firstItem="owP-Kz-7mL" firstAttribute="top" secondItem="UFR-S6-MSH" secondAttribute="top" constant="15" id="MYf-4R-AaA"/>
+                            <constraint firstAttribute="bottom" secondItem="679-cs-2RR" secondAttribute="bottom" constant="15" id="OPZ-BR-AxF"/>
+                            <constraint firstItem="hSu-hF-R4R" firstAttribute="leading" secondItem="UFR-S6-MSH" secondAttribute="leading" constant="30" id="Pqf-iC-qpJ"/>
+                            <constraint firstItem="G9U-r7-uOm" firstAttribute="top" secondItem="hSu-hF-R4R" secondAttribute="bottom" constant="15" id="SwG-hU-PTe"/>
+                            <constraint firstItem="G9U-r7-uOm" firstAttribute="centerX" secondItem="UFR-S6-MSH" secondAttribute="centerX" id="YtT-O4-7LQ"/>
+                            <constraint firstItem="r43-O8-iFN" firstAttribute="top" secondItem="G9U-r7-uOm" secondAttribute="bottom" constant="15" id="ZcP-Jn-r71"/>
+                            <constraint firstItem="r43-O8-iFN" firstAttribute="centerX" secondItem="UFR-S6-MSH" secondAttribute="centerX" id="aNu-X6-n4Z"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="G9U-r7-uOm" secondAttribute="trailing" constant="30" id="bWF-Lb-JSK"/>
+                            <constraint firstItem="hSu-hF-R4R" firstAttribute="top" secondItem="owP-Kz-7mL" secondAttribute="bottom" constant="15" id="cRx-lb-5g8"/>
+                            <constraint firstItem="hSu-hF-R4R" firstAttribute="height" secondItem="G9U-r7-uOm" secondAttribute="height" multiplier="0.84507" id="dCt-By-hFU"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="r43-O8-iFN" secondAttribute="trailing" constant="30" id="gM9-wN-GIX"/>
+                            <constraint firstItem="679-cs-2RR" firstAttribute="top" secondItem="r43-O8-iFN" secondAttribute="bottom" constant="15" id="iQD-nP-wi1"/>
+                            <constraint firstItem="G9U-r7-uOm" firstAttribute="height" secondItem="r43-O8-iFN" secondAttribute="height" id="oMM-Ot-KrE"/>
+                            <constraint firstItem="679-cs-2RR" firstAttribute="leading" secondItem="UFR-S6-MSH" secondAttribute="leading" constant="30" id="p3u-pt-A6X"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="679-cs-2RR" secondAttribute="trailing" constant="30" id="pLQ-w5-Jqx"/>
+                            <constraint firstItem="G9U-r7-uOm" firstAttribute="leading" secondItem="UFR-S6-MSH" secondAttribute="leading" constant="30" id="vOC-h0-8Q1"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="UFR-S6-MSH" secondAttribute="trailing" constant="10" id="423-jj-eve"/>
+                    <constraint firstItem="UFR-S6-MSH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="8Mf-AH-mjC"/>
+                    <constraint firstAttribute="bottom" secondItem="UFR-S6-MSH" secondAttribute="bottom" id="Gqy-7z-Q21"/>
+                    <constraint firstItem="UFR-S6-MSH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="Vde-UJ-5XJ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="quizContainer" destination="UFR-S6-MSH" id="fQ4-Oh-sZD"/>
+                <outletCollection property="buttonCollection" destination="hSu-hF-R4R" collectionClass="NSMutableArray" id="kC5-5g-r4D"/>
+                <outletCollection property="buttonCollection" destination="G9U-r7-uOm" collectionClass="NSMutableArray" id="m9X-8a-78S"/>
+                <outletCollection property="buttonCollection" destination="r43-O8-iFN" collectionClass="NSMutableArray" id="lLY-3y-OkL"/>
+                <outletCollection property="buttonCollection" destination="679-cs-2RR" collectionClass="NSMutableArray" id="tRz-cg-nY9"/>
+            </connections>
+            <point key="canvasLocation" x="108.69565217391305" y="164.73214285714286"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="circle-selected-icon" width="30" height="32"/>
+        <image name="circle-unselected-icon" width="30" height="30"/>
+        <namedColor name="FinishColor">
+            <color red="0.14509803921568629" green="0.086274509803921567" blue="0.019607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="QuizQuestionBackgroundColor">
+            <color red="0.9137254901960784" green="0.8901960784313725" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
