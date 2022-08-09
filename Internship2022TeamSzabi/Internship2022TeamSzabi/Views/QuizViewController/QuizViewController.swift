@@ -20,6 +20,7 @@ class QuizViewController: UIViewController {
         tableView.dataSource = self
         tableView.rowHeight = UITableView.automaticDimension
         tableView.delaysContentTouches = false
+        tableView.separatorColor = .clear
         
         finishButton.layer.cornerRadius = 20
         finishButton.layer.masksToBounds = false
