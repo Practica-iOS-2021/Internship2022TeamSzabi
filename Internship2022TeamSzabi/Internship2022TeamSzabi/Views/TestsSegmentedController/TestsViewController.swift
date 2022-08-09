@@ -53,7 +53,7 @@ class TestsViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        setAppearence()
+        setAppearance()
         testsTableView.reloadData()
     }
     
@@ -71,13 +71,13 @@ class TestsViewController: UIViewController {
         makeButtonSelected()
     }
     
-    // MARK: - Appearence
-    private func setAppearence() {
+    // MARK: - Appearance
+    private func setAppearance() {
         view.backgroundColor = .white
-        navAppearence()
+        navAppearance()
     }
     
-    private func navAppearence() {
+    private func navAppearance() {
         // MARK: - navView containing nav components appearence
         // shadow
         navView.layer.masksToBounds = false
@@ -101,12 +101,12 @@ class TestsViewController: UIViewController {
         makeButtonSelected()
     }
     
-    private func setNormalButtonAppearence(button: UIButton) {
+    private func setNormalButtonAppearance(button: UIButton) {
         button.backgroundColor = .white
         button.tintColor = UIColor(named: "TabBarSelectedColor")
     }
     
-    private func setSelectedButtonAppearence(button: UIButton) {
+    private func setSelectedButtonAppearance(button: UIButton) {
         button.backgroundColor = UIColor(named: "TabBarSelectedColor")
         button.tintColor = .white
     }
@@ -114,17 +114,17 @@ class TestsViewController: UIViewController {
     private func makeButtonSelected() {
         switch currentButton {
         case .chaptersButton:
-            setSelectedButtonAppearence(button: chaptersButton)
-            setNormalButtonAppearence(button: finalButton)
-            setNormalButtonAppearence(button: passedButton)
+            setSelectedButtonAppearance(button: chaptersButton)
+            setNormalButtonAppearance(button: finalButton)
+            setNormalButtonAppearance(button: passedButton)
         case .finalButton:
-            setNormalButtonAppearence(button: chaptersButton)
-            setSelectedButtonAppearence(button: finalButton)
-            setNormalButtonAppearence(button: passedButton)
+            setNormalButtonAppearance(button: chaptersButton)
+            setSelectedButtonAppearance(button: finalButton)
+            setNormalButtonAppearance(button: passedButton)
         case .passedButton:
-            setNormalButtonAppearence(button: chaptersButton)
-            setNormalButtonAppearence(button: finalButton)
-            setSelectedButtonAppearence(button: passedButton)
+            setNormalButtonAppearance(button: chaptersButton)
+            setNormalButtonAppearance(button: finalButton)
+            setSelectedButtonAppearance(button: passedButton)
         }
         testsTableView.reloadData()
     }
@@ -155,32 +155,23 @@ extension TestsViewController: UITableViewDataSource, UITableViewDelegate {
         // depending on 'currentButton'
         switch self.currentButton {
         case NavButtons.chaptersButton:
-            guard
-                let cell = tableView.dequeueReusableCell(
+            guard let cell = tableView.dequeueReusableCell(
                     withIdentifier: ChaptersTableViewCell.identifier, for: indexPath)
                     as? ChaptersTableViewCell
-            else {
-                return UITableViewCell()
-            }
+            else { return UITableViewCell() }
             cell.updateCellViewForChapter(/* ChapterModel @ indexPath */)
             return cell
         case NavButtons.finalButton:
-            guard
-                let cell = tableView.dequeueReusableCell(withIdentifier: FinalTableViewCell.identifier, for: indexPath)
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: FinalTableViewCell.identifier, for: indexPath)
                     as? FinalTableViewCell
-            else {
-                return UITableViewCell()
-            }
+            else { return UITableViewCell() }
             cell.updateCellView(finalModel: finalDataSource[indexPath.row])
             return cell
         case NavButtons.passedButton:
-            guard
-                let cell = tableView.dequeueReusableCell(
+            guard let cell = tableView.dequeueReusableCell(
                     withIdentifier: ChaptersTableViewCell.identifier, for: indexPath)
                     as? ChaptersTableViewCell
-            else {
-                return UITableViewCell()
-            }
+            else { return UITableViewCell() }
             cell.updateCellViewforPassed(/* PassedModel @ indexPath */)
             return cell
         }

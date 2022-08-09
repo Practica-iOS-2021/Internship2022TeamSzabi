@@ -9,8 +9,8 @@ import UIKit
 
 class FinalTableViewCell: UITableViewCell {
     @IBOutlet private weak var cellView: UIView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var subTitleLabel: UILabel!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var subTitleLabel: UILabel!
 
     static let identifier = "finalCell"
 
