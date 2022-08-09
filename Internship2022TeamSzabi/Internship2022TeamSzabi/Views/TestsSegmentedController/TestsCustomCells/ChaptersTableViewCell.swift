@@ -15,7 +15,6 @@ class ChaptersTableViewCell: UITableViewCell {
     @IBOutlet private weak var grade: UILabel!
     @IBOutlet private weak var arrow: UIImageView!
 
-    //static let identifier = "chapterCell"
     enum Details {
         static let identifier = "chapterCell"
         static let cornerRadius = 20.0
