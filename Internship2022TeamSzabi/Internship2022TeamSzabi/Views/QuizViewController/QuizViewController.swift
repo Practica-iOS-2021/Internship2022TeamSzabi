@@ -27,21 +27,23 @@ class QuizViewController: UIViewController {
     }
     
     func setGradient() {
+        let firstColor = UIColor.red
+        let secondColor = firstColor.withAlphaComponent(0.0)
         let gradient = CAGradientLayer()
-        gradient.colors = [
-            UIColor.purple.withAlphaComponent(0), UIColor.red.withAlphaComponent(0.3),
-            UIColor.green.withAlphaComponent(0.5), UIColor.white.withAlphaComponent(1)
-        ]
-//        gradient.locations = [0.0, 0.3, 0.5, 1.0]
+        gradient.type = .axial
+        gradient.colors = [ firstColor, secondColor ]
+//        gradient.colors = [ UIColor.white.cgColor, UIColor.white.cgColor ]
+        gradient.locations = [0, 1]
         gradient.frame = fadeView.layer.bounds
-        
+//        self.fadeView.layer.insertSublayer(gradient, at: 0)
+//        fadeView.backgroundColor = .clear
         fadeView.layer.addSublayer(gradient)
     }
 }
 
 extension QuizViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 5
     }
     
     

@@ -31,9 +31,9 @@
                         <outlet property="delegate" destination="-1" id="vUB-Ni-nJ4"/>
                     </connections>
                 </tableView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IHp-w4-msV">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IHp-w4-msV" userLabel="Fade View">
                     <rect key="frame" x="0.0" y="712" width="414" height="150"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="150" id="Br8-ll-wKB"/>
                     </constraints>
