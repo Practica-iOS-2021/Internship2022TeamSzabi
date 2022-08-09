@@ -231,9 +231,6 @@ PODS:
   - Firebase/Crashlytics (8.1.0):
     - Firebase/CoreOnly
     - FirebaseCrashlytics (~> 8.1.0)
-  - Firebase/Database (8.1.0):
-    - Firebase/CoreOnly
-    - FirebaseDatabase (~> 8.1.0)
   - Firebase/Firestore (8.1.0):
     - Firebase/CoreOnly
     - FirebaseFirestore (~> 8.1.0)
@@ -287,9 +284,6 @@ PODS:
     - GoogleDataTransport (~> 9.0)
     - nanopb (~> 2.30908.0)
     - PromisesObjC (~> 1.2)
-  - FirebaseDatabase (8.1.0):
-    - FirebaseCore (~> 8.0)
-    - leveldb-library (~> 1.22)
   - FirebaseFirestore (8.1.0):
     - abseil/algorithm (= 0.20200225.0)
     - abseil/base (= 0.20200225.0)
@@ -388,7 +382,6 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core (= 8.1.0)
   - Firebase/Crashlytics
-  - Firebase/Database
   - Firebase/Firestore
   - Firebase/Messaging
 
@@ -402,7 +395,6 @@ SPEC REPOS:
     - FirebaseCore
     - FirebaseCoreDiagnostics
     - FirebaseCrashlytics
-    - FirebaseDatabase
     - FirebaseFirestore
     - FirebaseInstallations
     - FirebaseMessaging
@@ -425,7 +417,6 @@ SPEC CHECKSUMS:
   FirebaseCore: 389c4ce9a7cce4a7e25eb22326b4bee0050557b2
   FirebaseCoreDiagnostics: 92e07a649aeb66352b319d43bdd2ee3942af84cb
   FirebaseCrashlytics: 1b55b3a718f9e20d59d96db46a4652d95a8ba1d2
-  FirebaseDatabase: cc219dac8f37fe80f5838ed5ffd84ce3daa443ad
   FirebaseFirestore: c4be8314e9fa156f44b54025f7a98ecbff6971a6
   FirebaseInstallations: 40bd9054049b2eae9a2c38ef1c3dd213df3605cd
   FirebaseMessaging: c8871b0907dcf4e76de81241eb6a62be6d657d2f
@@ -439,6 +430,6 @@ SPEC CHECKSUMS:
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
 
-PODFILE CHECKSUM: 107352ccda3f53b6c4330b4aa895024c5d110875
+PODFILE CHECKSUM: 00539fb55b8cbd42e3072a361ac8763f06884212
 
 COCOAPODS: 1.11.3

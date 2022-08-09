@@ -19,6 +19,7 @@ final class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Profile"
+        
         profileEmail.text = "-"
         profileName.text = "-"
         profilePersonalID.text = "-"
@@ -26,12 +27,20 @@ final class ProfileViewController: UIViewController {
         profilePhoto.image = UIImage(named: "")
         profilePhoto.layer.cornerRadius = profilePhoto.layer.frame.width / 2
         profilePhoto.layer.masksToBounds = false
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         assignUserData()
     }
     // MARK: - Assign fetched UserData to Profile Screen
     private func assignUserData() {
-        DataApiManager.sharedUserData.fetchUserData { [weak self] userData in
+        DataApiManager.sharedUserData.fetchUserData { [weak self] userData, errorMessage in
             guard let self = self else { return }
+            guard errorMessage == nil else {
+                self.alertError(errorMessage ?? "Error")
+                return
+            }
             self.profileEmail.text = userData?.email
             self.profileName.text = userData?.name
             self.profilePersonalID.text = userData?.personalID
@@ -41,7 +50,7 @@ final class ProfileViewController: UIViewController {
     }
     
     // MARK: - SignOut
-    @IBAction func logOutButton(_ sender: Any) {
+    @IBAction private func logOutButton(_ sender: Any) {
         let logOut = FirestoreManager.auth
         do {
             try logOut.signOut()
@@ -51,5 +60,12 @@ final class ProfileViewController: UIViewController {
         } catch let signOutError as NSError {
             print("error signing out: \(signOutError)")
         }
+    }
+    
+    private func alertError(_ errorMessage: String) {
+        let dialogMessage = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Data cannot be fetched", style: .default)
+        dialogMessage.addAction(okAction)
+        present(dialogMessage, animated: true, completion: nil)
     }
 }
