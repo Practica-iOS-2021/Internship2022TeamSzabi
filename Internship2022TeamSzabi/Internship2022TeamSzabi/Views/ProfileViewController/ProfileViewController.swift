@@ -26,7 +26,7 @@ final class ProfileViewController: UIViewController {
         profileStudentID.text = "-"
         profilePhoto.image = UIImage(named: "")
         profilePhoto.layer.cornerRadius = profilePhoto.layer.frame.width / 2
-        profilePhoto.layer.masksToBounds = false        
+        profilePhoto.layer.masksToBounds = false
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -61,7 +61,8 @@ final class ProfileViewController: UIViewController {
             print("error signing out: \(signOutError)")
         }
     }
-    func alertError(_ errorMessage: String) {
+    
+    private func alertError(_ errorMessage: String) {
         let dialogMessage = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Data cannot be fetched", style: .default)
         dialogMessage.addAction(okAction)
