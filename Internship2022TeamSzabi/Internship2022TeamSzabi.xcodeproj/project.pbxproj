@@ -19,10 +19,6 @@
 		17350D6C28A1181E00EBD90E /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17350D6A28A1181E00EBD90E /* SplashViewController.swift */; };
 		17A7F9F12897BF8700A6D4B7 /* InterV.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 17B3281F2893F88B000B5D0B /* InterV.ttf */; };
 		17B328212893F8D0000B5D0B /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B328202893F8D0000B5D0B /* UIFont.swift */; };
-		17BFBE3928A12EDB000FA9BA /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BFBE3728A12EDB000FA9BA /* QuizViewController.swift */; };
-		17BFBE3A28A12EDB000FA9BA /* QuizViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17BFBE3828A12EDB000FA9BA /* QuizViewController.xib */; };
-		17BFBE3D28A13D74000FA9BA /* QuizQuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BFBE3B28A13D74000FA9BA /* QuizQuestionTableViewCell.swift */; };
-		17BFBE3E28A13D74000FA9BA /* QuizQuestionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17BFBE3C28A13D74000FA9BA /* QuizQuestionTableViewCell.xib */; };
 		17D1D858289D4A3400C8350C /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1D857289D4A3400C8350C /* StorageManager.swift */; };
 		17FE032D289C05A6001B6C78 /* UserDataApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FE032C289C05A6001B6C78 /* UserDataApiManager.swift */; };
 		AC66F743289956A90050925A /* CoursesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC66F741289956A90050925A /* CoursesCollectionViewCell.swift */; };
@@ -39,6 +35,13 @@
 		BF227DC92895AFC000DD111A /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF227DC82895AFC000DD111A /* UserModel.swift */; };
 		BF5DD2FD28994158002F8244 /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5DD2FC28994158002F8244 /* Encodable.swift */; };
 		BF5DD2FF28994397002F8244 /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5DD2FE28994397002F8244 /* FirestoreManager.swift */; };
+		BF88728028A1507400AA009B /* TestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF88727828A1507400AA009B /* TestsViewController.swift */; };
+		BF88728128A1507400AA009B /* TestsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF88727928A1507400AA009B /* TestsViewController.xib */; };
+		BF88728228A1507400AA009B /* ChaptersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF88727B28A1507400AA009B /* ChaptersTableViewCell.xib */; };
+		BF88728328A1507400AA009B /* ChaptersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF88727C28A1507400AA009B /* ChaptersTableViewCell.swift */; };
+		BF88728528A1507400AA009B /* FinalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF88727E28A1507400AA009B /* FinalTableViewCell.swift */; };
+		BF88728628A1507400AA009B /* FinalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF88727F28A1507400AA009B /* FinalTableViewCell.xib */; };
+		BF88728828A1A27200AA009B /* FinalTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF88728728A1A27200AA009B /* FinalTestModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,10 +56,6 @@
 		17350D6A28A1181E00EBD90E /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		17B3281F2893F88B000B5D0B /* InterV.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = InterV.ttf; sourceTree = "<group>"; };
 		17B328202893F8D0000B5D0B /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
-		17BFBE3728A12EDB000FA9BA /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
-		17BFBE3828A12EDB000FA9BA /* QuizViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizViewController.xib; sourceTree = "<group>"; };
-		17BFBE3B28A13D74000FA9BA /* QuizQuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizQuestionTableViewCell.swift; sourceTree = "<group>"; };
-		17BFBE3C28A13D74000FA9BA /* QuizQuestionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizQuestionTableViewCell.xib; sourceTree = "<group>"; };
 		17D1D857289D4A3400C8350C /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		17FE032C289C05A6001B6C78 /* UserDataApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataApiManager.swift; sourceTree = "<group>"; };
 		6C7B69DF5BC9AAEE4762FCA0 /* Pods_Internship2022TeamSzabi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Internship2022TeamSzabi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +77,13 @@
 		BF227DC82895AFC000DD111A /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		BF5DD2FC28994158002F8244 /* Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encodable.swift; sourceTree = "<group>"; };
 		BF5DD2FE28994397002F8244 /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
+		BF88727828A1507400AA009B /* TestsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestsViewController.swift; sourceTree = "<group>"; };
+		BF88727928A1507400AA009B /* TestsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestsViewController.xib; sourceTree = "<group>"; };
+		BF88727B28A1507400AA009B /* ChaptersTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChaptersTableViewCell.xib; sourceTree = "<group>"; };
+		BF88727C28A1507400AA009B /* ChaptersTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChaptersTableViewCell.swift; sourceTree = "<group>"; };
+		BF88727E28A1507400AA009B /* FinalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalTableViewCell.swift; sourceTree = "<group>"; };
+		BF88727F28A1507400AA009B /* FinalTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FinalTableViewCell.xib; sourceTree = "<group>"; };
+		BF88728728A1A27200AA009B /* FinalTestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalTestModel.swift; sourceTree = "<group>"; };
 		E8DA8DF6CE54DE53C1D8ECC7 /* Pods-Internship2022TeamSzabi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Internship2022TeamSzabi.release.xcconfig"; path = "Target Support Files/Pods-Internship2022TeamSzabi/Pods-Internship2022TeamSzabi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -155,17 +161,6 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		17BFBE3228A12D3F000FA9BA /* QuizViewController */ = {
-			isa = PBXGroup;
-			children = (
-				17BFBE3728A12EDB000FA9BA /* QuizViewController.swift */,
-				17BFBE3828A12EDB000FA9BA /* QuizViewController.xib */,
-				17BFBE3B28A13D74000FA9BA /* QuizQuestionTableViewCell.swift */,
-				17BFBE3C28A13D74000FA9BA /* QuizQuestionTableViewCell.xib */,
-			);
-			path = QuizViewController;
-			sourceTree = "<group>";
-		};
 		17D1D856289D4A2100C8350C /* Storage */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,7 +225,7 @@
 		AF79B84D288E763000AA99BD /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				17BFBE3228A12D3F000FA9BA /* QuizViewController */,
+				BF88727728A1507400AA009B /* TestsSegmentedController */,
 				1742C56A2898FF9700F765D8 /* SplashViewController */,
 				BF227DBF2893E41600DD111A /* Register */,
 				ACEDF6AF2892948D00CCFF8B /* Login */,
@@ -255,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				BF5DD2FC28994158002F8244 /* Encodable.swift */,
+				BF88728728A1A27200AA009B /* FinalTestModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -285,6 +281,28 @@
 				BF227DC12893E41600DD111A /* RegisterViewController.swift */,
 			);
 			path = Register;
+			sourceTree = "<group>";
+		};
+		BF88727728A1507400AA009B /* TestsSegmentedController */ = {
+			isa = PBXGroup;
+			children = (
+				BF88727828A1507400AA009B /* TestsViewController.swift */,
+				BF88727928A1507400AA009B /* TestsViewController.xib */,
+				BF88727A28A1507400AA009B /* TestsCustomCells */,
+			);
+			name = TestsSegmentedController;
+			path = Internship2022TeamSzabi/Views/TestsSegmentedController;
+			sourceTree = SOURCE_ROOT;
+		};
+		BF88727A28A1507400AA009B /* TestsCustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				BF88727B28A1507400AA009B /* ChaptersTableViewCell.xib */,
+				BF88727C28A1507400AA009B /* ChaptersTableViewCell.swift */,
+				BF88727F28A1507400AA009B /* FinalTableViewCell.xib */,
+				BF88727E28A1507400AA009B /* FinalTableViewCell.swift */,
+			);
+			path = TestsCustomCells;
 			sourceTree = "<group>";
 		};
 		E2F5549BC7833CFE569EE387 /* Pods */ = {
@@ -364,13 +382,14 @@
 				17350D6B28A1181E00EBD90E /* SplashViewController.xib in Resources */,
 				17289A0828901D9500D6EFCE /* ProfileViewController.xib in Resources */,
 				AC66F744289956A90050925A /* CoursesCollectionViewCell.xib in Resources */,
+				BF88728128A1507400AA009B /* TestsViewController.xib in Resources */,
 				17289A0328901B4800D6EFCE /* CoursesViewController.xib in Resources */,
-				17BFBE3E28A13D74000FA9BA /* QuizQuestionTableViewCell.xib in Resources */,
 				17289A0C28901E5400D6EFCE /* GradesViewController.xib in Resources */,
+				BF88728228A1507400AA009B /* ChaptersTableViewCell.xib in Resources */,
 				17A7F9F12897BF8700A6D4B7 /* InterV.ttf in Resources */,
 				AFD0D4E22893DEE100363B6C /* GoogleService-Info.plist in Resources */,
+				BF88728628A1507400AA009B /* FinalTableViewCell.xib in Resources */,
 				BF227DC22893E41600DD111A /* RegisterViewController.xib in Resources */,
-				17BFBE3A28A12EDB000FA9BA /* QuizViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,22 +481,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				17B328212893F8D0000B5D0B /* UIFont.swift in Sources */,
-				17BFBE3928A12EDB000FA9BA /* QuizViewController.swift in Sources */,
 				ACEDF6B32892948D00CCFF8B /* LoginViewController.swift in Sources */,
 				AC66F743289956A90050925A /* CoursesCollectionViewCell.swift in Sources */,
 				17FE032D289C05A6001B6C78 /* UserDataApiManager.swift in Sources */,
 				17289A0728901D9500D6EFCE /* ProfileViewController.swift in Sources */,
 				BF227DC32893E41600DD111A /* RegisterViewController.swift in Sources */,
 				17289A0F2890415E00D6EFCE /* TabBarController.swift in Sources */,
+				BF88728328A1507400AA009B /* ChaptersTableViewCell.swift in Sources */,
 				AF79B837288E75B800AA99BD /* AppDelegate.swift in Sources */,
 				17289A0B28901E5400D6EFCE /* GradesViewController.swift in Sources */,
-				17BFBE3D28A13D74000FA9BA /* QuizQuestionTableViewCell.swift in Sources */,
 				BF5DD2FF28994397002F8244 /* FirestoreManager.swift in Sources */,
 				BF227DC728957F2F00DD111A /* AuthApiManager.swift in Sources */,
+				BF88728528A1507400AA009B /* FinalTableViewCell.swift in Sources */,
 				BF227DC92895AFC000DD111A /* UserModel.swift in Sources */,
+				BF88728828A1A27200AA009B /* FinalTestModel.swift in Sources */,
 				17289A0228901B4800D6EFCE /* CoursesViewController.swift in Sources */,
 				BF5DD2FD28994158002F8244 /* Encodable.swift in Sources */,
 				17D1D858289D4A3400C8350C /* StorageManager.swift in Sources */,
+				BF88728028A1507400AA009B /* TestsViewController.swift in Sources */,
 				17350D6C28A1181E00EBD90E /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
