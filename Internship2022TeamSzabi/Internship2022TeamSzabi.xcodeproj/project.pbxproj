@@ -156,12 +156,20 @@
 		1750B7BF28A28837006B3CBB /* QuizViewController */ = {
 			isa = PBXGroup;
 			children = (
-				1750B7C128A28842006B3CBB /* QuizQuestionTableViewCell.swift */,
-				1750B7C228A28842006B3CBB /* QuizQuestionTableViewCell.xib */,
+				1750B7C828A2A99C006B3CBB /* QuizCustomCell */,
 				1750B7C028A28842006B3CBB /* QuizViewController.swift */,
 				1750B7C328A28842006B3CBB /* QuizViewController.xib */,
 			);
 			path = QuizViewController;
+			sourceTree = "<group>";
+		};
+		1750B7C828A2A99C006B3CBB /* QuizCustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				1750B7C128A28842006B3CBB /* QuizQuestionTableViewCell.swift */,
+				1750B7C228A28842006B3CBB /* QuizQuestionTableViewCell.xib */,
+			);
+			path = QuizCustomCell;
 			sourceTree = "<group>";
 		};
 		17B3281C2893F71C000B5D0B /* Extensions */ = {

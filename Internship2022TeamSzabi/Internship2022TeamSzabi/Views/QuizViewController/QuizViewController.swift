@@ -14,6 +14,7 @@ class QuizViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.register(QuizQuestionTableViewCell.nib(),
                            forCellReuseIdentifier: QuizQuestionTableViewCell.identifier)
         tableView.delegate = self
@@ -26,18 +27,16 @@ class QuizViewController: UIViewController {
         finishButton.layer.masksToBounds = false
         setGradient()
     }
-    
-    func setGradient() {
-        let firstColor = UIColor.red
-        let secondColor = firstColor.withAlphaComponent(0.0)
+    // MARK: - Gradient fade
+    private func setGradient() {
         let gradient = CAGradientLayer()
         gradient.type = .axial
-        gradient.colors = [ firstColor, secondColor ]
-//        gradient.colors = [ UIColor.white.cgColor, UIColor.white.cgColor ]
-        gradient.locations = [0, 1]
+        gradient.colors = [
+            UIColor.white.withAlphaComponent(0.1).cgColor, UIColor.white.withAlphaComponent(0.6).cgColor,
+            UIColor.white.withAlphaComponent(0.9).cgColor, UIColor.white.cgColor
+        ]
+        gradient.locations = [0.0, 0.3, 0.5, 1.0]
         gradient.frame = fadeView.layer.bounds
-//        self.fadeView.layer.insertSublayer(gradient, at: 0)
-//        fadeView.backgroundColor = .clear
         fadeView.layer.addSublayer(gradient)
     }
 }
@@ -47,7 +46,6 @@ extension QuizViewController: UITableViewDelegate, UITableViewDataSource {
         return 5
     }
     
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: QuizQuestionTableViewCell.identifier,
                                                        for: indexPath) as? QuizQuestionTableViewCell else {
@@ -55,9 +53,4 @@ extension QuizViewController: UITableViewDelegate, UITableViewDataSource {
         }
         return cell
     }
-    
-    //    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-    //        UIView.animate(withDuration: 1) {
-    //            cell.contentView.alpha = 1
-    //        }?
 }

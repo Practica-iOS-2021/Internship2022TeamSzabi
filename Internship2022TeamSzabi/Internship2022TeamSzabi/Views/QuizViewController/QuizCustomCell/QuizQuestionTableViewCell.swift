@@ -18,6 +18,7 @@ class QuizQuestionTableViewCell: UITableViewCell {
     }
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         quizContainer.layer.cornerRadius = 20
         quizContainer.layer.masksToBounds = false
         buttonCollection.forEach {
@@ -26,6 +27,7 @@ class QuizQuestionTableViewCell: UITableViewCell {
             $0.setImage(UIImage(named: "circle-selected-icon"), for: UIControl.State.selected)
         }
     }
+    
     @IBAction func buttonSelected(_ sender: UIButton) {
         buttonCollection.forEach { $0.isSelected = false }
         buttonCollection[sender.tag].isSelected = true
