@@ -8,17 +8,26 @@
 import UIKit
 
 class FinalTableViewCell: UITableViewCell {
-    func updateCellView() {
-        self.backgroundColor = .yellow
+    @IBOutlet private weak var cellView: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var subTitleLabel: UILabel!
+
+    static let identifier = "finalCell"
+
+    func updateCellView(finalModel: FinalTestModel) {
+        titleLabel.text = finalModel.title
+        subTitleLabel.text = finalModel.subTitle
     }
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        cellView.layer.cornerRadius = 20
+        cellView.layer.masksToBounds = false
+        // shadow
+        cellView.layer.masksToBounds = false
+        cellView.layer.shadowOffset = CGSize(width: 0, height: 4)
+        cellView.layer.shadowColor = UIColor.lightGray.cgColor
+        cellView.layer.shadowOpacity = 0.25
     }
 }

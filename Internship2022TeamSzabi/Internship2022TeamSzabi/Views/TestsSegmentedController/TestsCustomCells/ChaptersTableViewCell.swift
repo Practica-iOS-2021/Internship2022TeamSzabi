@@ -16,12 +16,12 @@ class ChaptersTableViewCell: UITableViewCell {
     @IBOutlet private weak var arrow: UIImageView!
 
     static let identifier = "chapterCell"
-    
+
     func updateCellViewForChapter(/* ChapterModel */) {
         grade.isHidden = true
         arrow.isHidden = false
     }
-    
+
     func updateCellViewforPassed(/* PassedModel */) {
         grade.isHidden = false
         arrow.isHidden = true

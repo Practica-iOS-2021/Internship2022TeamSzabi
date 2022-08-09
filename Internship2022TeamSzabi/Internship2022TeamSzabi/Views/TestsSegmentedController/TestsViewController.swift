@@ -22,14 +22,13 @@ class TestsViewController: UIViewController {
     }
     private var currentButton = NavButtons.chaptersButton
     
-    // MARK: - Cells reuse identifiers
-    
-    let finalCellIdentifier = "finalCell"
-    
     // MARK: - DataSet for 'chapters', 'final' 'passed' tests
-    let chaptersDataSource: [String] = ["1", "2", "3"]
-    let finalDataSource: [String] = ["1", "2"]
-    let passedDataSource: [String] = ["1", "2", "3", "4"]
+    var chaptersDataSource: [String] = []
+    var passedDataSource: [String] = []
+    let finalDataSource: [FinalTestModel] = [
+        FinalTestModel(title: "Generate final random test"),
+        FinalTestModel(title: "Scan the QR code and start the coresponding test")
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,12 +37,18 @@ class TestsViewController: UIViewController {
             UINib(nibName: "ChaptersTableViewCell", bundle: nil),
             forCellReuseIdentifier: ChaptersTableViewCell.identifier)
         testsTableView.register(
-            UINib(nibName: "FinalTableViewCell", bundle: nil), forCellReuseIdentifier: finalCellIdentifier)
-       // testsTableView.register(
-       //     UINib(nibName: "ChaptersTableViewCell", bundle: nil), forCellReuseIdentifier: chapterCellIdentifier)
+            UINib(nibName: "FinalTableViewCell", bundle: nil), forCellReuseIdentifier: FinalTableViewCell.identifier)
         // set dataSource & delegate
         testsTableView.dataSource = self
         testsTableView.delegate = self
+        // remove cell separator
+        testsTableView.separatorColor = .clear
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        chaptersDataSource = self.getChapters()
+        passedDataSource = self.getPassed()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -108,31 +113,39 @@ class TestsViewController: UIViewController {
     
     private func makeButtonSelected() {
         switch currentButton {
-        case NavButtons.chaptersButton:
+        case .chaptersButton:
             setSelectedButtonAppearence(button: chaptersButton)
             setNormalButtonAppearence(button: finalButton)
             setNormalButtonAppearence(button: passedButton)
-        case NavButtons.finalButton:
+        case .finalButton:
             setNormalButtonAppearence(button: chaptersButton)
             setSelectedButtonAppearence(button: finalButton)
             setNormalButtonAppearence(button: passedButton)
-        case NavButtons.passedButton:
+        case .passedButton:
             setNormalButtonAppearence(button: chaptersButton)
             setNormalButtonAppearence(button: finalButton)
             setSelectedButtonAppearence(button: passedButton)
         }
         testsTableView.reloadData()
     }
+    
+    private func getChapters() -> [String] {
+        return ["1", "2", "3", "4", "5"]
+    }
+    
+    private func getPassed() -> [String] {
+        return ["1", "2", "3"]
+    }
 }
 
 extension TestsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch self.currentButton {
-        case NavButtons.chaptersButton:
+        case .chaptersButton:
             return self.chaptersDataSource.count
-        case NavButtons.finalButton:
+        case .finalButton:
             return self.finalDataSource.count
-        case NavButtons.passedButton:
+        case .passedButton:
             return self.passedDataSource.count
         }
     }
@@ -153,12 +166,12 @@ extension TestsViewController: UITableViewDataSource, UITableViewDelegate {
             return cell
         case NavButtons.finalButton:
             guard
-                let cell = tableView.dequeueReusableCell(withIdentifier: finalCellIdentifier, for: indexPath)
+                let cell = tableView.dequeueReusableCell(withIdentifier: FinalTableViewCell.identifier, for: indexPath)
                     as? FinalTableViewCell
             else {
                 return UITableViewCell()
             }
-            cell.updateCellView()
+            cell.updateCellView(finalModel: finalDataSource[indexPath.row])
             return cell
         case NavButtons.passedButton:
             guard
@@ -174,6 +187,19 @@ extension TestsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-          return 115
+        switch self.currentButton {
+        case NavButtons.chaptersButton:
+            // height + top
+            // 90     + 25
+            return 115
+        case .passedButton:
+            // height + top
+            // 90     + 25
+            return 115
+        case .finalButton:
+            // height + top + bottom
+            // 250    + 65  + 5
+            return 320
+        }
       }
 }
