@@ -17,6 +17,10 @@
 		17289A0F2890415E00D6EFCE /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17289A0E2890415E00D6EFCE /* TabBarController.swift */; };
 		17350D6B28A1181E00EBD90E /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17350D6928A1181E00EBD90E /* SplashViewController.xib */; };
 		17350D6C28A1181E00EBD90E /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17350D6A28A1181E00EBD90E /* SplashViewController.swift */; };
+		1750B7C428A28842006B3CBB /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1750B7C028A28842006B3CBB /* QuizViewController.swift */; };
+		1750B7C528A28842006B3CBB /* QuizQuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1750B7C128A28842006B3CBB /* QuizQuestionTableViewCell.swift */; };
+		1750B7C628A28842006B3CBB /* QuizQuestionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1750B7C228A28842006B3CBB /* QuizQuestionTableViewCell.xib */; };
+		1750B7C728A28842006B3CBB /* QuizViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1750B7C328A28842006B3CBB /* QuizViewController.xib */; };
 		17A7F9F12897BF8700A6D4B7 /* InterV.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 17B3281F2893F88B000B5D0B /* InterV.ttf */; };
 		17B328212893F8D0000B5D0B /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B328202893F8D0000B5D0B /* UIFont.swift */; };
 		17D1D858289D4A3400C8350C /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1D857289D4A3400C8350C /* StorageManager.swift */; };
@@ -54,6 +58,10 @@
 		17289A0E2890415E00D6EFCE /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		17350D6928A1181E00EBD90E /* SplashViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
 		17350D6A28A1181E00EBD90E /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		1750B7C028A28842006B3CBB /* QuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		1750B7C128A28842006B3CBB /* QuizQuestionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizQuestionTableViewCell.swift; sourceTree = "<group>"; };
+		1750B7C228A28842006B3CBB /* QuizQuestionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuizQuestionTableViewCell.xib; sourceTree = "<group>"; };
+		1750B7C328A28842006B3CBB /* QuizViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuizViewController.xib; sourceTree = "<group>"; };
 		17B3281F2893F88B000B5D0B /* InterV.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = InterV.ttf; sourceTree = "<group>"; };
 		17B328202893F8D0000B5D0B /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		17D1D857289D4A3400C8350C /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
@@ -145,6 +153,17 @@
 			path = SplashViewController;
 			sourceTree = "<group>";
 		};
+		1750B7BF28A28837006B3CBB /* QuizViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1750B7C128A28842006B3CBB /* QuizQuestionTableViewCell.swift */,
+				1750B7C228A28842006B3CBB /* QuizQuestionTableViewCell.xib */,
+				1750B7C028A28842006B3CBB /* QuizViewController.swift */,
+				1750B7C328A28842006B3CBB /* QuizViewController.xib */,
+			);
+			path = QuizViewController;
+			sourceTree = "<group>";
+		};
 		17B3281C2893F71C000B5D0B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +244,7 @@
 		AF79B84D288E763000AA99BD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1750B7BF28A28837006B3CBB /* QuizViewController */,
 				BF88727728A1507400AA009B /* TestsSegmentedController */,
 				1742C56A2898FF9700F765D8 /* SplashViewController */,
 				BF227DBF2893E41600DD111A /* Register */,
@@ -378,6 +398,7 @@
 			files = (
 				AF79B843288E75B900AA99BD /* LaunchScreen.storyboard in Resources */,
 				AF79B840288E75B900AA99BD /* Assets.xcassets in Resources */,
+				1750B7C628A28842006B3CBB /* QuizQuestionTableViewCell.xib in Resources */,
 				ACEDF6B22892948D00CCFF8B /* LoginViewController.xib in Resources */,
 				17350D6B28A1181E00EBD90E /* SplashViewController.xib in Resources */,
 				17289A0828901D9500D6EFCE /* ProfileViewController.xib in Resources */,
@@ -389,6 +410,7 @@
 				17A7F9F12897BF8700A6D4B7 /* InterV.ttf in Resources */,
 				AFD0D4E22893DEE100363B6C /* GoogleService-Info.plist in Resources */,
 				BF88728628A1507400AA009B /* FinalTableViewCell.xib in Resources */,
+				1750B7C728A28842006B3CBB /* QuizViewController.xib in Resources */,
 				BF227DC22893E41600DD111A /* RegisterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -482,6 +504,7 @@
 			files = (
 				17B328212893F8D0000B5D0B /* UIFont.swift in Sources */,
 				ACEDF6B32892948D00CCFF8B /* LoginViewController.swift in Sources */,
+				1750B7C528A28842006B3CBB /* QuizQuestionTableViewCell.swift in Sources */,
 				AC66F743289956A90050925A /* CoursesCollectionViewCell.swift in Sources */,
 				17FE032D289C05A6001B6C78 /* UserDataApiManager.swift in Sources */,
 				17289A0728901D9500D6EFCE /* ProfileViewController.swift in Sources */,
@@ -495,6 +518,7 @@
 				BF88728528A1507400AA009B /* FinalTableViewCell.swift in Sources */,
 				BF227DC92895AFC000DD111A /* UserModel.swift in Sources */,
 				BF88728828A1A27200AA009B /* FinalTestModel.swift in Sources */,
+				1750B7C428A28842006B3CBB /* QuizViewController.swift in Sources */,
 				17289A0228901B4800D6EFCE /* CoursesViewController.swift in Sources */,
 				BF5DD2FD28994158002F8244 /* Encodable.swift in Sources */,
 				17D1D858289D4A3400C8350C /* StorageManager.swift in Sources */,

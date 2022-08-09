@@ -26,15 +26,6 @@ class QuizQuestionTableViewCell: UITableViewCell {
             $0.setImage(UIImage(named: "circle-selected-icon"), for: UIControl.State.selected)
         }
     }
-
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-       super.init(style: style, reuseIdentifier: reuseIdentifier)
-       contentView.isUserInteractionEnabled = true
-   }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-}
     @IBAction func buttonSelected(_ sender: UIButton) {
         buttonCollection.forEach { $0.isSelected = false }
         buttonCollection[sender.tag].isSelected = true

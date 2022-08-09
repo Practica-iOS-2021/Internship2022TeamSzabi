@@ -10,6 +10,7 @@ import UIKit
 class QuizViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var finishButton: UIButton!
+    @IBOutlet private weak var fadeView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,23 +19,23 @@ class QuizViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 500
         tableView.delaysContentTouches = false
         
         finishButton.layer.cornerRadius = 20
         finishButton.layer.masksToBounds = false
+        setGradient()
     }
-    let gradient = CAGradientLayer()
-    override func viewDidLayoutSubviews() {
-        gradient.frame = tableView.superview?.bounds ?? CGRect.null
+    
+    func setGradient() {
+        let gradient = CAGradientLayer()
         gradient.colors = [
-            UIColor.clear, UIColor.clear, UIColor.clear,
-            UIColor.red, UIColor.clear.cgColor, UIColor.red.cgColor
+            UIColor.purple.withAlphaComponent(0), UIColor.red.withAlphaComponent(0.3),
+            UIColor.green.withAlphaComponent(0.5), UIColor.white.withAlphaComponent(1)
         ]
-        gradient.locations = [0.0, 0.0, 0.0, 0.0, 0.5]
-        tableView.superview?.layer.mask = gradient
+//        gradient.locations = [0.0, 0.3, 0.5, 1.0]
+        gradient.frame = fadeView.layer.bounds
         
-        tableView.backgroundColor = UIColor.clear
+        fadeView.layer.addSublayer(gradient)
     }
 }
 
@@ -49,14 +50,11 @@ extension QuizViewController: UITableViewDelegate, UITableViewDataSource {
                                                        for: indexPath) as? QuizQuestionTableViewCell else {
             return UITableViewCell()
         }
-//        cell.contentView.alpha = 0.5
-        
-        cell.backgroundColor = .clear
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//        UIView.animate(withDuration: 1) {
-//            cell.contentView.alpha = 1
-//        }?
+    //    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    //        UIView.animate(withDuration: 1) {
+    //            cell.contentView.alpha = 1
+    //        }?
 }

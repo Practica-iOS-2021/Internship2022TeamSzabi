@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuizViewController" customModule="Internship2022TeamSzabi" customModuleProvider="target">
             <connections>
+                <outlet property="fadeView" destination="IHp-w4-msV" id="0a0-Il-iD8"/>
                 <outlet property="finishButton" destination="KhT-hP-MYC" id="qj0-Vz-TGZ"/>
                 <outlet property="tableView" destination="OAg-On-Uit" id="Hhh-2q-9r3"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -30,6 +31,13 @@
                         <outlet property="delegate" destination="-1" id="vUB-Ni-nJ4"/>
                     </connections>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IHp-w4-msV">
+                    <rect key="frame" x="0.0" y="712" width="414" height="150"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="Br8-ll-wKB"/>
+                    </constraints>
+                </view>
                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KhT-hP-MYC">
                     <rect key="frame" x="62" y="752" width="290" height="60"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -59,9 +67,12 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="KhT-hP-MYC" secondAttribute="bottom" constant="50" id="0Cz-Cb-Y3Z"/>
                 <constraint firstItem="KhT-hP-MYC" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="6QZ-Sp-nhN"/>
                 <constraint firstItem="OAg-On-Uit" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="J6x-nb-Mze"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="IHp-w4-msV" secondAttribute="bottom" id="Sfo-aZ-pHP"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OAg-On-Uit" secondAttribute="trailing" id="Vid-Nz-MUo"/>
                 <constraint firstItem="OAg-On-Uit" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="id9-Zr-9NC"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="OAg-On-Uit" secondAttribute="bottom" id="nvs-7J-wa3"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="IHp-w4-msV" secondAttribute="trailing" id="r8M-dF-Kkn"/>
+                <constraint firstItem="IHp-w4-msV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="tbu-Yp-KPs"/>
             </constraints>
             <point key="canvasLocation" x="132" y="78"/>
         </view>
