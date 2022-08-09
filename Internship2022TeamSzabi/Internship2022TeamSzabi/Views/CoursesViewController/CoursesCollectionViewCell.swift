@@ -11,6 +11,7 @@ class CoursesCollectionViewCell: UICollectionViewCell {
     static let identifier = "CoursesCollectionViewCell"
     
     @IBOutlet private var courseName: UILabel!
+    @IBOutlet private var chapterCount: UIButton!
     @IBOutlet private var courseIcon: UIImageView!
     
     override func awakeFromNib() {
@@ -35,5 +36,6 @@ class CoursesCollectionViewCell: UICollectionViewCell {
     func setup(course: CoursesModel) {
         courseIcon.image = UIImage(named: course.name)
         courseName.text = course.name
+        chapterCount.setTitle("\(course.chapters?.count ?? 0) lessons", for: .normal)
     }
 }

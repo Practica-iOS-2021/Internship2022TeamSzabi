@@ -75,6 +75,7 @@
             </constraints>
             <size key="customSize" width="50" height="54"/>
             <connections>
+                <outlet property="chapterCount" destination="2um-Zi-bRU" id="pho-TN-QRa"/>
                 <outlet property="courseIcon" destination="ivI-g4-nf9" id="0u1-My-qeS"/>
                 <outlet property="courseName" destination="LOd-h1-Dfj" id="X4V-8w-Oqt"/>
             </connections>

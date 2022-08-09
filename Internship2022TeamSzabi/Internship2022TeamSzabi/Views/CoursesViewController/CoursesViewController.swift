@@ -23,13 +23,14 @@ final class CoursesViewController: UIViewController,
         let nibCell = UINib(nibName: CoursesCollectionViewCell.identifier, bundle: nil)
         courseCollectionView.register(nibCell, forCellWithReuseIdentifier: "CoursesCollectionViewCell")
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         getCourses()
     }
     
     func getCourses() {
-        CoursesApiManager.sharedCoursesData.fetchCoursesData { [weak self] courses in
+        CoursesApiManager.sharedCoursesData.getCoursesData { [weak self] courses in
             guard let courses = courses else { return }
             guard let self = self else { return }
             self.coursesData = courses
