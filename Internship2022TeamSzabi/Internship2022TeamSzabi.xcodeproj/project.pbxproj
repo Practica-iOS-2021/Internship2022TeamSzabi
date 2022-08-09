@@ -21,6 +21,9 @@
 		17B328212893F8D0000B5D0B /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B328202893F8D0000B5D0B /* UIFont.swift */; };
 		17D1D858289D4A3400C8350C /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1D857289D4A3400C8350C /* StorageManager.swift */; };
 		17FE032D289C05A6001B6C78 /* UserDataApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FE032C289C05A6001B6C78 /* UserDataApiManager.swift */; };
+		AC51D62928A1779900C8F82A /* CoursesApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC51D62828A1779900C8F82A /* CoursesApiManager.swift */; };
+		AC51D62B28A2754100C8F82A /* CoursesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC51D62A28A2754100C8F82A /* CoursesModel.swift */; };
+		AC51D62D28A28A0D00C8F82A /* ChapterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC51D62C28A28A0D00C8F82A /* ChapterModel.swift */; };
 		AC66F743289956A90050925A /* CoursesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC66F741289956A90050925A /* CoursesCollectionViewCell.swift */; };
 		AC66F744289956A90050925A /* CoursesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC66F742289956A90050925A /* CoursesCollectionViewCell.xib */; };
 		ACEDF6B22892948D00CCFF8B /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACEDF6B02892948D00CCFF8B /* LoginViewController.xib */; };
@@ -53,6 +56,9 @@
 		17FE032C289C05A6001B6C78 /* UserDataApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataApiManager.swift; sourceTree = "<group>"; };
 		6C7B69DF5BC9AAEE4762FCA0 /* Pods_Internship2022TeamSzabi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Internship2022TeamSzabi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D3D3B9698794A59ACE11F08 /* Pods-Internship2022TeamSzabi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Internship2022TeamSzabi.debug.xcconfig"; path = "Target Support Files/Pods-Internship2022TeamSzabi/Pods-Internship2022TeamSzabi.debug.xcconfig"; sourceTree = "<group>"; };
+		AC51D62828A1779900C8F82A /* CoursesApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesApiManager.swift; sourceTree = "<group>"; };
+		AC51D62A28A2754100C8F82A /* CoursesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesModel.swift; sourceTree = "<group>"; };
+		AC51D62C28A28A0D00C8F82A /* ChapterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterModel.swift; sourceTree = "<group>"; };
 		AC66F741289956A90050925A /* CoursesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesCollectionViewCell.swift; sourceTree = "<group>"; };
 		AC66F742289956A90050925A /* CoursesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoursesCollectionViewCell.xib; sourceTree = "<group>"; };
 		ACEDF6B02892948D00CCFF8B /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -246,6 +252,7 @@
 				BF227DC628957F2F00DD111A /* AuthApiManager.swift */,
 				BF5DD2FE28994397002F8244 /* FirestoreManager.swift */,
 				17FE032C289C05A6001B6C78 /* UserDataApiManager.swift */,
+				AC51D62828A1779900C8F82A /* CoursesApiManager.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -254,6 +261,8 @@
 			isa = PBXGroup;
 			children = (
 				BF227DC82895AFC000DD111A /* UserModel.swift */,
+				AC51D62A28A2754100C8F82A /* CoursesModel.swift */,
+				AC51D62C28A28A0D00C8F82A /* ChapterModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -448,12 +457,15 @@
 				17289A0F2890415E00D6EFCE /* TabBarController.swift in Sources */,
 				AF79B837288E75B800AA99BD /* AppDelegate.swift in Sources */,
 				17289A0B28901E5400D6EFCE /* GradesViewController.swift in Sources */,
+				AC51D62D28A28A0D00C8F82A /* ChapterModel.swift in Sources */,
 				BF5DD2FF28994397002F8244 /* FirestoreManager.swift in Sources */,
 				BF227DC728957F2F00DD111A /* AuthApiManager.swift in Sources */,
 				BF227DC92895AFC000DD111A /* UserModel.swift in Sources */,
 				17289A0228901B4800D6EFCE /* CoursesViewController.swift in Sources */,
 				BF5DD2FD28994158002F8244 /* Encodable.swift in Sources */,
+				AC51D62928A1779900C8F82A /* CoursesApiManager.swift in Sources */,
 				17D1D858289D4A3400C8350C /* StorageManager.swift in Sources */,
+				AC51D62B28A2754100C8F82A /* CoursesModel.swift in Sources */,
 				17350D6C28A1181E00EBD90E /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

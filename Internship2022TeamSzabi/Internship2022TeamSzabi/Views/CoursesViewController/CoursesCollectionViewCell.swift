@@ -32,8 +32,8 @@ class CoursesCollectionViewCell: UICollectionViewCell {
         layer.shadowOffset = CGSize(width: 0, height: 4)
     }
     
-    func setup(imageName: String, name: String) {
-        courseIcon.image = UIImage(named: imageName)
-        courseName.text = name
+    func setup(course: CoursesModel) {
+        courseIcon.image = UIImage(named: course.name)
+        courseName.text = course.name
     }
 }
