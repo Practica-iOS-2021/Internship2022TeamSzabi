@@ -63,8 +63,9 @@ final class ProfileViewController: UIViewController {
     }
     
     private func alertError(_ errorMessage: String) {
-        let dialogMessage = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Data cannot be fetched", style: .default)
+        let dialogMessage = UIAlertController(title: "Something went wrong",
+                                              message: errorMessage, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Error: \(FirestoreManager.firestoreError)", style: .default)
         dialogMessage.addAction(okAction)
         present(dialogMessage, animated: true, completion: nil)
     }

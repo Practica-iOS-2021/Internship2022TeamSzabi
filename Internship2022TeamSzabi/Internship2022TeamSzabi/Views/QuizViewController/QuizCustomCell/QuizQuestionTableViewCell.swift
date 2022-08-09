@@ -12,7 +12,7 @@ class QuizQuestionTableViewCell: UITableViewCell {
     @IBOutlet weak var quizContainer: UIView!
     
     static let identifier = "QuizQuestionTableViewCell"
-
+    
     static func nib() -> UINib {
         return UINib(nibName: "QuizQuestionTableViewCell", bundle: nil)
     }
