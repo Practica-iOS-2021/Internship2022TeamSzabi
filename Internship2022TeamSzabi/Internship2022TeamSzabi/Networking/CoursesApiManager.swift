@@ -11,19 +11,19 @@ import FirebaseFirestore
 class CoursesApiManager {
     static let sharedCoursesData = CoursesApiManager()
     
-    private var courses: [CoursesModel] = []
+    var courses: [CoursesModel] = []
     
     func getCoursesData(completion: @escaping ([CoursesModel]?) -> Void) {
         if !courses.isEmpty {
             completion(courses)
+            return
         }
-        let coursesReference = FirestoreManager.dbConn.collection(coursesCollection)
-        
-        coursesReference.getDocuments { [weak self] querySnapshot, error in
-            if error != nil {
-                completion(nil)
+        let coursesRefrence = FirestoreManager.dbConn.collection(coursesCollection)
+    
+        coursesRefrence.getDocuments { querySnapshot, err in
+            if err != nil {
+               completion(nil)
             } else {
-                guard let self = self else { return }
                 var courses: [CoursesModel] = []
                 for document in querySnapshot?.documents ?? [] {
                     print("\(document.documentID) => \(document.data())")
@@ -32,7 +32,9 @@ class CoursesApiManager {
                     let name = data["name"] as? String ?? ""
                     let semester = data["semester"] as? Int ?? 0
                     
-                    let currentCourse = CoursesModel(name: name, semester: semester, documentId: document.documentID)
+                    let currentCourse = CoursesModel(name: name,
+                                                     semester: semester,
+                                                     documentId: document.documentID)
                     courses.append(currentCourse)
                 }
                 self.courses = courses
@@ -44,9 +46,11 @@ class CoursesApiManager {
     }
     
     private func getAllCourses(completion: @escaping () -> Void) {
+        var courseCount = 0
         for course in courses {
-            getChapters(courseDocumentId: course.documentId ?? "") { chapters in
-                if course.documentId == self.courses.last?.documentId {
+            self.getChapters(courseDocumentId: course.documentId ?? "") { chapters in
+                courseCount += 1
+                if courseCount >= self.courses.count {
                     completion()
                 }
                 for chapter in chapters ?? [] {
@@ -61,10 +65,10 @@ class CoursesApiManager {
                              completion: @escaping ([ChapterModel]?) -> Void) {
         let coursesRefrence = FirestoreManager.dbConn.collection(coursesCollection)
         let chaptersRefrence = coursesRefrence.document(courseDocumentId).collection(chaptersCollection)
-        
-        chaptersRefrence.getDocuments { [weak self] querySnapshot, error in
-            if error != nil {
-                completion(nil)
+    
+        chaptersRefrence.getDocuments { querySnapshot, err in
+            if err != nil {
+               completion(nil)
             } else {
                 var chapters: [ChapterModel] = []
                 for document in querySnapshot?.documents ?? [] {
@@ -77,7 +81,7 @@ class CoursesApiManager {
                     
                     chapters.append(chapter)
                 }
-                self?.updateCourse(documentId: courseDocumentId, chapters: chapters)
+                self.updateCourse(documentId: courseDocumentId, chapters: chapters)
                 completion(chapters)
             }
         }
@@ -88,8 +92,8 @@ class CoursesApiManager {
         let coursesRefrence = FirestoreManager.dbConn.collection(coursesCollection)
         let chaptersRefrence = coursesRefrence.document(courseDocumentId).collection(chaptersCollection)
         let questionRefrence = chaptersRefrence.document(chapterDocumentId).collection(questionsCollection)
-        
-        questionRefrence.getDocuments { [weak self] querySnapshot, _ in
+    
+        questionRefrence.getDocuments { querySnapshot, _ in
             var questions: [QuestionModel] = []
             for document in querySnapshot?.documents ?? [] {
                 print("\(document.documentID) => \(document.data())")
@@ -103,9 +107,9 @@ class CoursesApiManager {
                                              question: questionString)
                 questions.append(question)
             }
-            self?.updateChapter(courseDocumentId: courseDocumentId,
-                                chapterDocumentId: chapterDocumentId,
-                                questions: questions)
+            self.updateChapter(courseDocumentId: courseDocumentId,
+                               chapterDocumentId: chapterDocumentId,
+                               questions: questions)
         }
     }
     

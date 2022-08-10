@@ -60,6 +60,8 @@ final class CoursesViewController: UIViewController,
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let coursesData = CoursesApiManager.sharedCoursesData.courses
+        
         let viewController = TestsViewController()
         viewController.modalPresentationStyle = .fullScreen
         viewController.course = coursesData[indexPath.row]

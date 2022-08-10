@@ -12,6 +12,8 @@ class QuizViewController: UIViewController {
     @IBOutlet private weak var finishButton: UIButton!
     @IBOutlet private weak var fadeView: UIView!
     
+    var chapter: ChapterModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,6 +28,8 @@ class QuizViewController: UIViewController {
         finishButton.layer.cornerRadius = 20
         finishButton.layer.masksToBounds = false
         setGradient()
+        
+        navigationItem.title = chapter?.name
     }
     
     // MARK: - Gradient fade
