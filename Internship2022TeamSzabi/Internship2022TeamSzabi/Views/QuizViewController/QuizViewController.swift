@@ -12,6 +12,8 @@ class QuizViewController: UIViewController {
     @IBOutlet private weak var finishButton: UIButton!
     @IBOutlet private weak var fadeView: UIView!
     
+//    private var quizModel = [courseModel]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -54,3 +56,4 @@ extension QuizViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 }
+        

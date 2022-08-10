@@ -16,6 +16,7 @@ class QuizQuestionTableViewCell: UITableViewCell {
     static func nib() -> UINib {
         return UINib(nibName: "QuizQuestionTableViewCell", bundle: nil)
     }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -28,7 +29,7 @@ class QuizQuestionTableViewCell: UITableViewCell {
         }
     }
     
-    @IBAction func buttonSelected(_ sender: UIButton) {
+    @IBAction private func buttonSelected(_ sender: UIButton) {
         buttonCollection.forEach { $0.isSelected = false }
         buttonCollection[sender.tag].isSelected = true
     }
