@@ -199,7 +199,7 @@ extension TestsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let viewController = QuizViewController()
         viewController.modalPresentationStyle = .fullScreen
-        viewController.chapter = chaptersDataSource[indexPath.row]
+        viewController.chapterModel = chaptersDataSource[indexPath.row]
         navigationController?.pushViewController(viewController, animated: true)
     }
 }

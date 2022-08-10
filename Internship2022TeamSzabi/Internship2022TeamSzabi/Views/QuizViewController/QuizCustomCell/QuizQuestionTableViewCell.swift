@@ -32,13 +32,15 @@ class QuizQuestionTableViewCell: UITableViewCell {
             $0.isSelected = false
             $0.setImage(UIImage(named: "circle-unselected-icon"), for: UIControl.State.normal)
             $0.setImage(UIImage(named: "circle-selected-icon"), for: UIControl.State.selected)
+            $0.titleLabel?.numberOfLines = 0
+            $0.titleLabel?.lineBreakMode = .byWordWrapping
         }
     }
     
     @IBAction private func buttonSelected(_ sender: UIButton) {
         buttonCollection.forEach { $0.isSelected = false }
         buttonCollection[sender.tag].isSelected = true
-        delegate?.didSelectAnswer(answer: sender.tag , number: questionNumber)
+        delegate?.didSelectAnswer(answer: sender.tag, number: questionNumber)
     }
     
     func setup(question: QuestionModel, number: Int) {

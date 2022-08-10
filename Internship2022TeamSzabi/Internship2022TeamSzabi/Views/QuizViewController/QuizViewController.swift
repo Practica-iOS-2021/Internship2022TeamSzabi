@@ -7,8 +7,6 @@
 
 import UIKit
 
-
-
 class QuizViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var finishButton: UIButton!
@@ -16,7 +14,8 @@ class QuizViewController: UIViewController {
     
     private var selectedAnswers: [Int] = []
     private var questionsModel: [QuestionModel] = []
-    
+    var chapterModel: ChapterModel?
+    private var score = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,8 +30,11 @@ class QuizViewController: UIViewController {
         finishButton.layer.cornerRadius = 20
         finishButton.layer.masksToBounds = false
         setGradient()
+       
+        navigationItem.title = chapterModel?.name
+        questionsModel = chapterModel?.questions ?? []
         if !questionsModel.isEmpty {
-            selectedAnswers = [Int](repeating: -1, count: questionsModel.count - 1)
+            selectedAnswers = [Int](repeating: -1, count: questionsModel.count)
         }
     }
     
@@ -50,15 +52,33 @@ class QuizViewController: UIViewController {
     }
     
     private func computeGrade() {
-        if selectedAnswers
-    }//error if question not answered
+        if selectedAnswers.first(where: { $0 == -1 }) != nil {
+            print("please fill all questions")
+            return
+        }
+        questionsModel.enumerated().forEach { index, question in
+            if question.correntAnswer == selectedAnswers[index] {
+            score += 1
+            }
+        }
+        print(score)
+        // error if question not answered
+    }
+    @IBAction private func finishExam() {
+        computeGrade()
+    }
 }
 
 extension QuizViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return questionsModel.count
+        return questionsModel.count 
     }
-    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 150
+    }
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: QuizQuestionTableViewCell.identifier,
                                                        for: indexPath) as? QuizQuestionTableViewCell else {
