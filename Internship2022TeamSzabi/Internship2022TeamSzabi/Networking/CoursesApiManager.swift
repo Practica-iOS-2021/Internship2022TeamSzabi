@@ -48,14 +48,14 @@ class CoursesApiManager {
     private func getAllCourses(completion: @escaping () -> Void) {
         var courseCount = 0
         for course in courses {
-            self.getChapters(courseDocumentId: course.documentId) { chapters in
+            self.getChapters(courseDocumentId: course.documentId ?? "") { chapters in
                 courseCount += 1
                 if courseCount >= self.courses.count {
                     completion()
                 }
                 for chapter in chapters ?? [] {
-                    self.getQuestions(courseDocumentId: course.documentId,
-                                      chapterDocumentId: chapter.documentId)
+                    self.getQuestions(courseDocumentId: course.documentId ?? "",
+                                      chapterDocumentId: chapter.documentId ?? "")
                 }
             }
         }

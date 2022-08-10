@@ -28,6 +28,8 @@ class QuizViewController: UIViewController {
         finishButton.layer.cornerRadius = 20
         finishButton.layer.masksToBounds = false
         setGradient()
+        
+        navigationItem.title = chapter?.name
     }
     
     // MARK: - Gradient fade

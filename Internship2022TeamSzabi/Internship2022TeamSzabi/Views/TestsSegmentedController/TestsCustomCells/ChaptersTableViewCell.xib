@@ -29,6 +29,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mathematics" translatesAutoresizingMaskIntoConstraints="NO" id="Vcc-DP-KfT">
                                 <rect key="frame" x="20" y="31.5" width="40" height="40"/>
+                                <color key="tintColor" name="TabBarColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="G0e-fW-8IJ"/>
                                     <constraint firstAttribute="width" constant="40" id="hTq-vZ-Yd8"/>

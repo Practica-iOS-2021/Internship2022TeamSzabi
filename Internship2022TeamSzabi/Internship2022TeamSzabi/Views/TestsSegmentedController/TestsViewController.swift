@@ -24,9 +24,9 @@ class TestsViewController: UIViewController {
     
     var course: CoursesModel?
     // MARK: - DataSet for 'chapters', 'final' 'passed' tests
-    var chaptersDataSource: [ChapterModel] = []
-    var passedDataSource: [String] = []
-    var finalDataSource: [FinalTestModel] = []
+    private var chaptersDataSource: [ChapterModel] = []
+    private var passedDataSource: [String] = []
+    private var finalDataSource: [FinalTestModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +46,7 @@ class TestsViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        self.navigationItem.title = course?.name
         chaptersDataSource = course?.chapters ?? []
         finalDataSource = self.getFinal()
         // passedDataSource = self.getPassed()
@@ -198,7 +199,6 @@ extension TestsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let viewController = QuizViewController()
         viewController.modalPresentationStyle = .fullScreen
-        viewController.navigationItem.title = chaptersDataSource[indexPath.row].name
         viewController.chapter = chaptersDataSource[indexPath.row]
         navigationController?.pushViewController(viewController, animated: true)
     }
