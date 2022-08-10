@@ -65,6 +65,7 @@ final class CoursesViewController: UIViewController,
         
         let viewController = TestsViewController()
         viewController.modalPresentationStyle = .fullScreen
+        viewController.navigationItem.title = coursesData[indexPath.row].name
         viewController.course = coursesData[indexPath.row]
         navigationController?.pushViewController(viewController, animated: true)
     }

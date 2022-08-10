@@ -22,16 +22,11 @@ class TestsViewController: UIViewController {
     }
     private var currentButton = NavButtons.chaptersButton
     
-    // MARK: - DataSet for 'chapters', 'final' 'passed' tests
     var course: CoursesModel?
+    // MARK: - DataSet for 'chapters', 'final' 'passed' tests
     var chaptersDataSource: [ChapterModel] = []
-    //var questions = ChapterModel(questions: [])
-    
     var passedDataSource: [String] = []
-    let finalDataSource: [FinalTestModel] = [
-        FinalTestModel(title: "Generate final random test"),
-        FinalTestModel(title: "Scan the QR code and start the coresponding test")
-    ]
+    var finalDataSource: [FinalTestModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,20 +46,9 @@ class TestsViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        self.navigationItem.title = course?.name ?? "Tests"
         chaptersDataSource = course?.chapters ?? []
+        finalDataSource = self.getFinal()
         // passedDataSource = self.getPassed()
-        print("Count --------------------------------")
-        chaptersDataSource.forEach { chapter in
-            print(chapter.questions?.count as Any)
-        }
-        print("Questions ---------------------------")
-        course?.chapters?.forEach { chapter in
-            chapter.questions?.forEach { question in
-                print(question)
-            }
-        }
-        print("--------------------------------")
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -147,13 +131,12 @@ class TestsViewController: UIViewController {
         testsTableView.reloadData()
     }
 
-//    private func getChapters() -> [ChapterModel] {
-//        return courseData.chapters ?? []
-//    }
-//
-//    private func getPassed() -> [String] {
-//        return ["1", "2", "3"]
-//    }
+    private func getFinal() -> [FinalTestModel] {
+        return [
+            FinalTestModel(title: "Generate final random test"),
+            FinalTestModel(title: "Scan the QR code and start the coresponding test")
+        ]
+    }
 }
 
 extension TestsViewController: UITableViewDataSource, UITableViewDelegate {
@@ -210,5 +193,13 @@ extension TestsViewController: UITableViewDataSource, UITableViewDelegate {
             // 250    + 65  + 5
             return 320
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let viewController = QuizViewController()
+        viewController.modalPresentationStyle = .fullScreen
+        viewController.navigationItem.title = chaptersDataSource[indexPath.row].name
+        viewController.chapter = chaptersDataSource[indexPath.row]
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }

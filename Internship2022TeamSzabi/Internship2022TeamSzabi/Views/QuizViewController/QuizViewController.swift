@@ -12,6 +12,8 @@ class QuizViewController: UIViewController {
     @IBOutlet private weak var finishButton: UIButton!
     @IBOutlet private weak var fadeView: UIView!
     
+    var chapter: ChapterModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
