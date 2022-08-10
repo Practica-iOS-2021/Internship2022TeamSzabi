@@ -11,6 +11,8 @@ import FirebaseAuth
 
 let usersCollection = "users"
 let coursesCollection = "courses"
+let chaptersCollection = "chapters"
+let questionsCollection = "questions"
 
 enum FirestoreManager {
     static let dbConn = Firestore.firestore()

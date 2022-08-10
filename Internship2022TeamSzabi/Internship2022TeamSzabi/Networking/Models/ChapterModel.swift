@@ -9,4 +9,6 @@ import Foundation
 
 struct ChapterModel: Codable {
     var name: String
+    var documentId: String
+    var questions: [QuestionModel]?
 }

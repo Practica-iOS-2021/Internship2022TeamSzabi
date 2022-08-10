@@ -10,5 +10,6 @@ import Foundation
 struct CoursesModel: Codable {
     var name: String
     var semester: Int
-    var chapters: [ChapterModel]
+    var documentId: String
+    var chapters: [ChapterModel]?
 }

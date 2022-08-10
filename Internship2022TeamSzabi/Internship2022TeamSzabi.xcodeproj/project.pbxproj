@@ -32,6 +32,7 @@
 		AF79B840288E75B900AA99BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF79B83F288E75B900AA99BD /* Assets.xcassets */; };
 		AF79B843288E75B900AA99BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF79B841288E75B900AA99BD /* LaunchScreen.storyboard */; };
 		AFD0D4E22893DEE100363B6C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AFD0D4E12893DEE100363B6C /* GoogleService-Info.plist */; };
+		AFED2DCC28A2A30E00F80323 /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFED2DCB28A2A30E00F80323 /* QuestionModel.swift */; };
 		BF227DC22893E41600DD111A /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF227DC02893E41600DD111A /* RegisterViewController.xib */; };
 		BF227DC32893E41600DD111A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF227DC12893E41600DD111A /* RegisterViewController.swift */; };
 		BF227DC728957F2F00DD111A /* AuthApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF227DC628957F2F00DD111A /* AuthApiManager.swift */; };
@@ -77,6 +78,7 @@
 		AF79B844288E75B900AA99BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFA30AF5288FEADB00781179 /* Storage.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Storage.md; sourceTree = "<group>"; };
 		AFD0D4E12893DEE100363B6C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AFED2DCB28A2A30E00F80323 /* QuestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
 		BF227DC02893E41600DD111A /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
 		BF227DC12893E41600DD111A /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		BF227DC628957F2F00DD111A /* AuthApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthApiManager.swift; sourceTree = "<group>"; };
@@ -277,8 +279,9 @@
 			isa = PBXGroup;
 			children = (
 				BF227DC82895AFC000DD111A /* UserModel.swift */,
-				AC51D63228A2AC2400C8F82A /* ChapterModel.swift */,
-				AC51D63028A2AC1900C8F82A /* CoursesModel.swift */,
+				AC51D62A28A2754100C8F82A /* CoursesModel.swift */,
+				AC51D62C28A28A0D00C8F82A /* ChapterModel.swift */,
+				AFED2DCB28A2A30E00F80323 /* QuestionModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
