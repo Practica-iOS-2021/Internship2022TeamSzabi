@@ -58,4 +58,11 @@ final class CoursesViewController: UIViewController,
         }
         return UICollectionViewCell()
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let viewController = TestsViewController()
+        viewController.modalPresentationStyle = .fullScreen
+        viewController.course = coursesData[indexPath.row]
+        navigationController?.pushViewController(viewController, animated: true)
+    }
 }
