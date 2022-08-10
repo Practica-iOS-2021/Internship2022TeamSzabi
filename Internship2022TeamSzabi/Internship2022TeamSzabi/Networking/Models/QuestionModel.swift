@@ -8,7 +8,7 @@
 import Foundation
 
 struct QuestionModel: Codable {
-    var answers: [String]
-    var correntAnswer: Int
-    var question: String
+    var answers: [String]?
+    var correntAnswer: Int?
+    var question: String?
 }

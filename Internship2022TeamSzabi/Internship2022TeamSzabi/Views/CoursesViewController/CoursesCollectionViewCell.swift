@@ -34,7 +34,7 @@ class CoursesCollectionViewCell: UICollectionViewCell {
     }
     
     func setup(course: CoursesModel) {
-        courseIcon.image = UIImage(named: course.name)
+        courseIcon.image = UIImage(named: course.name ?? "")
         courseName.text = course.name
         chapterCount.setTitle("\(course.chapters?.count ?? 0) lessons", for: .normal)
     }
