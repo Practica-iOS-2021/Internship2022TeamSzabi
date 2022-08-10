@@ -27,6 +27,7 @@ class QuizViewController: UIViewController {
         finishButton.layer.masksToBounds = false
         setGradient()
     }
+    
     // MARK: - Gradient fade
     private func setGradient() {
         let gradient = CAGradientLayer()
