@@ -23,7 +23,8 @@ class TestsViewController: UIViewController {
     private var currentButton = NavButtons.chaptersButton
 
     // MARK: - DataSet for 'chapters', 'final' 'passed' tests
-    var chaptersDataSource: [String] = []
+    var courseName: String = "Tests"
+    var chaptersDataSource: [ChapterModel] = []
     var passedDataSource: [String] = []
     let finalDataSource: [FinalTestModel] = [
         FinalTestModel(title: "Generate final random test"),
@@ -48,8 +49,9 @@ class TestsViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        chaptersDataSource = self.getChapters()
-        passedDataSource = self.getPassed()
+        self.navigationItem.title = courseName
+        //chaptersDataSource = self.getChapters()
+        //passedDataSource = self.getPassed()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -130,13 +132,13 @@ class TestsViewController: UIViewController {
         testsTableView.reloadData()
     }
 
-    private func getChapters() -> [String] {
-        return ["1", "2", "3", "4", "5"]
-    }
-
-    private func getPassed() -> [String] {
-        return ["1", "2", "3"]
-    }
+//    private func getChapters() -> [ChapterModel] {
+//        return courseData.chapters ?? []
+//    }
+//
+//    private func getPassed() -> [String] {
+//        return ["1", "2", "3"]
+//    }
 }
 
 extension TestsViewController: UITableViewDataSource, UITableViewDelegate {
@@ -159,7 +161,7 @@ extension TestsViewController: UITableViewDataSource, UITableViewDelegate {
             guard let cell = tableView.dequeueReusableCell(
                 withIdentifier: ChaptersTableViewCell.Details.identifier, for: indexPath)
             as? ChaptersTableViewCell else { return UITableViewCell() }
-            cell.updateCellViewForChapter(/* ChapterModel @ indexPath */)
+            cell.updateCellViewForChapter(chapter: chaptersDataSource[indexPath.row], iconName: courseName)
             return cell
         case NavButtons.finalButton:
             guard let cell = tableView.dequeueReusableCell(

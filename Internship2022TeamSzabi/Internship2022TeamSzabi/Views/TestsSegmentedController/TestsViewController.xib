@@ -27,14 +27,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dr4-kj-EEx">
-                    <rect key="frame" x="0.0" y="77.5" width="414" height="784.5"/>
+                    <rect key="frame" x="0.0" y="87.5" width="414" height="774.5"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
                 <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="nvo-IH-aE5" userLabel="navView">
-                    <rect key="frame" x="0.0" y="44" width="414" height="33.5"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="43.5"/>
                     <subviews>
                         <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fur-04-h6b" userLabel="segmentedStackView">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="33.5"/>
+                            <rect key="frame" x="0.0" y="10" width="414" height="33.5"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TWi-jr-iAs">
                                     <rect key="frame" x="0.0" y="0.0" width="138" height="33.5"/>
@@ -79,7 +79,7 @@
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="Fur-04-h6b" secondAttribute="trailing" id="Efs-zW-aW9"/>
                         <constraint firstAttribute="bottom" secondItem="Fur-04-h6b" secondAttribute="bottom" id="HxD-L1-aLU"/>
-                        <constraint firstItem="Fur-04-h6b" firstAttribute="top" secondItem="nvo-IH-aE5" secondAttribute="top" id="P2y-Ar-ZOa"/>
+                        <constraint firstItem="Fur-04-h6b" firstAttribute="top" secondItem="nvo-IH-aE5" secondAttribute="top" constant="10" id="P2y-Ar-ZOa"/>
                         <constraint firstItem="Fur-04-h6b" firstAttribute="leading" secondItem="nvo-IH-aE5" secondAttribute="leading" id="dPI-bx-R0V"/>
                     </constraints>
                 </view>
