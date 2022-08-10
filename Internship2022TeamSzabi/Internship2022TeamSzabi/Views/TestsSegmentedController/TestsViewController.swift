@@ -22,21 +22,14 @@ class TestsViewController: UIViewController {
     }
     private var currentButton = NavButtons.chaptersButton
     
-    // MARK: - DataSet for 'chapters', 'final' 'passed' tests
-    var chaptersDataSource: [String] = []
-    var passedDataSource: [String] = []
-    let finalDataSource: [FinalTestModel] = [
-        FinalTestModel(title: "Generate final random test"),
-        FinalTestModel(title: "Scan the QR code and start the coresponding test")
-    ]
     var course: CoursesModel?
+    // MARK: - DataSet for 'chapters', 'final' 'passed' tests
+    private var chaptersDataSource: [ChapterModel] = []
+    private var passedDataSource: [String] = []
+    private var finalDataSource: [FinalTestModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        navigationItem.title = course?.name
-
-        
         // register cells Nib's
         testsTableView.register(
             UINib(nibName: "ChaptersTableViewCell", bundle: nil),
@@ -53,8 +46,10 @@ class TestsViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        chaptersDataSource = self.getChapters()
-        passedDataSource = self.getPassed()
+        self.navigationItem.title = course?.name
+        chaptersDataSource = course?.chapters ?? []
+        finalDataSource = self.getFinal()
+        // passedDataSource = self.getPassed()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -85,6 +80,8 @@ class TestsViewController: UIViewController {
 
     private func navAppearance() {
         // MARK: - navView containing nav components appearence
+        // navigationBar remove shadow
+        navigationController?.navigationBar.layer.shadowColor = UIColor.clear.cgColor
         // shadow
         navView.layer.masksToBounds = false
         navView.layer.shadowOffset = CGSize(width: 0, height: 4)
@@ -135,12 +132,11 @@ class TestsViewController: UIViewController {
         testsTableView.reloadData()
     }
 
-    private func getChapters() -> [String] {
-        return ["1", "2", "3", "4", "5"]
-    }
-
-    private func getPassed() -> [String] {
-        return ["1", "2", "3"]
+    private func getFinal() -> [FinalTestModel] {
+        return [
+            FinalTestModel(title: "Generate final random test"),
+            FinalTestModel(title: "Scan the QR code and start the coresponding test")
+        ]
     }
 }
 
@@ -164,7 +160,9 @@ extension TestsViewController: UITableViewDataSource, UITableViewDelegate {
             guard let cell = tableView.dequeueReusableCell(
                 withIdentifier: ChaptersTableViewCell.Details.identifier, for: indexPath)
             as? ChaptersTableViewCell else { return UITableViewCell() }
-            cell.updateCellViewForChapter(/* ChapterModel @ indexPath */)
+            cell.updateCellViewForChapter(
+                chapter: chaptersDataSource[indexPath.row],
+                iconName: course?.name ?? "Chapter")
             return cell
         case NavButtons.finalButton:
             guard let cell = tableView.dequeueReusableCell(
@@ -196,5 +194,12 @@ extension TestsViewController: UITableViewDataSource, UITableViewDelegate {
             // 250    + 65  + 5
             return 320
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let viewController = QuizViewController()
+        viewController.modalPresentationStyle = .fullScreen
+        viewController.chapter = chaptersDataSource[indexPath.row]
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }

@@ -26,7 +26,10 @@ class ChaptersTableViewCell: UITableViewCell {
         setAppearance()
     }
 
-    func updateCellViewForChapter(/* ChapterModel */) {
+    func updateCellViewForChapter(chapter: ChapterModel, iconName: String) {
+        icon.image = UIImage(named: iconName)
+        title.text = chapter.name
+        subTitle.text = "\(chapter.questions?.count ?? 0) questions"
         grade.isHidden = true
         arrow.isHidden = false
     }
