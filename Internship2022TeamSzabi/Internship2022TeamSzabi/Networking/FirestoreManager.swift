@@ -14,4 +14,5 @@ let usersCollection = "users"
 enum FirestoreManager {
     static let dbConn = Firestore.firestore()
     static let auth = Auth.auth()
+    static let firestoreError = FirestoreErrorCode.unavailable
 }
