@@ -27,7 +27,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dr4-kj-EEx">
-                    <rect key="frame" x="0.0" y="87.5" width="414" height="774.5"/>
+                    <rect key="frame" x="0.0" y="97.5" width="414" height="764.5"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
                 <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="nvo-IH-aE5" userLabel="navView">
@@ -88,7 +88,7 @@
             <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="nvo-IH-aE5" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="AS0-8D-X4m"/>
-                <constraint firstItem="dr4-kj-EEx" firstAttribute="top" secondItem="nvo-IH-aE5" secondAttribute="bottom" id="CKi-0N-0p6"/>
+                <constraint firstItem="dr4-kj-EEx" firstAttribute="top" secondItem="nvo-IH-aE5" secondAttribute="bottom" constant="10" id="CKi-0N-0p6"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dr4-kj-EEx" secondAttribute="trailing" id="GO9-05-5GL"/>
                 <constraint firstItem="nvo-IH-aE5" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Gd1-OY-Hdm"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="nvo-IH-aE5" secondAttribute="trailing" id="UTk-fC-jOx"/>

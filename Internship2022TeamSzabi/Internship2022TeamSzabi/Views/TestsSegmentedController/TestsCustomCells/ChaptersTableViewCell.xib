@@ -25,29 +25,29 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9So-FF-ggA" userLabel="cellView">
-                        <rect key="frame" x="12" y="25" width="304" height="90"/>
+                        <rect key="frame" x="12" y="10" width="304" height="99"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mathematics" translatesAutoresizingMaskIntoConstraints="NO" id="Vcc-DP-KfT">
-                                <rect key="frame" x="20" y="27" width="40" height="40"/>
+                                <rect key="frame" x="20" y="31.5" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="G0e-fW-8IJ"/>
                                     <constraint firstAttribute="width" constant="40" id="hTq-vZ-Yd8"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oMT-MY-Rd2" userLabel="Chapter">
-                                <rect key="frame" x="80" y="20" width="52" height="24.5"/>
+                                <rect key="frame" x="80" y="20" width="169" height="24.5"/>
                                 <fontDescription key="fontDescription" name="InterV" family="Inter V" pointSize="20"/>
                                 <color key="textColor" name="ProfileLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="drE-h3-TKX" userLabel="Questions">
-                                <rect key="frame" x="80" y="54.5" width="41.5" height="19.5"/>
+                                <rect key="frame" x="80" y="63.5" width="41.5" height="19.5"/>
                                 <fontDescription key="fontDescription" name="InterV" family="Inter V" pointSize="16"/>
                                 <color key="textColor" name="TabBarColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="25" placeholderIntrinsicHeight="50" image="RightArrow" translatesAutoresizingMaskIntoConstraints="NO" id="5ry-hr-Kox">
-                                <rect key="frame" x="264" y="27" width="25" height="40"/>
+                                <rect key="frame" x="264" y="31.5" width="25" height="40"/>
                                 <color key="tintColor" name="TabBarColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="EHv-sf-URs"/>
@@ -55,7 +55,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Imc-5Y-Cts" userLabel="Grade">
-                                <rect key="frame" x="252" y="32.5" width="37" height="29.5"/>
+                                <rect key="frame" x="252" y="37" width="37" height="29.5"/>
                                 <fontDescription key="fontDescription" name="InterV_Medium" family="Inter V" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -64,9 +64,9 @@
                         <color key="backgroundColor" name="RegisterBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Vcc-DP-KfT" firstAttribute="centerY" secondItem="9So-FF-ggA" secondAttribute="centerY" constant="2" id="313-1O-VWM"/>
-                            <constraint firstItem="Imc-5Y-Cts" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="oMT-MY-Rd2" secondAttribute="trailing" constant="10" id="7iX-hg-cyb"/>
                             <constraint firstItem="Imc-5Y-Cts" firstAttribute="centerY" secondItem="9So-FF-ggA" secondAttribute="centerY" constant="2.25" id="C5W-c4-z20"/>
                             <constraint firstAttribute="bottom" secondItem="drE-h3-TKX" secondAttribute="bottom" constant="16" id="Dle-wu-adV"/>
+                            <constraint firstAttribute="trailing" secondItem="oMT-MY-Rd2" secondAttribute="trailing" constant="55" id="HJY-uR-1Gv"/>
                             <constraint firstAttribute="trailing" secondItem="Imc-5Y-Cts" secondAttribute="trailing" constant="15" id="PFN-Cz-ixE"/>
                             <constraint firstAttribute="trailing" secondItem="5ry-hr-Kox" secondAttribute="trailing" constant="15" id="ZVy-8o-VNE"/>
                             <constraint firstItem="drE-h3-TKX" firstAttribute="leading" secondItem="oMT-MY-Rd2" secondAttribute="leading" id="ifY-4k-GuB"/>
@@ -79,8 +79,8 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="9So-FF-ggA" secondAttribute="trailing" constant="12" id="bgC-BL-Jcn"/>
-                    <constraint firstItem="9So-FF-ggA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="25" id="mhq-xj-NLr"/>
-                    <constraint firstAttribute="bottom" secondItem="9So-FF-ggA" secondAttribute="bottom" constant="4" id="ppA-s6-I05"/>
+                    <constraint firstItem="9So-FF-ggA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="mhq-xj-NLr"/>
+                    <constraint firstAttribute="bottom" secondItem="9So-FF-ggA" secondAttribute="bottom" constant="10" id="ppA-s6-I05"/>
                     <constraint firstItem="9So-FF-ggA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="sOM-eL-CMf"/>
                 </constraints>
             </tableViewCellContentView>

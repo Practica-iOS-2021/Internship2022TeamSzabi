@@ -23,21 +23,18 @@ class TestsViewController: UIViewController {
     private var currentButton = NavButtons.chaptersButton
     
     // MARK: - DataSet for 'chapters', 'final' 'passed' tests
-    var courseName: String = "Tests"
+    var course: CoursesModel?
     var chaptersDataSource: [ChapterModel] = []
+    //var questions = ChapterModel(questions: [])
+    
     var passedDataSource: [String] = []
     let finalDataSource: [FinalTestModel] = [
         FinalTestModel(title: "Generate final random test"),
         FinalTestModel(title: "Scan the QR code and start the coresponding test")
     ]
-    var course: CoursesModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        navigationItem.title = course?.name
-
-        
         // register cells Nib's
         testsTableView.register(
             UINib(nibName: "ChaptersTableViewCell", bundle: nil),
@@ -54,9 +51,20 @@ class TestsViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        self.navigationItem.title = courseName
-        //chaptersDataSource = self.getChapters()
-        //passedDataSource = self.getPassed()
+        self.navigationItem.title = course?.name ?? "Tests"
+        chaptersDataSource = course?.chapters ?? []
+        // passedDataSource = self.getPassed()
+        print("Count --------------------------------")
+        chaptersDataSource.forEach { chapter in
+            print(chapter.questions?.count as Any)
+        }
+        print("Questions ---------------------------")
+        course?.chapters?.forEach { chapter in
+            chapter.questions?.forEach { question in
+                print(question)
+            }
+        }
+        print("--------------------------------")
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -87,6 +95,8 @@ class TestsViewController: UIViewController {
 
     private func navAppearance() {
         // MARK: - navView containing nav components appearence
+        // navigationBar remove shadow
+        navigationController?.navigationBar.layer.shadowColor = UIColor.clear.cgColor
         // shadow
         navView.layer.masksToBounds = false
         navView.layer.shadowOffset = CGSize(width: 0, height: 4)
@@ -166,7 +176,9 @@ extension TestsViewController: UITableViewDataSource, UITableViewDelegate {
             guard let cell = tableView.dequeueReusableCell(
                 withIdentifier: ChaptersTableViewCell.Details.identifier, for: indexPath)
             as? ChaptersTableViewCell else { return UITableViewCell() }
-            cell.updateCellViewForChapter(chapter: chaptersDataSource[indexPath.row], iconName: courseName)
+            cell.updateCellViewForChapter(
+                chapter: chaptersDataSource[indexPath.row],
+                iconName: course?.name ?? "Chapter")
             return cell
         case NavButtons.finalButton:
             guard let cell = tableView.dequeueReusableCell(
