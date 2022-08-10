@@ -9,7 +9,7 @@ import UIKit
 
 class QuizQuestionTableViewCell: UITableViewCell {
     @IBOutlet private var buttonCollection: [UIButton]!
-    @IBOutlet weak var quizContainer: UIView!
+    @IBOutlet private weak var quizContainer: UIView!
     
     static let identifier = "QuizQuestionTableViewCell"
     
