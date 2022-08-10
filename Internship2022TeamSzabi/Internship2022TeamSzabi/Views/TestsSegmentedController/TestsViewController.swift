@@ -21,7 +21,7 @@ class TestsViewController: UIViewController {
         case passedButton
     }
     private var currentButton = NavButtons.chaptersButton
-
+    
     // MARK: - DataSet for 'chapters', 'final' 'passed' tests
     var courseName: String = "Tests"
     var chaptersDataSource: [ChapterModel] = []
@@ -30,9 +30,14 @@ class TestsViewController: UIViewController {
         FinalTestModel(title: "Generate final random test"),
         FinalTestModel(title: "Scan the QR code and start the coresponding test")
     ]
-
+    var course: CoursesModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.title = course?.name
+
+        
         // register cells Nib's
         testsTableView.register(
             UINib(nibName: "ChaptersTableViewCell", bundle: nil),

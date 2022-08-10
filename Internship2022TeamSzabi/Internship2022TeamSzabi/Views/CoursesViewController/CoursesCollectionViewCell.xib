@@ -45,6 +45,7 @@
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ivI-g4-nf9">
                                 <rect key="frame" x="63" y="43.666666666666657" width="54" height="54"/>
+                                <color key="tintColor" red="0.48235297199999999" green="0.47843140360000003" blue="0.48235297199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="54" id="E2l-Nh-HFs"/>
                                     <constraint firstAttribute="height" constant="54" id="OTR-td-1Sg"/>
