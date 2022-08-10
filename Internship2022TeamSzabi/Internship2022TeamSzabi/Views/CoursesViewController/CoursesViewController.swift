@@ -12,8 +12,8 @@ final class CoursesViewController: UIViewController,
                                    UICollectionViewDataSource,
                                    UICollectionViewDelegateFlowLayout {
     @IBOutlet private var courseCollectionView: UICollectionView!
-    private var courseNames: [String] = ["Geography", "Mathematics", "Biology", "Chemistry", "Informatics"]
-    private var courseIcons: [String] = ["Geography", "Mathematics", "Biology", "Chemistry", "Informatics"]
+    
+    private var coursesData: [CoursesModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +22,19 @@ final class CoursesViewController: UIViewController,
         
         let nibCell = UINib(nibName: CoursesCollectionViewCell.identifier, bundle: nil)
         courseCollectionView.register(nibCell, forCellWithReuseIdentifier: "CoursesCollectionViewCell")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        getCourses()
+    }
+    
+    private func getCourses() {
+        CoursesApiManager.sharedCoursesData.getCoursesData { [weak self] courses in
+            guard let courses = courses, let self = self else { return }
+            self.coursesData = courses
+            self.courseCollectionView.reloadData()
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -34,15 +47,22 @@ final class CoursesViewController: UIViewController,
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return courseNames.count
+        return coursesData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = courseCollectionView.dequeueReusableCell(withReuseIdentifier: "CoursesCollectionViewCell",
                                                                for: indexPath) as? CoursesCollectionViewCell {
-            cell.setup(imageName: courseNames[indexPath.row], name: courseIcons[indexPath.row])
+            cell.setup(course: coursesData[indexPath.row])
             return cell
         }
         return UICollectionViewCell()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let viewController = TestsViewController()
+        viewController.modalPresentationStyle = .fullScreen
+        viewController.course = coursesData[indexPath.row]
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }
