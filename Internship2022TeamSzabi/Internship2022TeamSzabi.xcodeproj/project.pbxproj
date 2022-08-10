@@ -50,6 +50,8 @@
 		BF88728528A1507400AA009B /* FinalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF88727E28A1507400AA009B /* FinalTableViewCell.swift */; };
 		BF88728628A1507400AA009B /* FinalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF88727F28A1507400AA009B /* FinalTableViewCell.xib */; };
 		BF88728828A1A27200AA009B /* FinalTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF88728728A1A27200AA009B /* FinalTestModel.swift */; };
+		BF88729C28A3FE9A00AA009B /* GradesApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF88729B28A3FE9A00AA009B /* GradesApiManager.swift */; };
+		BF88729E28A3FEEB00AA009B /* GradeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF88729D28A3FEEB00AA009B /* GradeModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +104,8 @@
 		BF88727E28A1507400AA009B /* FinalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalTableViewCell.swift; sourceTree = "<group>"; };
 		BF88727F28A1507400AA009B /* FinalTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FinalTableViewCell.xib; sourceTree = "<group>"; };
 		BF88728728A1A27200AA009B /* FinalTestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalTestModel.swift; sourceTree = "<group>"; };
+		BF88729B28A3FE9A00AA009B /* GradesApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradesApiManager.swift; sourceTree = "<group>"; };
+		BF88729D28A3FEEB00AA009B /* GradeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeModel.swift; sourceTree = "<group>"; };
 		E8DA8DF6CE54DE53C1D8ECC7 /* Pods-Internship2022TeamSzabi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Internship2022TeamSzabi.release.xcconfig"; path = "Target Support Files/Pods-Internship2022TeamSzabi/Pods-Internship2022TeamSzabi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -311,6 +315,7 @@
 				BF5DD2FE28994397002F8244 /* FirestoreManager.swift */,
 				17FE032C289C05A6001B6C78 /* UserDataApiManager.swift */,
 				AC51D62E28A2AC0000C8F82A /* CoursesApiManager.swift */,
+				BF88729B28A3FE9A00AA009B /* GradesApiManager.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -322,6 +327,7 @@
 				BF227DC82895AFC000DD111A /* UserModel.swift */,
 				AFED2DCB28A2A30E00F80323 /* QuestionModel.swift */,
 				AC51D63628A38EDC00C8F82A /* CoursesModel.swift */,
+				BF88729D28A3FEEB00AA009B /* GradeModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -553,7 +559,9 @@
 				BF88728528A1507400AA009B /* FinalTableViewCell.swift in Sources */,
 				BF227DC92895AFC000DD111A /* UserModel.swift in Sources */,
 				BF88728828A1A27200AA009B /* FinalTestModel.swift in Sources */,
+				BF88729E28A3FEEB00AA009B /* GradeModel.swift in Sources */,
 				1750B7C428A28842006B3CBB /* QuizViewController.swift in Sources */,
+				BF88729C28A3FE9A00AA009B /* GradesApiManager.swift in Sources */,
 				17289A0228901B4800D6EFCE /* CoursesViewController.swift in Sources */,
 				BF5DD2FD28994158002F8244 /* Encodable.swift in Sources */,
 				17D1D858289D4A3400C8350C /* StorageManager.swift in Sources */,

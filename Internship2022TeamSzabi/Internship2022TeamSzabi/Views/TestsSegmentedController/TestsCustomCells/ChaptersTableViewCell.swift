@@ -34,7 +34,11 @@ class ChaptersTableViewCell: UITableViewCell {
         arrow.isHidden = false
     }
 
-    func updateCellViewforPassed(/* PassedModel */) {
+    func updateCellViewforPassed(passed: GradeModel, iconName: String) {
+        icon.image = UIImage(named: iconName)
+        title.text = passed.chapter
+        subTitle.text = "2022"
+        grade.text = String(passed.grade)
         grade.isHidden = false
         arrow.isHidden = true
     }
