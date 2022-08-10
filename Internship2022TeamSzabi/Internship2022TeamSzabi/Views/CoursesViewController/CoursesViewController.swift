@@ -13,7 +13,7 @@ final class CoursesViewController: UIViewController,
                                    UICollectionViewDelegateFlowLayout {
     @IBOutlet private var courseCollectionView: UICollectionView!
     
-    var coursesData: [CoursesModel] = []
+    private var coursesData: [CoursesModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,10 +29,9 @@ final class CoursesViewController: UIViewController,
         getCourses()
     }
     
-    func getCourses() {
+    private func getCourses() {
         CoursesApiManager.sharedCoursesData.getCoursesData { [weak self] courses in
-            guard let courses = courses else { return }
-            guard let self = self else { return }
+            guard let courses = courses, let self = self else { return }
             self.coursesData = courses
             self.courseCollectionView.reloadData()
         }

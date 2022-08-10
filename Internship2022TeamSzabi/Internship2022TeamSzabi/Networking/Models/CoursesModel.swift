@@ -8,8 +8,8 @@
 import Foundation
 
 struct CoursesModel: Codable {
-    var name: String
-    var semester: Int
-    var documentId: String
+    var name: String?
+    var semester: Int?
+    var documentId: String?
     var chapters: [ChapterModel]?
 }
