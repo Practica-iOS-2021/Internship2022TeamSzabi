@@ -6,11 +6,16 @@
 //
 
 import UIKit
+protocol QuizQuestionProtocol: AnyObject {
+    func didSelectAnswer(answer: Int, number: Int)
+}
 
 class QuizQuestionTableViewCell: UITableViewCell {
     @IBOutlet var buttonCollection: [UIButton]!
     @IBOutlet private weak var quizContainer: UIView!
     @IBOutlet weak var questionLabel: UILabel!
+    weak var delegate: QuizQuestionProtocol?
+    private var questionNumber: Int = 0
     
     static let identifier = "QuizQuestionTableViewCell"
     
@@ -33,8 +38,14 @@ class QuizQuestionTableViewCell: UITableViewCell {
     @IBAction private func buttonSelected(_ sender: UIButton) {
         buttonCollection.forEach { $0.isSelected = false }
         buttonCollection[sender.tag].isSelected = true
-//        if sender.tag == correctAnswer {
-//        grade += 1
-//        }
+        delegate?.didSelectAnswer(answer: sender.tag , number: questionNumber)
+    }
+    
+    func setup(question: QuestionModel, number: Int) {
+        questionLabel.text = question.question
+        for i in 0..<buttonCollection.count {
+            buttonCollection[i].setTitle("\(question.answers?[i] ?? "")", for: .normal)
+        }
+        questionNumber = number
     }
 }
