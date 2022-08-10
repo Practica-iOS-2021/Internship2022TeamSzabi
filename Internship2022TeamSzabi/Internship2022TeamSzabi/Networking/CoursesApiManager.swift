@@ -11,11 +11,12 @@ import FirebaseFirestore
 class CoursesApiManager {
     static let sharedCoursesData = CoursesApiManager()
     
-    private var courses: [CoursesModel] = []
+    var courses: [CoursesModel] = []
     
     func getCoursesData(completion: @escaping ([CoursesModel]?) -> Void) {
         if !courses.isEmpty {
             completion(courses)
+            return
         }
         let coursesRefrence = FirestoreManager.dbConn.collection(coursesCollection)
     
@@ -45,9 +46,11 @@ class CoursesApiManager {
     }
     
     private func getAllCourses(completion: @escaping () -> Void) {
+        var courseCount = 0
         for course in courses {
             self.getChapters(courseDocumentId: course.documentId) { chapters in
-                if course.documentId == self.courses.last?.documentId {
+                courseCount += 1
+                if courseCount >= self.courses.count {
                     completion()
                 }
                 for chapter in chapters ?? [] {
