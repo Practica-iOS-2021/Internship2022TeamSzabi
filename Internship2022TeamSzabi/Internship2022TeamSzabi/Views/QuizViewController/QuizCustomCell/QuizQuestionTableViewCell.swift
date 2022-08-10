@@ -8,8 +8,9 @@
 import UIKit
 
 class QuizQuestionTableViewCell: UITableViewCell {
-    @IBOutlet private var buttonCollection: [UIButton]!
+    @IBOutlet var buttonCollection: [UIButton]!
     @IBOutlet private weak var quizContainer: UIView!
+    @IBOutlet weak var questionLabel: UILabel!
     
     static let identifier = "QuizQuestionTableViewCell"
     
@@ -32,5 +33,8 @@ class QuizQuestionTableViewCell: UITableViewCell {
     @IBAction private func buttonSelected(_ sender: UIButton) {
         buttonCollection.forEach { $0.isSelected = false }
         buttonCollection[sender.tag].isSelected = true
+//        if sender.tag == correctAnswer {
+//        grade += 1
+//        }
     }
 }

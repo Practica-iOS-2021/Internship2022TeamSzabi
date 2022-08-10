@@ -151,6 +151,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="questionLabel" destination="owP-Kz-7mL" id="O7a-wa-jub"/>
                 <outlet property="quizContainer" destination="UFR-S6-MSH" id="fQ4-Oh-sZD"/>
                 <outletCollection property="buttonCollection" destination="hSu-hF-R4R" collectionClass="NSMutableArray" id="kC5-5g-r4D"/>
                 <outletCollection property="buttonCollection" destination="G9U-r7-uOm" collectionClass="NSMutableArray" id="m9X-8a-78S"/>
