@@ -79,9 +79,6 @@ final class LoginViewController: BaseViewController, UITextFieldDelegate {
                 viewController.modalPresentationStyle = .fullScreen
                 present(viewController, animated: true)
                 navigationController?.pushViewController(viewController, animated: true)
-//        if let navigationController = self.navigationController {
-//            navigationController.pushViewController(RegisterViewController(), animated: true)
-//        }
     }
     
     // email RegEx function to verify if the email address introduced by the user is valid
