@@ -15,17 +15,32 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        setupBackButton()
+    }
+    
+    func setupBackButton() {
+        let backImage = UIImage(named: "BackArrow")
+        navigationController?.navigationBar.backIndicatorImage = backImage
+        navigationController?.navigationBar.backIndicatorTransitionMaskImage = backImage
+        navigationItem.backButtonTitle = ""
+    }
+    
+    func dismissKeyboard() {
+        // this allows the user to dismiss the keyboard by tapping anywhere on the screen
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
     }
     
     func startLoadingIndicator() {
-        baseView = UIView(frame: view.bounds)
-        baseView?.backgroundColor = UIColor.init(red: 0.5, green: 0.5, blue: 0.5, alpha: 1)
+        baseView = UIView(frame: self.view.bounds)
+        baseView?.backgroundColor = UIColor.white
         
-        let baseView = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
-        baseView.center = baseView.center
-        baseView.startAnimating()
-        baseView.addSubview(baseView)
-        view.addSubview(baseView)
+        let activityView = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
+        activityView.center = baseView!.center
+        activityView.startAnimating()
+        baseView?.addSubview(activityView)
+        self.view.addSubview(baseView!)
     }
     
     func stopLoadingIndicator() {

@@ -51,7 +51,7 @@ class QuizViewController: BaseViewController {
             UIColor.white.withAlphaComponent(0.1).cgColor, UIColor.white.withAlphaComponent(0.6).cgColor,
             UIColor.white.withAlphaComponent(0.9).cgColor, UIColor.white.cgColor
         ]
-        gradient.locations = [0.0, 0.3, 0.5, 1.0]
+        gradient.locations = [0.0, 0.4, 0.7, 1.0]
         gradient.frame = fadeView.layer.bounds
         fadeView.layer.addSublayer(gradient)
     }
@@ -103,7 +103,7 @@ extension QuizViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 150
+        return 125
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {

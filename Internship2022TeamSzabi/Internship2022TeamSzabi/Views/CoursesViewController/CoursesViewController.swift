@@ -67,10 +67,6 @@ final class CoursesViewController: BaseViewController,
         let viewController = TestsViewController()
         viewController.modalPresentationStyle = .fullScreen
         viewController.course = coursesData[indexPath.row]
-        let backImage = UIImage(named: "BackArrow")
-        navigationController?.navigationBar.backIndicatorImage = backImage
-        navigationController?.navigationBar.backIndicatorTransitionMaskImage = backImage
-        navigationItem.backButtonTitle = ""
         navigationController?.pushViewController(viewController, animated: true)
     }
 }

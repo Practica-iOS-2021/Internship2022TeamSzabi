@@ -15,10 +15,14 @@ class RegisterViewController: BaseViewController {
     @IBOutlet private weak var passwordTextfield: UITextField!
     @IBOutlet private weak var studentIDTextfield: UITextField!
     @IBOutlet private weak var registerButton: UIButton!
-    @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet private weak var errorLabel: UILabel!
+    @IBOutlet private weak var backButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor(named: "RegisterBackgroundColor")
+        dismissKeyboard()
+        backButton.titleLabel?.text = ""
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -26,6 +30,9 @@ class RegisterViewController: BaseViewController {
         setupAppearence()
     }
     
+    @IBAction private func backToLoginButton(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
     @IBAction private func emailChanged(_ sender: Any) {
         validateForm()
     }

@@ -21,7 +21,7 @@ final class LoginViewController: BaseViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         dismissKeyboard()
-        
+        view.backgroundColor = UIColor(named: "RegisterBackgroundColor")
         emailTextField.delegate = self
         passwordTextField.delegate = self
         
@@ -75,9 +75,13 @@ final class LoginViewController: BaseViewController, UITextFieldDelegate {
     }
     
     @IBAction private func signUpButton(_ sender: UIButton) {
-        let viewController = RegisterViewController()
-        viewController.modalPresentationStyle = .fullScreen
-        present(viewController, animated: true)
+                let viewController = RegisterViewController()
+                viewController.modalPresentationStyle = .fullScreen
+                present(viewController, animated: true)
+                navigationController?.pushViewController(viewController, animated: true)
+//        if let navigationController = self.navigationController {
+//            navigationController.pushViewController(RegisterViewController(), animated: true)
+//        }
     }
     
     // email RegEx function to verify if the email address introduced by the user is valid
@@ -112,12 +116,5 @@ final class LoginViewController: BaseViewController, UITextFieldDelegate {
     func invalidMessage() {
         validationLabel.isHidden = false
         validationLabel.text = "Invalid email or password."
-    }
-    
-    func dismissKeyboard() {
-        // this allows the user to dismiss the keyboard by tapping anywhere on the screen
-        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
     }
 }
