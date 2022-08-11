@@ -14,8 +14,6 @@ final class ProfileViewController: UIViewController {
     @IBOutlet private weak var profilePersonalID: UILabel!
     @IBOutlet private weak var profileEmail: UILabel!
     
-    private var userData: [UserModel] = []
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Profile"
