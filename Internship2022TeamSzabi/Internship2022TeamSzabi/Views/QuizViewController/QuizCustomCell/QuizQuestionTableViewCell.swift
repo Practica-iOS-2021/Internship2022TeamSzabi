@@ -32,7 +32,7 @@ class QuizQuestionTableViewCell: UITableViewCell {
             $0.isSelected = false
             $0.setImage(UIImage(named: "circle-unselected-icon"), for: UIControl.State.normal)
             $0.setImage(UIImage(named: "circle-selected-icon"), for: UIControl.State.selected)
-            $0.titleLabel?.numberOfLines = 0
+            $0.titleLabel?.numberOfLines = 4
             $0.titleLabel?.lineBreakMode = .byWordWrapping
         }
     }
