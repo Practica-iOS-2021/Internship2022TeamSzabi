@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ProfileViewController: UIViewController {
+final class ProfileViewController: BaseViewController {
     @IBOutlet private weak var profileName: UILabel!
     @IBOutlet private weak var profilePhoto: UIImageView!
     @IBOutlet private weak var profileStudentID: UILabel!
@@ -33,6 +33,7 @@ final class ProfileViewController: UIViewController {
     }
     // MARK: - Assign fetched UserData to Profile Screen
     private func assignUserData() {
+        startLoadingIndicator()
         DataApiManager.sharedUserData.fetchUserData { [weak self] userData, errorMessage in
             guard let self = self else { return }
             guard errorMessage == nil else {
@@ -45,6 +46,7 @@ final class ProfileViewController: UIViewController {
             self.profileStudentID.text = userData?.studentID
             self.profilePhoto.image = UIImage(named: "\(userData?.photo ?? "")")
         }
+        stopLoadingIndicator()
     }
     
     // MARK: - SignOut

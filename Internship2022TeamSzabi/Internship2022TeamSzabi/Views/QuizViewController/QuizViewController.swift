@@ -7,7 +7,7 @@
 
 import UIKit
 
-class QuizViewController: UIViewController {
+class QuizViewController: BaseViewController {
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var finishButton: UIButton!
     @IBOutlet private weak var fadeView: UIView!
@@ -76,6 +76,7 @@ class QuizViewController: UIViewController {
         computeGrade()
         let passedGrade = GradeModel(chapter: chapterModel?.name ?? "",
                                      course: courseName ?? "", grade: Double(finalGrade), semester: 1)
+        startLoadingIndicator()
         GradesApiManager.sharedGradesData.saveGradeForUser(newGrade: passedGrade) { success, _ in
             if success {
                 self.navigationController?.popViewController(animated: true)
@@ -84,6 +85,7 @@ class QuizViewController: UIViewController {
                 return
             }
         }
+        stopLoadingIndicator()
     }
     
     private func alertError(_ error: String) {

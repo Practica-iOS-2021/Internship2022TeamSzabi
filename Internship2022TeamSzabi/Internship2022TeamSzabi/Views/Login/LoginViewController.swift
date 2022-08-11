@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class LoginViewController: UIViewController, UITextFieldDelegate {    
+final class LoginViewController: BaseViewController, UITextFieldDelegate {
     @IBOutlet private var loginLabel: UILabel!
     @IBOutlet private var emailLabel: UILabel!
     @IBOutlet private var passwordLabel: UILabel!
@@ -58,6 +58,8 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
             validationLabel.text = "Please enter Password"
             return
         }
+        
+        startLoadingIndicator()
         AuthApiManager.sharedInstance.signin(email: email, password: password) { success, _ in
             if success {
                 StorageManager.shared.setUserLoggedIn(value: true)
@@ -69,6 +71,7 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
                 self.invalidMessage()
             }
         }
+        stopLoadingIndicator()
     }
     
     @IBAction private func signUpButton(_ sender: UIButton) {

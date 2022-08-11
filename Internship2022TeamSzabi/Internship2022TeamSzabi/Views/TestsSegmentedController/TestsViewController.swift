@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TestsViewController: UIViewController {
+class TestsViewController: BaseViewController {
     @IBOutlet private weak var testsTableView: UITableView!
     @IBOutlet private weak var navStackView: UIStackView!
     @IBOutlet private weak var chaptersButton: UIButton!

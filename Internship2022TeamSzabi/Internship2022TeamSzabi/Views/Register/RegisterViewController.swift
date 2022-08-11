@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: BaseViewController {
     @IBOutlet private weak var formView: UIView!
     @IBOutlet private weak var emailTextField: UITextField!
     @IBOutlet private weak var nameTextField: UITextField!
@@ -61,6 +61,7 @@ class RegisterViewController: UIViewController {
             studentID: studentIDText,
             photo: "")
         
+        startLoadingIndicator()
         AuthApiManager.sharedInstance.registerUser(
             newUser: newUser, password: passwordText) { authenticated, errorString in
                 if let error = errorString {
@@ -72,6 +73,7 @@ class RegisterViewController: UIViewController {
                     appDelegate?.window?.rootViewController = TabBarController()
                 }
         }
+        stopLoadingIndicator()
     }
     
     private func handleFormValidation() {

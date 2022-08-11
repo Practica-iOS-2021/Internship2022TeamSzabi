@@ -17,7 +17,7 @@ class BaseViewController: UIViewController {
         view.backgroundColor = .white
     }
     
-    func loadSpinner() {
+    func startLoadingIndicator() {
         baseView = UIView(frame: view.bounds)
         baseView?.backgroundColor = UIColor.init(red: 0.5, green: 0.5, blue: 0.5, alpha: 1)
         
@@ -28,7 +28,7 @@ class BaseViewController: UIViewController {
         view.addSubview(baseView)
     }
     
-    func removeSpinner() {
+    func stopLoadingIndicator() {
         baseView?.removeFromSuperview()
         baseView = nil
     }
