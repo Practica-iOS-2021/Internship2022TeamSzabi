@@ -144,14 +144,15 @@
                                     <color key="textColor" systemColor="systemRedColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zBP-gL-BNI">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zBP-gL-BNI">
                                     <rect key="frame" x="25" y="30" width="25" height="40"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="25" id="78Z-4h-u39"/>
                                         <constraint firstAttribute="height" constant="40" id="edr-tr-sQO"/>
                                     </constraints>
-                                    <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" image="BackArrow"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" image="BackArrow"/>
+                                    <state key="selected" image="BackArrow"/>
                                     <connections>
                                         <action selector="backToLoginButton:" destination="-1" eventType="touchUpInside" id="Io0-Sz-phv"/>
                                     </connections>
