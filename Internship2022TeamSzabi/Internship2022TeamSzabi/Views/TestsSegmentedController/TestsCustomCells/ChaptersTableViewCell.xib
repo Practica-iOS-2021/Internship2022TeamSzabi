@@ -94,7 +94,7 @@
                 <outlet property="subTitle" destination="drE-h3-TKX" id="lEy-tV-tCj"/>
                 <outlet property="title" destination="oMT-MY-Rd2" id="mqn-Zc-WYi"/>
             </connections>
-            <point key="canvasLocation" x="130.43478260869566" y="115.51339285714285"/>
+            <point key="canvasLocation" x="11.594202898550726" y="23.772321428571427"/>
         </tableViewCell>
     </objects>
     <resources>

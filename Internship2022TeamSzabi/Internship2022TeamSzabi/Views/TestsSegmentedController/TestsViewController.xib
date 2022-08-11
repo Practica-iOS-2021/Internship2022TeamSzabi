@@ -98,7 +98,7 @@
                 <constraint firstItem="nvo-IH-aE5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="wfn-Y7-Qtb"/>
                 <constraint firstItem="dr4-kj-EEx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="wrr-AO-xhl"/>
             </constraints>
-            <point key="canvasLocation" x="139" y="61"/>
+            <point key="canvasLocation" x="-725" y="-161"/>
         </view>
     </objects>
     <resources>
