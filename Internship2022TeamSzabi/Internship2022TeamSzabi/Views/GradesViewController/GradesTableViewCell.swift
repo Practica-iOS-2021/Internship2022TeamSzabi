@@ -7,11 +7,12 @@
 
 import UIKit
 
-class ActiveGradesTableViewCell: UITableViewCell {
-    @IBOutlet private var activeCellView: UIView!
+class GradesTableViewCell: UITableViewCell {
+    @IBOutlet private var cellView: UIView!
     @IBOutlet private var icon: UIImageView!
     @IBOutlet private var name: UILabel!
     @IBOutlet private var grade: UILabel!
+    @IBOutlet private var slash: UILabel!
     
     enum Details {
         static let cornerRadius = 20.0
@@ -26,13 +27,29 @@ class ActiveGradesTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func setup(gradeIcon: String, gradeName: String, gradeValue: String) {
+    private func activeCell() {
+        grade.isHidden = false
+        slash.isHidden = true
+    }
+    
+    private func inactiveCell() {
+        grade.isHidden = true
+        slash.isHidden = false
+    }
+    
+    func setup(gradeIcon: String, gradeName: String, gradeValue: String?) {
         icon.image = UIImage(named: gradeIcon)
         name.text = gradeName
-        grade.text = gradeValue
+        if let gradeValue = gradeValue {
+            activeCell()
+            grade.text = gradeValue
+        } else {
+            inactiveCell()
+        }
     }
+    
     private func setAppearance() {
-        activeCellView?.layer.cornerRadius = Details.cornerRadius
-        activeCellView?.layer.masksToBounds = false
+        cellView?.layer.cornerRadius = Details.cornerRadius
+        cellView?.layer.masksToBounds = false
     }
 }

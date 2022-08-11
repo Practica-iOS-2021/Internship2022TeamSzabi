@@ -25,6 +25,7 @@ final class GradesViewController: UIViewController,
     private var gradeName: [String] = [ "Chemistry", "Informatics", "Mathematics", "Geography", "Biology" ]
     private var gradeIcon: [String] = [ "Chemistry", "Informatics", "Mathematics", "Geography", "Biology" ]
     private var gradeValue: [String] = [ "5", "9.3", "10", "7.2", "8.6" ]
+    private var gradeSlash: [String] = [ "/", "/", "/", "/", "/" ]
     
     private var currentButton = NavButtons.firstSemesterButton
     
@@ -33,8 +34,8 @@ final class GradesViewController: UIViewController,
         
         // register cells Nib
         gradesTableView.register(
-            UINib(nibName: "ActiveGradesTableViewCell", bundle: nil),
-            forCellReuseIdentifier: "ActiveGradesTableViewCell")
+            UINib(nibName: "GradesTableViewCell", bundle: nil),
+            forCellReuseIdentifier: "GradesTableViewCell")
         navigationItem.title = "Grades"
         
         // remove cell separator
@@ -124,8 +125,8 @@ final class GradesViewController: UIViewController,
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = gradesTableView.dequeueReusableCell(withIdentifier: "ActiveGradesTableViewCell",
-                                                       for: indexPath) as! ActiveGradesTableViewCell
+        let cell = gradesTableView.dequeueReusableCell(withIdentifier: "GradesTableViewCell",
+                                                       for: indexPath) as! GradesTableViewCell
         cell.setup(gradeIcon: gradeIcon[indexPath.row],
                    gradeName: gradeName[indexPath.row],
                    gradeValue: gradeValue[indexPath.row])
