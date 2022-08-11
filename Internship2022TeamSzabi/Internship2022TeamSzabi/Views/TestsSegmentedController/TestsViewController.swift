@@ -46,7 +46,11 @@ class TestsViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        self.navigationItem.title = course?.name
+        navigationItem.title = course?.name
+        let backImage = UIImage(named: "BackArrow")
+        navigationController?.navigationBar.backIndicatorImage = backImage
+        navigationController?.navigationBar.backIndicatorTransitionMaskImage = backImage
+        navigationItem.backButtonTitle = ""
         chaptersDataSource = course?.chapters ?? []
         finalDataSource = self.getFinal()
         self.getPassed()
