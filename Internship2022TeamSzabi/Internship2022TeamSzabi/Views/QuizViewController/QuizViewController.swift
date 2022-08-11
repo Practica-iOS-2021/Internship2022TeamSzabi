@@ -78,6 +78,7 @@ class QuizViewController: BaseViewController {
                                      course: courseName ?? "", grade: Double(finalGrade), semester: 1)
         startLoadingIndicator()
         GradesApiManager.sharedGradesData.saveGradeForUser(newGrade: passedGrade) { success, _ in
+            self.stopLoadingIndicator()
             if success {
                 self.navigationController?.popViewController(animated: true)
             } else {
@@ -85,7 +86,6 @@ class QuizViewController: BaseViewController {
                 return
             }
         }
-        stopLoadingIndicator()
     }
     
     private func alertError(_ error: String) {

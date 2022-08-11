@@ -35,6 +35,7 @@ final class ProfileViewController: BaseViewController {
     private func assignUserData() {
         startLoadingIndicator()
         DataApiManager.sharedUserData.fetchUserData { [weak self] userData, errorMessage in
+            self?.stopLoadingIndicator()
             guard let self = self else { return }
             guard errorMessage == nil else {
                 self.alertError(errorMessage ?? "Error")
@@ -46,7 +47,6 @@ final class ProfileViewController: BaseViewController {
             self.profileStudentID.text = userData?.studentID
             self.profilePhoto.image = UIImage(named: "\(userData?.photo ?? "")")
         }
-        stopLoadingIndicator()
     }
     
     // MARK: - SignOut

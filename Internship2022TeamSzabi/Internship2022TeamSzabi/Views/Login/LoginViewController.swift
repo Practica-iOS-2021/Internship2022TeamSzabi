@@ -61,6 +61,7 @@ final class LoginViewController: BaseViewController, UITextFieldDelegate {
         
         startLoadingIndicator()
         AuthApiManager.sharedInstance.signin(email: email, password: password) { success, _ in
+            self.stopLoadingIndicator()
             if success {
                 StorageManager.shared.setUserLoggedIn(value: true)
                 self.validationLabel.isHidden = true
@@ -71,7 +72,6 @@ final class LoginViewController: BaseViewController, UITextFieldDelegate {
                 self.invalidMessage()
             }
         }
-        stopLoadingIndicator()
     }
     
     @IBAction private func signUpButton(_ sender: UIButton) {

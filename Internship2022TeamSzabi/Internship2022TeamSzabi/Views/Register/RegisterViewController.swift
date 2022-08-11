@@ -71,6 +71,7 @@ class RegisterViewController: BaseViewController {
         startLoadingIndicator()
         AuthApiManager.sharedInstance.registerUser(
             newUser: newUser, password: passwordText) { authenticated, errorString in
+                self.stopLoadingIndicator()
                 if let error = errorString {
                     self.alertError(error)
                     StorageManager.shared.setUserLoggedIn(value: false)
@@ -80,7 +81,6 @@ class RegisterViewController: BaseViewController {
                     appDelegate?.window?.rootViewController = TabBarController()
                 }
         }
-        stopLoadingIndicator()
     }
     
     private func handleFormValidation() {

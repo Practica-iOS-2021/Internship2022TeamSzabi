@@ -32,11 +32,11 @@ final class CoursesViewController: BaseViewController,
     private func getCourses() {
         startLoadingIndicator()
         CoursesApiManager.sharedCoursesData.getCoursesData { [weak self] courses in
+            self?.stopLoadingIndicator()
             guard let courses = courses, let self = self else { return }
             self.coursesData = courses
             self.courseCollectionView.reloadData()
         }
-        stopLoadingIndicator()
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
