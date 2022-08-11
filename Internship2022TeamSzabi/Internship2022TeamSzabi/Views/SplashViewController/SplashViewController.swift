@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SplashViewController: UIViewController {
+class SplashViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }

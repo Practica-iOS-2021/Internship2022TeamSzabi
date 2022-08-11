@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: BaseViewController {
     @IBOutlet private weak var formView: UIView!
     @IBOutlet private weak var emailTextField: UITextField!
     @IBOutlet private weak var nameTextField: UITextField!
@@ -15,10 +15,14 @@ class RegisterViewController: UIViewController {
     @IBOutlet private weak var passwordTextfield: UITextField!
     @IBOutlet private weak var studentIDTextfield: UITextField!
     @IBOutlet private weak var registerButton: UIButton!
-    @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet private weak var errorLabel: UILabel!
+    @IBOutlet private weak var backButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor(named: "RegisterBackgroundColor")
+        dismissKeyboard()
+        backButton.titleLabel?.text = ""
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -26,6 +30,9 @@ class RegisterViewController: UIViewController {
         setupAppearence()
     }
     
+    @IBAction private func backToLoginButton(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
     @IBAction private func emailChanged(_ sender: Any) {
         validateForm()
     }
@@ -61,8 +68,10 @@ class RegisterViewController: UIViewController {
             studentID: studentIDText,
             photo: "")
         
+        startLoadingIndicator()
         AuthApiManager.sharedInstance.registerUser(
             newUser: newUser, password: passwordText) { authenticated, errorString in
+                self.stopLoadingIndicator()
                 if let error = errorString {
                     self.alertError(error)
                     StorageManager.shared.setUserLoggedIn(value: false)

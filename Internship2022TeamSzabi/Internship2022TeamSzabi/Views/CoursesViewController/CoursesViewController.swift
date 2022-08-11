@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class CoursesViewController: UIViewController,
+final class CoursesViewController: BaseViewController,
                                    UICollectionViewDelegate,
                                    UICollectionViewDataSource,
                                    UICollectionViewDelegateFlowLayout {
@@ -30,7 +30,9 @@ final class CoursesViewController: UIViewController,
     }
     
     private func getCourses() {
+        startLoadingIndicator()
         CoursesApiManager.sharedCoursesData.getCoursesData { [weak self] courses in
+            self?.stopLoadingIndicator()
             guard let courses = courses, let self = self else { return }
             self.coursesData = courses
             self.courseCollectionView.reloadData()

@@ -18,6 +18,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterViewController" customModule="Internship2022TeamSzabi" customModuleProvider="target">
             <connections>
+                <outlet property="backButton" destination="zBP-gL-BNI" id="Sbi-zx-Ro1"/>
                 <outlet property="emailTextField" destination="gtm-Pq-uNy" id="G3M-fI-NAt"/>
                 <outlet property="errorLabel" destination="YHV-NJ-0B0" id="5TJ-r3-dmc"/>
                 <outlet property="formView" destination="3QE-BP-DCk" id="k9a-6a-fvS"/>
@@ -41,19 +42,19 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="926"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8X-iY-j54">
-                                    <rect key="frame" x="20" y="536.66666666666663" width="335" height="23.333333333333371"/>
+                                    <rect key="frame" x="20" y="538.33333333333337" width="335" height="23.333333333333371"/>
                                     <fontDescription key="fontDescription" name="InterV" family="Inter V" pointSize="20"/>
                                     <color key="textColor" red="0.1450980392" green="0.086274509799999996" blue="0.019607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MrS-9O-eT2">
-                                    <rect key="frame" x="128.33333333333334" y="66" width="118.66666666666666" height="37.333333333333343"/>
+                                    <rect key="frame" x="120.66666666666667" y="66" width="133.66666666666663" height="39"/>
                                     <fontDescription key="fontDescription" name="InterV_Extra-Bold" family="Inter V" pointSize="32"/>
                                     <color key="textColor" red="0.1450980392" green="0.086274509799999996" blue="0.019607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WNe-so-Svv">
-                                    <rect key="frame" x="47.666666666666657" y="671" width="280" height="53.333333333333371"/>
+                                    <rect key="frame" x="47.666666666666657" y="672.66666666666663" width="280" height="53.333333333333371"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="280" id="aG1-u2-iVm"/>
                                     </constraints>
@@ -68,7 +69,7 @@
                                     </connections>
                                 </button>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V9D-vv-PuF" userLabel="Password Textfield">
-                                    <rect key="frame" x="20" y="580" width="335" height="34"/>
+                                    <rect key="frame" x="20" y="581.66666666666663" width="335" height="34"/>
                                     <color key="backgroundColor" name="RegisterBackgroundColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <textInputTraits key="textInputTraits"/>
@@ -77,25 +78,25 @@
                                     </connections>
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personal ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLZ-uG-xp0">
-                                    <rect key="frame" x="20" y="340" width="335" height="24.333333333333314"/>
+                                    <rect key="frame" x="20" y="341.66666666666669" width="335" height="24.333333333333314"/>
                                     <fontDescription key="fontDescription" name="InterV" family="Inter V" pointSize="20"/>
                                     <color key="textColor" red="0.1450980392" green="0.086274509799999996" blue="0.019607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4mF-a2-N5D">
-                                    <rect key="frame" x="20" y="241.66666666666669" width="335" height="24.333333333333314"/>
+                                    <rect key="frame" x="20" y="243.33333333333331" width="335" height="24.333333333333314"/>
                                     <fontDescription key="fontDescription" name="InterV" family="Inter V" pointSize="20"/>
                                     <color key="textColor" red="0.1450980392" green="0.086274509799999996" blue="0.019607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAj-S9-nQm">
-                                    <rect key="frame" x="20" y="438.33333333333331" width="335" height="24.333333333333314"/>
+                                    <rect key="frame" x="20" y="440" width="335" height="24.333333333333314"/>
                                     <fontDescription key="fontDescription" name="InterV" family="Inter V" pointSize="20"/>
                                     <color key="textColor" red="0.1450980392" green="0.086274509799999996" blue="0.019607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gtm-Pq-uNy" userLabel="Email Textfield">
-                                    <rect key="frame" x="20" y="187.66666666666666" width="335" height="34"/>
+                                    <rect key="frame" x="20" y="189.33333333333334" width="335" height="34"/>
                                     <color key="backgroundColor" name="RegisterBackgroundColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <textInputTraits key="textInputTraits"/>
@@ -104,7 +105,7 @@
                                     </connections>
                                 </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Nr-k1-Xd7" userLabel="Name Textfield">
-                                    <rect key="frame" x="20" y="286" width="335" height="34"/>
+                                    <rect key="frame" x="20" y="287.66666666666669" width="335" height="34"/>
                                     <color key="backgroundColor" name="RegisterBackgroundColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <textInputTraits key="textInputTraits"/>
@@ -114,7 +115,7 @@
                                     </connections>
                                 </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f4E-NY-o9t" userLabel="Student ID Textfield">
-                                    <rect key="frame" x="20" y="482.66666666666663" width="335" height="34"/>
+                                    <rect key="frame" x="20" y="484.33333333333337" width="335" height="34"/>
                                     <color key="backgroundColor" name="RegisterBackgroundColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <textInputTraits key="textInputTraits"/>
@@ -123,7 +124,7 @@
                                     </connections>
                                 </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EcB-DZ-FTW" userLabel="Personal ID Textfield">
-                                    <rect key="frame" x="20" y="384.33333333333331" width="335" height="34"/>
+                                    <rect key="frame" x="20" y="386" width="335" height="34"/>
                                     <color key="backgroundColor" name="RegisterBackgroundColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <textInputTraits key="textInputTraits"/>
@@ -132,24 +133,39 @@
                                     </connections>
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GyR-xJ-TKp">
-                                    <rect key="frame" x="20" y="144.33333333333334" width="335" height="23.333333333333343"/>
+                                    <rect key="frame" x="20" y="146" width="335" height="23.333333333333343"/>
                                     <fontDescription key="fontDescription" name="InterV" family="Inter V" pointSize="20"/>
                                     <color key="textColor" red="0.1450980392" green="0.086274509799999996" blue="0.019607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YHV-NJ-0B0">
-                                    <rect key="frame" x="20" y="634" width="335" height="17"/>
+                                    <rect key="frame" x="20" y="635.66666666666663" width="335" height="17"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <color key="textColor" systemColor="systemRedColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zBP-gL-BNI">
+                                    <rect key="frame" x="25" y="30" width="25" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="25" id="78Z-4h-u39"/>
+                                        <constraint firstAttribute="height" constant="40" id="edr-tr-sQO"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" image="BackArrow"/>
+                                    <state key="selected" image="BackArrow"/>
+                                    <connections>
+                                        <action selector="backToLoginButton:" destination="-1" eventType="touchUpInside" id="Io0-Sz-phv"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <constraints>
                                 <constraint firstItem="WNe-so-Svv" firstAttribute="centerX" secondItem="3QE-BP-DCk" secondAttribute="centerX" id="1CN-jL-33N"/>
+                                <constraint firstItem="zBP-gL-BNI" firstAttribute="leading" secondItem="3QE-BP-DCk" secondAttribute="leading" constant="25" id="1e4-k6-hAT"/>
                                 <constraint firstItem="GyR-xJ-TKp" firstAttribute="leading" secondItem="3QE-BP-DCk" secondAttribute="leading" constant="20" id="1wY-7U-9UZ"/>
                                 <constraint firstItem="MrS-9O-eT2" firstAttribute="centerX" secondItem="3QE-BP-DCk" secondAttribute="centerX" id="33h-NG-hFt"/>
                                 <constraint firstAttribute="trailing" secondItem="8Nr-k1-Xd7" secondAttribute="trailing" constant="20" id="37x-OR-3Ou"/>
                                 <constraint firstAttribute="trailing" secondItem="b8X-iY-j54" secondAttribute="trailing" constant="20" id="4E2-J5-Mmh"/>
+                                <constraint firstItem="zBP-gL-BNI" firstAttribute="top" secondItem="3QE-BP-DCk" secondAttribute="top" constant="30" id="52Z-V7-Sgf"/>
                                 <constraint firstItem="EcB-DZ-FTW" firstAttribute="top" secondItem="lLZ-uG-xp0" secondAttribute="bottom" constant="20" id="6LM-6E-3Ya"/>
                                 <constraint firstAttribute="trailing" secondItem="EcB-DZ-FTW" secondAttribute="trailing" constant="20" id="7HM-8w-fjP"/>
                                 <constraint firstItem="YHV-NJ-0B0" firstAttribute="top" secondItem="V9D-vv-PuF" secondAttribute="bottom" constant="20" id="8KK-Ew-vSJ"/>
@@ -209,6 +225,7 @@
         </view>
     </objects>
     <resources>
+        <image name="BackArrow" width="23" height="40"/>
         <namedColor name="RegisterBackgroundColor">
             <color red="0.75294117647058822" green="0.93725490196078431" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

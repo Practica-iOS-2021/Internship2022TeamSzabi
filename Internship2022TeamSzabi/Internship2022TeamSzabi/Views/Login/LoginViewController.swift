@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class LoginViewController: UIViewController, UITextFieldDelegate {    
+final class LoginViewController: BaseViewController, UITextFieldDelegate {
     @IBOutlet private var loginLabel: UILabel!
     @IBOutlet private var emailLabel: UILabel!
     @IBOutlet private var passwordLabel: UILabel!
@@ -21,7 +21,7 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         dismissKeyboard()
-        
+        view.backgroundColor = UIColor(named: "RegisterBackgroundColor")
         emailTextField.delegate = self
         passwordTextField.delegate = self
         
@@ -58,7 +58,10 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
             validationLabel.text = "Please enter Password"
             return
         }
+        
+        startLoadingIndicator()
         AuthApiManager.sharedInstance.signin(email: email, password: password) { success, _ in
+            self.stopLoadingIndicator()
             if success {
                 StorageManager.shared.setUserLoggedIn(value: true)
                 self.validationLabel.isHidden = true
@@ -72,9 +75,10 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction private func signUpButton(_ sender: UIButton) {
-        let viewController = RegisterViewController()
-        viewController.modalPresentationStyle = .fullScreen
-        present(viewController, animated: true)
+                let viewController = RegisterViewController()
+                viewController.modalPresentationStyle = .fullScreen
+                present(viewController, animated: true)
+                navigationController?.pushViewController(viewController, animated: true)
     }
     
     // email RegEx function to verify if the email address introduced by the user is valid
@@ -109,12 +113,5 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
     func invalidMessage() {
         validationLabel.isHidden = false
         validationLabel.text = "Invalid email or password."
-    }
-    
-    func dismissKeyboard() {
-        // this allows the user to dismiss the keyboard by tapping anywhere on the screen
-        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
     }
 }

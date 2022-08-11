@@ -14,7 +14,7 @@ class ChaptersTableViewCell: UITableViewCell {
     @IBOutlet private weak var subTitle: UILabel!
     @IBOutlet private weak var grade: UILabel!
     @IBOutlet private weak var arrow: UIImageView!
-
+    
     enum Details {
         static let identifier = "chapterCell"
         static let cornerRadius = 20.0
@@ -25,15 +25,16 @@ class ChaptersTableViewCell: UITableViewCell {
         // Initialization code
         setAppearance()
     }
-
+    
     func updateCellViewForChapter(chapter: ChapterModel, iconName: String) {
         icon.image = UIImage(named: iconName)
         title.text = chapter.name
         subTitle.text = "\(chapter.questions?.count ?? 0) questions"
         grade.isHidden = true
         arrow.isHidden = false
+        isUserInteractionEnabled = true
     }
-
+    
     func updateCellViewforPassed(passed: GradeModel, iconName: String) {
         icon.image = UIImage(named: iconName)
         title.text = passed.chapter
@@ -41,6 +42,7 @@ class ChaptersTableViewCell: UITableViewCell {
         grade.text = String(passed.grade)
         grade.isHidden = false
         arrow.isHidden = true
+        isUserInteractionEnabled = false
     }
     
     private func setAppearance() {

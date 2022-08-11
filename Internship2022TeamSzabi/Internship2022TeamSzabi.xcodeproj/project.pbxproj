@@ -54,6 +54,7 @@
 		BF88728828A1A27200AA009B /* FinalTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF88728728A1A27200AA009B /* FinalTestModel.swift */; };
 		BF8872A028A40C3A00AA009B /* GradeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF88729F28A40C3A00AA009B /* GradeModel.swift */; };
 		BF8872A228A40C5800AA009B /* GradesApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8872A128A40C5800AA009B /* GradesApiManager.swift */; };
+		BF8872A428A505FC00AA009B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8872A328A505FC00AA009B /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +111,7 @@
 		BF88728728A1A27200AA009B /* FinalTestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalTestModel.swift; sourceTree = "<group>"; };
 		BF88729F28A40C3A00AA009B /* GradeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeModel.swift; sourceTree = "<group>"; };
 		BF8872A128A40C5800AA009B /* GradesApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradesApiManager.swift; sourceTree = "<group>"; };
+		BF8872A328A505FC00AA009B /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		E8DA8DF6CE54DE53C1D8ECC7 /* Pods-Internship2022TeamSzabi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Internship2022TeamSzabi.release.xcconfig"; path = "Target Support Files/Pods-Internship2022TeamSzabi/Pods-Internship2022TeamSzabi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -292,6 +294,7 @@
 				17354F00288FEE8600CBC1F5 /* CoursesViewController */,
 				172899FA28901A8B00D6EFCE /* GradesViewController */,
 				AF79B841288E75B900AA99BD /* LaunchScreen.storyboard */,
+				BF8872A328A505FC00AA009B /* BaseViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -576,6 +579,7 @@
 				BF88728028A1507400AA009B /* TestsViewController.swift in Sources */,
 				17350D6C28A1181E00EBD90E /* SplashViewController.swift in Sources */,
 				AC51D62F28A2AC0000C8F82A /* CoursesApiManager.swift in Sources */,
+				BF8872A428A505FC00AA009B /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

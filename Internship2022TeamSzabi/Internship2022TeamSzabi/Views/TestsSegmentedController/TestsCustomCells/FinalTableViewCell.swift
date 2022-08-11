@@ -11,7 +11,7 @@ class FinalTableViewCell: UITableViewCell {
     @IBOutlet private weak var cellView: UIView!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var subTitleLabel: UILabel!
-
+    
     enum Details {
         static let identifier = "finalCell"
         static let cornerRadius = 20.0
@@ -22,12 +22,13 @@ class FinalTableViewCell: UITableViewCell {
         // Initialization code
         setAppearance()
     }
-
+    
     func updateCellView(finalModel: FinalTestModel) {
         titleLabel.text = finalModel.title
         subTitleLabel.text = finalModel.subTitle
+        isUserInteractionEnabled = false
     }
-
+    
     private func setAppearance() {
         cellView.layer.masksToBounds = false
         cellView.layer.cornerRadius = Details.cornerRadius

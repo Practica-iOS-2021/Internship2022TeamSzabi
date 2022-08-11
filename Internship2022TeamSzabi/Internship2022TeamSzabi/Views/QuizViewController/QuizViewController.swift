@@ -7,7 +7,7 @@
 
 import UIKit
 
-class QuizViewController: UIViewController {
+class QuizViewController: BaseViewController {
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var finishButton: UIButton!
     @IBOutlet private weak var fadeView: UIView!
@@ -51,7 +51,7 @@ class QuizViewController: UIViewController {
             UIColor.white.withAlphaComponent(0.1).cgColor, UIColor.white.withAlphaComponent(0.6).cgColor,
             UIColor.white.withAlphaComponent(0.9).cgColor, UIColor.white.cgColor
         ]
-        gradient.locations = [0.0, 0.3, 0.5, 1.0]
+        gradient.locations = [0.0, 0.4, 0.7, 1.0]
         gradient.frame = fadeView.layer.bounds
         fadeView.layer.addSublayer(gradient)
     }
@@ -76,7 +76,9 @@ class QuizViewController: UIViewController {
         computeGrade()
         let passedGrade = GradeModel(chapter: chapterModel?.name ?? "",
                                      course: courseName ?? "", grade: Double(finalGrade), semester: 1)
+        startLoadingIndicator()
         GradesApiManager.sharedGradesData.saveGradeForUser(newGrade: passedGrade) { success, _ in
+            self.stopLoadingIndicator()
             if success {
                 self.navigationController?.popViewController(animated: true)
             } else {
@@ -101,7 +103,7 @@ extension QuizViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 150
+        return 125
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {

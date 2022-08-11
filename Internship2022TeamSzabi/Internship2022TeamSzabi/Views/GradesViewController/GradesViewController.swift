@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class GradesViewController: UIViewController,
+final class GradesViewController: BaseViewController,
                                   UITableViewDelegate,
                                   UITableViewDataSource {
     @IBOutlet private var gradesTableView: UITableView!
