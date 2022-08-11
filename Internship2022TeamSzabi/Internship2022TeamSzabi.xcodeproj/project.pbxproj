@@ -29,6 +29,10 @@
 		AC51D63728A38EDC00C8F82A /* CoursesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC51D63628A38EDC00C8F82A /* CoursesModel.swift */; };
 		AC51D63928A38EEC00C8F82A /* ChapterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC51D63828A38EEC00C8F82A /* ChapterModel.swift */; };
 		AC51D63A28A390B900C8F82A /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFED2DCB28A2A30E00F80323 /* QuestionModel.swift */; };
+		AC51D63D28A3DF0600C8F82A /* ActiveGradesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC51D63B28A3DF0600C8F82A /* ActiveGradesTableViewCell.swift */; };
+		AC51D63E28A3DF0600C8F82A /* ActiveGradesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC51D63C28A3DF0600C8F82A /* ActiveGradesTableViewCell.xib */; };
+		AC51D64128A45FCC00C8F82A /* InactiveGradesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC51D63F28A45FCC00C8F82A /* InactiveGradesTableViewCell.swift */; };
+		AC51D64228A45FCC00C8F82A /* InactiveGradesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC51D64028A45FCC00C8F82A /* InactiveGradesTableViewCell.xib */; };
 		AC66F743289956A90050925A /* CoursesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC66F741289956A90050925A /* CoursesCollectionViewCell.swift */; };
 		AC66F744289956A90050925A /* CoursesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC66F742289956A90050925A /* CoursesCollectionViewCell.xib */; };
 		ACEDF6B22892948D00CCFF8B /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACEDF6B02892948D00CCFF8B /* LoginViewController.xib */; };
@@ -77,6 +81,10 @@
 		AC51D63228A2AC2400C8F82A /* ChapterModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChapterModel.swift; sourceTree = "<group>"; };
 		AC51D63628A38EDC00C8F82A /* CoursesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoursesModel.swift; sourceTree = "<group>"; };
 		AC51D63828A38EEC00C8F82A /* ChapterModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChapterModel.swift; sourceTree = "<group>"; };
+		AC51D63B28A3DF0600C8F82A /* ActiveGradesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveGradesTableViewCell.swift; sourceTree = "<group>"; };
+		AC51D63C28A3DF0600C8F82A /* ActiveGradesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActiveGradesTableViewCell.xib; sourceTree = "<group>"; };
+		AC51D63F28A45FCC00C8F82A /* InactiveGradesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InactiveGradesTableViewCell.swift; sourceTree = "<group>"; };
+		AC51D64028A45FCC00C8F82A /* InactiveGradesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InactiveGradesTableViewCell.xib; sourceTree = "<group>"; };
 		AC66F741289956A90050925A /* CoursesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesCollectionViewCell.swift; sourceTree = "<group>"; };
 		AC66F742289956A90050925A /* CoursesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoursesCollectionViewCell.xib; sourceTree = "<group>"; };
 		ACEDF6B02892948D00CCFF8B /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -122,6 +130,10 @@
 			children = (
 				17289A0928901E5400D6EFCE /* GradesViewController.swift */,
 				17289A0A28901E5400D6EFCE /* GradesViewController.xib */,
+				AC51D63B28A3DF0600C8F82A /* ActiveGradesTableViewCell.swift */,
+				AC51D63C28A3DF0600C8F82A /* ActiveGradesTableViewCell.xib */,
+				AC51D63F28A45FCC00C8F82A /* InactiveGradesTableViewCell.swift */,
+				AC51D64028A45FCC00C8F82A /* InactiveGradesTableViewCell.xib */,
 			);
 			path = GradesViewController;
 			sourceTree = "<group>";
@@ -432,11 +444,13 @@
 				AF79B840288E75B900AA99BD /* Assets.xcassets in Resources */,
 				1750B7C628A28842006B3CBB /* QuizQuestionTableViewCell.xib in Resources */,
 				ACEDF6B22892948D00CCFF8B /* LoginViewController.xib in Resources */,
+				AC51D64228A45FCC00C8F82A /* InactiveGradesTableViewCell.xib in Resources */,
 				17350D6B28A1181E00EBD90E /* SplashViewController.xib in Resources */,
 				17289A0828901D9500D6EFCE /* ProfileViewController.xib in Resources */,
 				AC66F744289956A90050925A /* CoursesCollectionViewCell.xib in Resources */,
 				BF88728128A1507400AA009B /* TestsViewController.xib in Resources */,
 				17289A0328901B4800D6EFCE /* CoursesViewController.xib in Resources */,
+				AC51D63E28A3DF0600C8F82A /* ActiveGradesTableViewCell.xib in Resources */,
 				17289A0C28901E5400D6EFCE /* GradesViewController.xib in Resources */,
 				BF88728228A1507400AA009B /* ChaptersTableViewCell.xib in Resources */,
 				17A7F9F12897BF8700A6D4B7 /* InterV.ttf in Resources */,
@@ -542,10 +556,12 @@
 				17FE032D289C05A6001B6C78 /* UserDataApiManager.swift in Sources */,
 				17289A0728901D9500D6EFCE /* ProfileViewController.swift in Sources */,
 				BF227DC32893E41600DD111A /* RegisterViewController.swift in Sources */,
+				AC51D64128A45FCC00C8F82A /* InactiveGradesTableViewCell.swift in Sources */,
 				17289A0F2890415E00D6EFCE /* TabBarController.swift in Sources */,
 				BF88728328A1507400AA009B /* ChaptersTableViewCell.swift in Sources */,
 				AF79B837288E75B800AA99BD /* AppDelegate.swift in Sources */,
 				AC51D63728A38EDC00C8F82A /* CoursesModel.swift in Sources */,
+				AC51D63D28A3DF0600C8F82A /* ActiveGradesTableViewCell.swift in Sources */,
 				17289A0B28901E5400D6EFCE /* GradesViewController.swift in Sources */,
 				BF5DD2FF28994397002F8244 /* FirestoreManager.swift in Sources */,
 				BF227DC728957F2F00DD111A /* AuthApiManager.swift in Sources */,
