@@ -21,7 +21,6 @@
 		1750B7C528A28842006B3CBB /* QuizQuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1750B7C128A28842006B3CBB /* QuizQuestionTableViewCell.swift */; };
 		1750B7C628A28842006B3CBB /* QuizQuestionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1750B7C228A28842006B3CBB /* QuizQuestionTableViewCell.xib */; };
 		1750B7C728A28842006B3CBB /* QuizViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1750B7C328A28842006B3CBB /* QuizViewController.xib */; };
-		1783F8C228A4158C00BC8226 /* GradesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1783F8C128A4158C00BC8226 /* GradesModel.swift */; };
 		17A7F9F12897BF8700A6D4B7 /* InterV.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 17B3281F2893F88B000B5D0B /* InterV.ttf */; };
 		17B328212893F8D0000B5D0B /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B328202893F8D0000B5D0B /* UIFont.swift */; };
 		17D1D858289D4A3400C8350C /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1D857289D4A3400C8350C /* StorageManager.swift */; };
@@ -51,6 +50,8 @@
 		BF88728528A1507400AA009B /* FinalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF88727E28A1507400AA009B /* FinalTableViewCell.swift */; };
 		BF88728628A1507400AA009B /* FinalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF88727F28A1507400AA009B /* FinalTableViewCell.xib */; };
 		BF88728828A1A27200AA009B /* FinalTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF88728728A1A27200AA009B /* FinalTestModel.swift */; };
+		BF8872A028A40C3A00AA009B /* GradeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF88729F28A40C3A00AA009B /* GradeModel.swift */; };
+		BF8872A228A40C5800AA009B /* GradesApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8872A128A40C5800AA009B /* GradesApiManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,7 +68,6 @@
 		1750B7C128A28842006B3CBB /* QuizQuestionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizQuestionTableViewCell.swift; sourceTree = "<group>"; };
 		1750B7C228A28842006B3CBB /* QuizQuestionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuizQuestionTableViewCell.xib; sourceTree = "<group>"; };
 		1750B7C328A28842006B3CBB /* QuizViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuizViewController.xib; sourceTree = "<group>"; };
-		1783F8C128A4158C00BC8226 /* GradesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradesModel.swift; sourceTree = "<group>"; };
 		17B3281F2893F88B000B5D0B /* InterV.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = InterV.ttf; sourceTree = "<group>"; };
 		17B328202893F8D0000B5D0B /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		17D1D857289D4A3400C8350C /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
@@ -104,6 +104,8 @@
 		BF88727E28A1507400AA009B /* FinalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalTableViewCell.swift; sourceTree = "<group>"; };
 		BF88727F28A1507400AA009B /* FinalTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FinalTableViewCell.xib; sourceTree = "<group>"; };
 		BF88728728A1A27200AA009B /* FinalTestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalTestModel.swift; sourceTree = "<group>"; };
+		BF88729F28A40C3A00AA009B /* GradeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeModel.swift; sourceTree = "<group>"; };
+		BF8872A128A40C5800AA009B /* GradesApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradesApiManager.swift; sourceTree = "<group>"; };
 		E8DA8DF6CE54DE53C1D8ECC7 /* Pods-Internship2022TeamSzabi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Internship2022TeamSzabi.release.xcconfig"; path = "Target Support Files/Pods-Internship2022TeamSzabi/Pods-Internship2022TeamSzabi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -313,6 +315,7 @@
 				BF5DD2FE28994397002F8244 /* FirestoreManager.swift */,
 				17FE032C289C05A6001B6C78 /* UserDataApiManager.swift */,
 				AC51D62E28A2AC0000C8F82A /* CoursesApiManager.swift */,
+				BF8872A128A40C5800AA009B /* GradesApiManager.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -324,7 +327,7 @@
 				BF227DC82895AFC000DD111A /* UserModel.swift */,
 				AFED2DCB28A2A30E00F80323 /* QuestionModel.swift */,
 				AC51D63628A38EDC00C8F82A /* CoursesModel.swift */,
-				1783F8C128A4158C00BC8226 /* GradesModel.swift */,
+				BF88729F28A40C3A00AA009B /* GradeModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -537,11 +540,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1783F8C228A4158C00BC8226 /* GradesModel.swift in Sources */,
 				AC51D63A28A390B900C8F82A /* QuestionModel.swift in Sources */,
 				17B328212893F8D0000B5D0B /* UIFont.swift in Sources */,
 				ACEDF6B32892948D00CCFF8B /* LoginViewController.swift in Sources */,
 				1750B7C528A28842006B3CBB /* QuizQuestionTableViewCell.swift in Sources */,
+				BF8872A028A40C3A00AA009B /* GradeModel.swift in Sources */,
 				AC66F743289956A90050925A /* CoursesCollectionViewCell.swift in Sources */,
 				17FE032D289C05A6001B6C78 /* UserDataApiManager.swift in Sources */,
 				17289A0728901D9500D6EFCE /* ProfileViewController.swift in Sources */,
@@ -561,6 +564,7 @@
 				17289A0228901B4800D6EFCE /* CoursesViewController.swift in Sources */,
 				BF5DD2FD28994158002F8244 /* Encodable.swift in Sources */,
 				17D1D858289D4A3400C8350C /* StorageManager.swift in Sources */,
+				BF8872A228A40C5800AA009B /* GradesApiManager.swift in Sources */,
 				BF88728028A1507400AA009B /* TestsViewController.swift in Sources */,
 				17350D6C28A1181E00EBD90E /* SplashViewController.swift in Sources */,
 				AC51D62F28A2AC0000C8F82A /* CoursesApiManager.swift in Sources */,

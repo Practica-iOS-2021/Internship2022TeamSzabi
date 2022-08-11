@@ -25,7 +25,7 @@ class TestsViewController: UIViewController {
     var course: CoursesModel?
     // MARK: - DataSet for 'chapters', 'final' 'passed' tests
     private var chaptersDataSource: [ChapterModel] = []
-    private var passedDataSource: [String] = []
+    private var passedDataSource: [GradeModel] = []
     private var finalDataSource: [FinalTestModel] = []
     
     override func viewDidLoad() {
@@ -49,7 +49,7 @@ class TestsViewController: UIViewController {
         self.navigationItem.title = course?.name
         chaptersDataSource = course?.chapters ?? []
         finalDataSource = self.getFinal()
-        // passedDataSource = self.getPassed()
+        self.getPassed()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -138,6 +138,19 @@ class TestsViewController: UIViewController {
             FinalTestModel(title: "Scan the QR code and start the coresponding test")
         ]
     }
+    
+    private func getPassed() {
+        GradesApiManager.sharedGradesData.getGradesForUser { grades in
+            guard let grades = grades else {
+                return
+            }
+            // filter the grades for grades in current course
+            let filteredGrades = grades.filter { grade in
+                grade.course == self.course?.name && grade.grade >= 5
+            }
+            self.passedDataSource = filteredGrades
+        }
+    }
 }
 
 extension TestsViewController: UITableViewDataSource, UITableViewDelegate {
@@ -174,7 +187,7 @@ extension TestsViewController: UITableViewDataSource, UITableViewDelegate {
             guard let cell = tableView.dequeueReusableCell(
                 withIdentifier: ChaptersTableViewCell.Details.identifier, for: indexPath)
             as? ChaptersTableViewCell else { return UITableViewCell() }
-            cell.updateCellViewforPassed(/* PassedModel @ indexPath */)
+            cell.updateCellViewforPassed(passed: passedDataSource[indexPath.row], iconName: course?.name ?? "Chapter")
             return cell
         }
     }
@@ -199,7 +212,7 @@ extension TestsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let viewController = QuizViewController()
         viewController.modalPresentationStyle = .fullScreen
-        viewController.chapterModel = chaptersDataSource[indexPath.row]
+        // viewController.chapterModel = chaptersDataSource[indexPath.row]
         navigationController?.pushViewController(viewController, animated: true)
     }
 }

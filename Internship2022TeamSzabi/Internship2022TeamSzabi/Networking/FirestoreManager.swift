@@ -13,6 +13,7 @@ let usersCollection = "users"
 let coursesCollection = "courses"
 let chaptersCollection = "chapters"
 let questionsCollection = "questions"
+let gradesCollection = "grades"
 
 enum FirestoreManager {
     static let dbConn = Firestore.firestore()
