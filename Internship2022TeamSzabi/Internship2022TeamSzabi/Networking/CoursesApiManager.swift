@@ -100,10 +100,10 @@ class CoursesApiManager {
                 
                 let data = document.data()
                 let questionString = data["question"] as? String ?? ""
-                let correntAnswer = data["correntAnswer"] as? Int ?? 0
+                let correctAnswer = data["correctAnswer"] as? Int ?? 0
                 let answers = data["answers"] as? [String] ?? []
                 let question = QuestionModel(answers: answers,
-                                             correntAnswer: correntAnswer,
+                                             correctAnswer: correctAnswer,
                                              question: questionString)
                 questions.append(question)
             }
