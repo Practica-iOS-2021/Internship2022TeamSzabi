@@ -43,7 +43,7 @@ class TestsViewController: UIViewController {
         // remove cell separator
         testsTableView.separatorColor = .clear
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         navigationItem.title = course?.name
@@ -55,13 +55,13 @@ class TestsViewController: UIViewController {
         finalDataSource = self.getFinal()
         self.getPassed()
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         setAppearance()
         testsTableView.reloadData()
     }
-
+    
     // MARK: - nav buttons tapped actions
     @IBAction private func chaptersTap(_ sender: Any) {
         currentButton = .chaptersButton
@@ -75,13 +75,13 @@ class TestsViewController: UIViewController {
         currentButton = .passedButton
         makeButtonSelected()
     }
-
+    
     // MARK: - Appearance
     private func setAppearance() {
         view.backgroundColor = .white
         navAppearance()
     }
-
+    
     private func navAppearance() {
         // MARK: - navView containing nav components appearence
         // navigationBar remove shadow
@@ -107,17 +107,17 @@ class TestsViewController: UIViewController {
         // set currentSelected button ('chapter') appearence
         makeButtonSelected()
     }
-
+    
     private func setNormalButtonAppearance(button: UIButton) {
         button.backgroundColor = .white
         button.tintColor = UIColor(named: "TabBarSelectedColor")
     }
-
+    
     private func setSelectedButtonAppearance(button: UIButton) {
         button.backgroundColor = UIColor(named: "TabBarSelectedColor")
         button.tintColor = .white
     }
-
+    
     private func makeButtonSelected() {
         switch currentButton {
         case .chaptersButton:
@@ -135,7 +135,7 @@ class TestsViewController: UIViewController {
         }
         testsTableView.reloadData()
     }
-
+    
     private func getFinal() -> [FinalTestModel] {
         return [
             FinalTestModel(title: "Generate final random test"),
@@ -168,7 +168,7 @@ extension TestsViewController: UITableViewDataSource, UITableViewDelegate {
             return self.passedDataSource.count
         }
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // MARK: - let cell = chaptersCell/ finalCell/ passedCell
         // depending on 'currentButton'
@@ -176,7 +176,7 @@ extension TestsViewController: UITableViewDataSource, UITableViewDelegate {
         case NavButtons.chaptersButton:
             guard let cell = tableView.dequeueReusableCell(
                 withIdentifier: ChaptersTableViewCell.Details.identifier, for: indexPath)
-            as? ChaptersTableViewCell else { return UITableViewCell() }
+                    as? ChaptersTableViewCell else { return UITableViewCell() }
             cell.updateCellViewForChapter(
                 chapter: chaptersDataSource[indexPath.row],
                 iconName: course?.name ?? "Chapter")
@@ -184,18 +184,18 @@ extension TestsViewController: UITableViewDataSource, UITableViewDelegate {
         case NavButtons.finalButton:
             guard let cell = tableView.dequeueReusableCell(
                 withIdentifier: FinalTableViewCell.Details.identifier, for: indexPath)
-            as? FinalTableViewCell else { return UITableViewCell() }
+                    as? FinalTableViewCell else { return UITableViewCell() }
             cell.updateCellView(finalModel: finalDataSource[indexPath.row])
             return cell
         case NavButtons.passedButton:
             guard let cell = tableView.dequeueReusableCell(
                 withIdentifier: ChaptersTableViewCell.Details.identifier, for: indexPath)
-            as? ChaptersTableViewCell else { return UITableViewCell() }
+                    as? ChaptersTableViewCell else { return UITableViewCell() }
             cell.updateCellViewforPassed(passed: passedDataSource[indexPath.row], iconName: course?.name ?? "Chapter")
             return cell
         }
     }
-
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch self.currentButton {
         case NavButtons.chaptersButton:
@@ -216,7 +216,8 @@ extension TestsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let viewController = QuizViewController()
         viewController.modalPresentationStyle = .fullScreen
-        // viewController.chapterModel = chaptersDataSource[indexPath.row]
+        viewController.chapterModel = chaptersDataSource[indexPath.row]
+        viewController.courseName = course?.name
         navigationController?.pushViewController(viewController, animated: true)
     }
 }
